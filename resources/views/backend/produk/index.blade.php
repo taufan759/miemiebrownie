@@ -1,4 +1,4 @@
-@extends('backend.v_layouts.app')
+@extends('backend.layouts.app')
 @section('content')
     <div class="row small-spacing">
         <div class="col-xs-12">
@@ -8,18 +8,6 @@
                         <span class="btn btn-success btn-xs waves-effect waves-light">Tambah</span>
                     </a>
                 </h4>
-                <!-- /.box-title -->
-                <div class="dropdown js__drop_down">
-                    <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-                    <ul class="sub-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else there</a></li>
-                        <li class="split"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                    <!-- /.sub-menu -->
-                </div>
                 <!-- /.dropdown js__dropdown -->
                 <table id="example" class="table-striped table-bordered display table" style="width:100%">
                     <thead>

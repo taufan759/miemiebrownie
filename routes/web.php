@@ -29,7 +29,7 @@ Route::get('/', [HomeFrontend::class, 'index']);
 Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
 Route::resource('backend/customer', CustomerBackend::class);
 Route::resource('backend/kategori', KategoriBackend::class);
-Route::resource('backend/subkategori', Subkategori::class);
+Route::resource('backend/subkategori', SubkategoriBackend::class);
 Route::resource('backend/produk', ProdukBackend::class);
 Route::resource('backend/pesanan', PesananBackend::class);
 

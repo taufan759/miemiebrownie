@@ -1,4 +1,4 @@
-@extends('backend.v_layouts.app')
+@extends('backend.layouts.app')
 @section('content')
     <div class="row small-spacing">
         <div class="col-xs-12">
@@ -55,18 +55,6 @@
                                 <input type="text" name="email" value="{{ old('email') }}"
                                     class="form-control @error('email') is-invalid @enderror" placeholder="Masukkan Email">
                                 @error('email')
-                                    <span class="invalid-feedback alert-danger" role="alert">
-                                        {{ $message }}
-                                    </span>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label>HP</label>
-                                <input type="text" onkeypress="return hanyaAngka(event)" name="hp"
-                                    value="{{ old('hp') }}" class="form-control @error('hp') is-invalid @enderror"
-                                    placeholder="Masukkan Nomor HP">
-                                @error('hp')
                                     <span class="invalid-feedback alert-danger" role="alert">
                                         {{ $message }}
                                     </span>

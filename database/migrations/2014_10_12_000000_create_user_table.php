@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->boolean('is_admin');
             $table->string('password');
-            $table->string('hp', 13)->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();
         });

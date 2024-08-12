@@ -7,84 +7,63 @@ use Illuminate\Http\Request;
 use App\Models\Backend\Kategori;
 use App\Models\Backend\Subkategori;
 
-class KategoriBackend extends Controller
+class SubkategoriBackend extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $subkategori = Subkategori::orderBy('id', 'desc')->get();
+        $subkategori = Subkategori::with('kategori')->orderBy('id', 'desc')->get(); // Pastikan untuk memuat relasi kategori
         return view('backend.subkategori.index', [
-            'judul' => 'Subkategori',
-            'sub' => 'Data Kategori',
+            'judul' => 'SubKategori',
+            'sub' => 'Data SubKategori',
             'subkategori' => $subkategori
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
+        $kategori = Kategori::orderBy('nama_kategori', 'asc')->get();
         return view('backend.subkategori.create', [
-            'judul' => 'Kategori',
-            'sub' => 'Tambah Kategori',
+            'judul' => 'Produk',
+            'sub' => 'Tambah Produk',
+            'kategori' => $kategori
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        // ddd($request);
         $validatedData = $request->validate([
             'nama_subkategori' => 'required',
+            'kategori_id' => 'required|exists:kategori,id', // Menambahkan validasi kategori_id
         ]);
-        Kategori::create($validatedData);
+        Subkategori::create($validatedData);
         return redirect('backend/subkategori')->with('success', 'Data berhasil tersimpan');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
+        $kategori = Kategori::orderBy('nama_kategori', 'asc')->get();
         $subkategori = Subkategori::findOrFail($id);
         return view('backend.subkategori.edit', [
-            'judul' => 'Subkategori',
-            'sub' => 'Ubah Subkategori',
+            'judul' => 'SubKategori',
+            'sub' => 'Ubah SubKategori',
+            'kategori' => $kategori,
             'edit' => $subkategori
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $subkategori = Subkategori::findOrFail($id);
         $rules = [
             'nama_subkategori' => 'required|max:255',
+            'kategori_id' => 'required|exists:kategori,id', // Menambahkan validasi kategori_id
         ];
 
         $validatedData = $request->validate($rules);
-        Subkategori::where('id', $id)->update($validatedData);
+        $subkategori->update($validatedData);
         return redirect('backend/subkategori')->with('success', 'Data berhasil diperbaharui');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $subkategori = Subkategori::findOrFail($id);

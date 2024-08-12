@@ -1,4 +1,4 @@
-@extends('backend.v_layouts.app')
+@extends('backend.layouts.app')
 @section('content')
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
     <script src="{{ asset('sweetalert/jquery-3.6.0.min.js') }}"></script>

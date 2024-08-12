@@ -1,4 +1,4 @@
-@extends('backend.v_layouts.app')enderror
+@extends('backend.layouts.app')enderror
 @section('content')
     <div class="row small-spacing">
         <div class="col-xs-12">

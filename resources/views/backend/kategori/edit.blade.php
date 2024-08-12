@@ -1,4 +1,4 @@
-@extends('backend.v_layouts.app')
+@extends('backend.layouts.app')
 @section('content')
     <div class="row small-spacing">
         <div class="col-xs-12">
