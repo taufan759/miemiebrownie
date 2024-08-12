@@ -73,11 +73,11 @@ class DatabaseSeeder extends Seeder
         ]);
         Subkategori::create([
             'nama_subkategori' => 'Meals',
-            'kategori_id' => $kategoriMinuman->id,
+            'kategori_id' => $kategoriMakanan->id,
         ]);
         Subkategori::create([
             'nama_subkategori' => 'Souvenir',
-            'kategori_id' => $kategoriMinuman->id,
+            'kategori_id' => $kategoriMakanan->id,
         ]);
     }
 }
