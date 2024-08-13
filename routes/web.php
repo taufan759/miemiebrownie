@@ -11,7 +11,7 @@ use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
 
 use App\Http\Controllers\Frontend\HomeFrontend;
-use App\Models\Backend\Subkategori;
+use App\Http\Controllers\Frontend\ProdukFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,18 +24,16 @@ use App\Models\Backend\Subkategori;
 |
 */
 
-Route::get('/', [HomeFrontend::class, 'index']);
+// Frontend Routes
+Route::get('/', [HomeFrontend::class, 'index'])->name('frontend.home');
+Route::get('frontend/produk', [ProdukFrontend::class, 'index'])->name('frontend.produk.index');
+// Route::get('frontend/produk/{id}', [ProdukFrontend::class, 'show'])->name('frontend.produk.show');
 
-Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
+// Backend Routes
+Route::get('backend/home', [HomeBackend::class, 'index'])->name('backend.home');
 Route::resource('backend/customer', CustomerBackend::class);
 Route::resource('backend/kategori', KategoriBackend::class);
 Route::resource('backend/subkategori', SubkategoriBackend::class);
 Route::resource('backend/produk', ProdukBackend::class);
 Route::resource('backend/pesanan', PesananBackend::class);
-
 Route::resource('backend/user', UserBackend::class);
-
-
-
-
-
