@@ -1,5 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
+<body>
         <!-- Hero Section Begin -->
         <section class="hero">
             <div class="hero__slider owl-carousel">
@@ -496,4 +497,5 @@
             </div>
         </section>
         <!-- Testimony End -->
+</body>
 @endsection
