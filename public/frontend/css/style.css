@@ -743,14 +743,14 @@ ol {
 /*---------------------
   Categories
 -----------------------*/
-
 .categories {
-	background: #f3f2ee;
-	overflow: hidden;
-	padding-top: 150px;
-	padding-bottom: 125px;
+	background-image: url("img/bg.png"); /* Ganti dengan path gambar Anda */
+	background-size: cover; 
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 50px 0; 
+	position: relative;
 }
-
 .categories__text {
 	padding-top: 40px;
 	position: relative;
@@ -2054,22 +2054,28 @@ ol {
 -----------------------*/
 
 .breadcrumb-option {
-	background: #f3f2ee;
-	padding: 40px 0;
+    background-image: url('img/bg.jpg'); /* Path ke gambar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0; /* Tambahkan padding jika diperlukan */
 }
 
 .breadcrumb__text h4 {
-	color: #111111;
+	color: #3E2723;
 	font-weight: 700;
 	margin-bottom: 8px;
+	font-size: 2rem;
+	font-weight: 900;
 }
 
 .breadcrumb__links a {
-	font-size: 15px;
-	color: #111111;
+	font-size: 30px;
+	color: #3E2723;
 	margin-right: 18px;
 	display: inline-block;
 	position: relative;
+	font-weight: 700;
 }
 
 .breadcrumb__links a:after {
@@ -2078,12 +2084,14 @@ ol {
 	top: 0;
 	content: "";
 	font-family: "FontAwesome";
+	font-weight: 700;
 }
 
 .breadcrumb__links span {
-	font-size: 15px;
-	color: #b7b7b7;
+	font-size: 20px;
+	color: #3E2723;
 	display: inline-block;
+	font-weight: 700;
 }
 
 /*---------------------
@@ -3848,4 +3856,94 @@ ol {
 	.categories__text:before {
 		height: 250px;
 	}
+}
+
+.categories__slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.categories__item {
+	flex: 0 0 150px; /* Lebar setiap kotak */
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.categories__slider {
+	display: flex;
+	gap: 15px; /* Jarak antar kotak lebih kecil */
+	overflow-x: scroll;
+	padding: 15px 0;
+	-ms-overflow-style: none;  /* Menghilangkan scrollbar di Internet Explorer dan Edge */
+	scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
+}
+
+.categories__slider::-webkit-scrollbar {
+	display: none;  /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
+}
+
+
+.categories__item:hover {
+	transform: translateY(-10px); /* Efek melayang saat hover */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.categories__item__icon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.categories__item__icon h5 {
+	margin-top: 10px;
+	font-size: 16px;
+	color: #333;
+}
+
+.categories__item__icon span {
+	color: #e91e63; /* Warna ikon */
+	font-size: 2rem; /* Mengurangi ukuran ikon */
+    margin-bottom: 5px; /* Mengurangi jarak antara ikon dan teks */
+	
+}
+.shop__sidebar__categories ul {
+	list-style: none;
+	padding: 0;
+}
+
+.shop__sidebar__categories i {
+	margin-right: 10px;
+	font-size: 15px; /* Ukuran ikon */
+	color: #FF4DA3;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.shop__sidebar__categories a:hover {
+	color: #FF4DA3; /* Warna teks saat hover */
+}
+
+.shop__sidebar__categories a:hover i {
+	transform: scale(1.2); /* Efek membesar pada ikon saat hover */
+	color: #FF4DA3; /* Warna ikon saat hover */
+}
+.slider__control {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.slider__control--left {
+	left: -20px;
+}
+
+.slider__control--right {
+	right: -20px; 
 }
