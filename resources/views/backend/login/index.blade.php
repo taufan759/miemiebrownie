@@ -78,6 +78,14 @@
                             Login
                         </button>
                     </div>
+                    <div class="container-login100-form-btn m-t-32">
+                        <button type="button" class="login100-form-btn" onclick="goBack()">
+                            Kembali
+                        </button>
+                        <script>
+                            function goBack() {window.location.href = "/";}
+                        </script>
+                    </div>
                 </form>
             </div>
         </div>

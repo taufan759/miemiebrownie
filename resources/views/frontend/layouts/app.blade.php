@@ -31,6 +31,26 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
+                <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
+                <a href="#"><i class="fa fa-shopping-cart" style="color: grey;""></i>
+                <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
+            </div>
+            <div class="offcanvas__top__hover">
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Miemie Brownie X Lost In Coffee</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -42,34 +62,26 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
-                    <ul>
-    <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
-    <li class="{{ request()->is('produk') ? 'active' : '' }}"><a href="/produk">Produk</a></li>
-    <li class="{{ request()->is('tentang-kami*') ? 'active' : '' }}">
-        <a href="#">Tentang Kami</a>
-        <ul class="dropdown">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Sejarah</a></li>
-            <li><a href="#">Visi & Misi</a></li>
-        </ul>
-    </li>
-    <li class="{{ request()->is('info-kemitraan*') ? 'active' : '' }}">
-        <a href="#">Info Kemitraan</a>
-        <ul class="dropdown">
-            <li><a href="#">Agen</a></li>
-            <li><a href="#">Reseller</a></li>
-        </ul>
-    </li>
-</ul>
-
+                        <ul>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="produk">Produk</a></li>
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Info Kemitraan</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Agen</a></li>
+                                    <li><a href="#">Reseller</a></li>
+                                </ul>
+                            {{-- <li><a href="./about.html">Tentang Kami</a></li> --}}
+                            {{-- <li><a href="./contact.html">Contact</a></li> --}}
+                        </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="{{ asset('frontend/img/icon/search.png')}}" alt=""></a>
-                        <a href="#"><img src="{{ asset('frontend/img/icon/heart.png')}}" alt=""></a>
-                        <a href="#"><img src="{{ asset('frontend/img/icon/cart.png')}}" alt=""> <span>0</span></a>
-                        <a href="#"><img src="{{ asset('frontend/img/icon/user.png')}}" alt=""></a>
+                        <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
+                        <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
+                        <a href="#"><i class="fa fa-shopping-cart" style="color: grey;""></i>
+                        <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
                     </div>
                 </div>
             </div>
@@ -92,11 +104,17 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
-                        <div class="footer__logo">
+                        {{-- <div class="footer__logo">
                             <a href="#"><img src="{{ asset('frontend/img/footer-logo.png')}}" alt=""></a>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tempora?</p>
-                        <a href="#"><img src="{{ asset('frontend/img/payment.png')}}" alt=""></a>
+                        </div> --}}
+                        <address style="color: #f0f0f0;">
+                            Jl. P. Diponegoro No.102<br>
+                            Kota Tegal - Jawa Tengah 52125<br>
+                            <a href="https://www.facebook.com/miemiebrownie"><i class="fa fa-facebook-f"></i>@miemiebrownie</a> <br>
+                            <a href="https://www.instagram.com/miemiebrownie"><i class="fa fa-instagram"></i>@miemieandbrownie</a> <br>
+                            <a href="https://wa.me/628152800800">081 52 800 800</a>
+                        </address>
+                        {{-- <a href="#"><img src="{{ asset('frontend/img/payment.png')}}" alt=""></a> --}}
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -122,9 +140,9 @@
                         <h6>NewLetter</h6>
                         <div class="footer__newslatter">
                             <p>Always updated with our products and promotions!</p>
-                            <form action="#">
+                            <form action="#" method="post">
                                 <input type="text" placeholder="Keep updated">
-                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                                <button type="submit"><i class="fas fa-envelope"></i></button>
                             </form>
                         </div>
                     </div>
@@ -133,14 +151,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p>Copyright ©
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
                             All rights reserved
                         </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
             </div>
@@ -153,7 +169,7 @@
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch">+</div>
             <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
+                <input type="text" id="search-input" placeholder="Cari">
             </form>
         </div>
     </div>
