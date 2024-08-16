@@ -2,12 +2,13 @@
 
 @section('content')
 <!-- Background Section -->
-<div class="bg-image" style="background-image: url('{{ asset('frontend/img/breadcrumb-bg.jpg') }}'); background-size: contain; background-repeat: no-repeat; background-position: center; padding: 100px 0;">
+<div class="bg-image" style="background-image: url('{{ asset('frontend/img/breadcrumb-bg.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px; padding: 100px 0;">
     <div class="container text-center text-white">
         <h1>Info Kemitraan</h1>
         <p>Bergabunglah dengan kami sebagai agen atau reseller dan nikmati keuntungan menarik!</p>
     </div>
 </div>
+
 
 <div class="container py-5">
     <div class="row justify-content-center">
