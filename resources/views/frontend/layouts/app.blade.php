@@ -38,7 +38,7 @@
             <div class="offcanvas__links">
                 <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
                 <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
-                <a href="#"><i class="fa fa-shopping-cart" style="color: grey;""></i>
+                <a href="#"><i class="fa fa-shopping-cart" style="color: grey;"></i>
                 <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
             </div>
             <div class="offcanvas__top__hover">
@@ -62,18 +62,25 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="produk">Produk</a></li>
-                            <li><a href="#">Tentang Kami</a></li>
-                            <li><a href="#">Info Kemitraan</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Agen</a></li>
-                                    <li><a href="#">Reseller</a></li>
-                                </ul>
-                            {{-- <li><a href="./about.html">Tentang Kami</a></li> --}}
-                            {{-- <li><a href="./contact.html">Contact</a></li> --}}
-                        </ul>
+                    <ul>
+    <li class="{{ request()->is('/') ? 'active' : '' }}">
+        <a href="/">Home</a>
+    </li>
+    <li class="{{ request()->is('produk') ? 'active' : '' }}">
+        <a href="/produk">Produk</a>
+    </li>
+    <li class="{{ request()->is('tentang-kami*') || request()->is('tentang-kami/*') ? 'active' : '' }}">
+        <a href="#">Tentang Kami</a>
+        <!-- Dropdown dihapus -->
+    </li>
+    <li class="{{ request()->is('mitra')  ? 'active' : '' }}">
+        <a href="/mitra">Info Kemitraan</a>
+        <!-- Dropdown dihapus -->
+    </li>
+</ul>
+
+
+
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">

@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\Frontend\HomeFrontend;
 use App\Http\Controllers\Frontend\ProdukFrontend;
+use App\Http\Controllers\Frontend\MitraFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,4 @@ Route::get('/', function () {
 });
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/produk', [ProdukFrontend::class, 'produk']);
+Route::get('/mitra', [MitraFrontend::class, 'mitra']);
