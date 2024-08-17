@@ -1,13 +1,14 @@
 @extends('frontend.layouts.app')
 @section('content')
 <body>
-<section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.png') }}">
+    <!-- Shop Section Begin -->
+    <section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.png') }}">
     <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb-option">
+    <section class="breadcrumb-option">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb__text text-center">
+                    <div class="breadcrumb__text">
                         <h4>Temukan Brownies Miemie Lezat Kami!</h4>
                         <div class="breadcrumb__links">
                             <span>Jelajahi pilihan Brownies Miemie yang lezat dan berbagai hidangan nikmat lainnya.</span>
@@ -16,91 +17,86 @@
                 </div>
             </div>
         </div>
-   <!-- Categories -->
-   <div class="categories">
+    </section>
+    <!-- Categories Filter Section -->
+    <div class="categories">
+        <div class="container">
             <div class="row">
                 <div class="categories__slider-container">
-                    <!-- Kontrol Panah Kiri -->
-                    <button class="slider__control slider__control--left">
+                    <!-- Left Arrow Control -->
+                    <button class="slider__control slider__control--left" aria-label="Previous">
                         <span class="fas fa-chevron-left fa-2x"></span>
                     </button>
 
-                    <!-- Slider Kategori -->
+                    <!-- Categories Slider -->
                     <div class="categories__slider">
-                        <!-- Kategori Cake Tart -->
-                        <div class="categories__item">
+                        <!-- Category Item -->
+                        <div class="categories__item" data-category="cake-tart">
                             <div class="categories__item__icon">
-                                <span class="fas fa-cake fa-4x"></span> <!-- Ikon kue -->
+                                <span class="fas fa-cake fa-4x"></span>
                                 <h5>Cake Tart</h5>
                             </div>
                         </div>
 
-                        <!-- Kategori Brownies Box -->
-                        <div class="categories__item">
+                        <div class="categories__item" data-category="brownies-box">
                             <div class="categories__item__icon">
-                                <span class="fas fa-cube fa-4x"></span> <!-- Ikon Brownies Box -->
+                                <span class="fas fa-cube fa-4x"></span>
                                 <h5>Brownies Box</h5>
                             </div>
                         </div>
 
-                        <!-- Kategori Coffee & Drink -->
-                        <div class="categories__item">
+                        <div class="categories__item" data-category="coffee-drink">
                             <div class="categories__item__icon">
-                                <span class="fas fa-coffee fa-4x"></span> <!-- Ikon Coffee & Drink -->
+                                <span class="fas fa-coffee fa-4x"></span>
                                 <h5>Coffee & Drink</h5>
                             </div>
                         </div>
 
-                        <!-- Kategori Cookies & Snack -->
-                        <div class="categories__item">
+                        <div class="categories__item" data-category="cookies-snack">
                             <div class="categories__item__icon">
-                                <span class="fas fa-cookie fa-4x"></span> <!-- Ikon Cookies & Snack -->
+                                <span class="fas fa-cookie fa-4x"></span>
                                 <h5>Cookies & Snack</h5>
                             </div>
                         </div>
 
-                        <!-- Kategori Dessert Box -->
-                        <div class="categories__item">
+                        <div class="categories__item" data-category="dessert-box">
                             <div class="categories__item__icon">
-                                <span class="fas fa-box-open fa-4x"></span> <!-- Ikon Dessert Box -->
+                                <span class="fas fa-box-open fa-4x"></span>
                                 <h5>Dessert Box</h5>
                             </div>
                         </div>
 
-                        <!-- Kategori Hampers -->
-                        <div class="categories__item">
+                        <div class="categories__item" data-category="hampers">
                             <div class="categories__item__icon">
-                                <span class="fas fa-gift fa-4x"></span> <!-- Ikon Hampers -->
+                                <span class="fas fa-gift fa-4x"></span>
                                 <h5>Hampers</h5>
                             </div>
                         </div>
 
-                        <!-- Kategori Meals -->
-                        <div class="categories__item">
+                        <div class="categories__item" data-category="meals">
                             <div class="categories__item__icon">
-                                <span class="fas fa-utensils fa-4x"></span> <!-- Ikon Meals -->
+                                <span class="fas fa-utensils fa-4x"></span>
                                 <h5>Meals</h5>
                             </div>
                         </div>
-                        <!-- Kategori Bolen Pisang -->
-                        <div class="categories__item">
+
+                        <div class="categories__item" data-category="bolen-pisang">
                             <div class="categories__item__icon">
                                 <span class="fas fa-apple-alt fa-4x"></span>
                                 <h5>Bolen Pisang</h5>
                             </div>
                         </div>
                     </div>
-                    <!-- Kontrol Panah Kanan -->
-                    <button class="slider__control slider__control--right">
+
+                    <!-- Right Arrow Control -->
+                    <button class="slider__control slider__control--right" aria-label="Next">
                         <span class="fas fa-chevron-right fa-2x"></span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!-- Combined Section End -->
-
+    </section>
     <section class="shop spad">
         <div class="container">
             <div class="row">

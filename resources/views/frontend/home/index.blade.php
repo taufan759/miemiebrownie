@@ -14,8 +14,8 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, impedit?</p>
                                     <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                     <div class="hero__social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="https://www.facebook.com/miemiebrownie"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.instagram.com/miemiebrownie"><i class="fa fa-instagram"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -32,8 +32,8 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, error.</p>
                                     <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                                     <div class="hero__social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
+                                        <a href="https://www.facebook.com/miemiebrownie"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.instagram.com/miemiebrownie"><i class="fa fa-instagram"></i></a>
                                     </div>
                                 </div>
                             </div>

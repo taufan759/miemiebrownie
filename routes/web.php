@@ -12,6 +12,7 @@ use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\Frontend\HomeFrontend;
 use App\Http\Controllers\Frontend\ProdukFrontend;
 use App\Http\Controllers\Frontend\MitraFrontend;
+use App\Http\Controllers\Frontend\TentangFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,4 @@ Route::get('/', function () {
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/produk', [ProdukFrontend::class, 'produk']);
 Route::get('/mitra', [MitraFrontend::class, 'mitra']);
+Route::get('/tentang', [TentangFrontend::class, 'tentang']);

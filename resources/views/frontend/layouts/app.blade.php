@@ -31,10 +31,10 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
                 <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
                 <a href="#"><i class="fa fa-shopping-cart" style="color: grey;"></i>
                 <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
+                <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
             </div>
             <div class="offcanvas__top__hover">
             </div>
@@ -64,8 +64,8 @@
                             <li class="{{ request()->is('produk') ? 'active' : '' }}">
                                 <a href="/produk">Produk</a>
                             </li>
-                            <li class="{{ request()->is('tentang-kami*') || request()->is('tentang-kami/*') ? 'active' : '' }}">
-                                <a href="#">Tentang Kami</a>
+                            <li class="{{ request()->is('tentang') ? 'active' : '' }}">
+                                <a href="/tentang">Tentang Kami</a>
                             </li>
                             <li class="{{ request()->is('mitra')  ? 'active' : '' }}">
                                 <a href="/mitra">Info Kemitraan</a>

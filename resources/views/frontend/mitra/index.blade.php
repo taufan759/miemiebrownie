@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('content')
 <!-- Background Section -->
 <div class="bg-image" style="background-image: url('{{ asset('frontend/img/breadcrumb-bg.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px; padding: 100px 0;">
