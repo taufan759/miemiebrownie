@@ -16,21 +16,16 @@
     <!-- Css Styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//font-awesome.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//elegant-icons.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//magnific-popup.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//nice-select.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//owl.carousel.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//slicknav.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('frontend/css//style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}" type="text/css">
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -62,25 +57,20 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
-                    <ul>
-    <li class="{{ request()->is('/') ? 'active' : '' }}">
-        <a href="/">Home</a>
-    </li>
-    <li class="{{ request()->is('produk') ? 'active' : '' }}">
-        <a href="/produk">Produk</a>
-    </li>
-    <li class="{{ request()->is('tentang-kami*') || request()->is('tentang-kami/*') ? 'active' : '' }}">
-        <a href="#">Tentang Kami</a>
-        <!-- Dropdown dihapus -->
-    </li>
-    <li class="{{ request()->is('mitra')  ? 'active' : '' }}">
-        <a href="/mitra">Info Kemitraan</a>
-        <!-- Dropdown dihapus -->
-    </li>
-</ul>
-
-
-
+                        <ul>
+                            <li class="{{ request()->is('/') ? 'active' : '' }}">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="{{ request()->is('produk') ? 'active' : '' }}">
+                                <a href="/produk">Produk</a>
+                            </li>
+                            <li class="{{ request()->is('tentang-kami*') || request()->is('tentang-kami/*') ? 'active' : '' }}">
+                                <a href="#">Tentang Kami</a>
+                            </li>
+                            <li class="{{ request()->is('mitra')  ? 'active' : '' }}">
+                                <a href="/mitra">Info Kemitraan</a>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
@@ -149,7 +139,7 @@
                             <p>Always updated with our products and promotions!</p>
                             <form action="#" method="post">
                                 <input type="text" placeholder="Keep updated">
-                                <button type="submit"><i class="fas fa-envelope"></i></button>
+                                <button type="submit"><i class="icon_mail_alt"></i></button>
                             </form>
                         </div>
                     </div>
