@@ -1,45 +1,50 @@
 @extends('backend.layouts.app')
 @section('content')
-    <div class="row small-spacing">
-        <div class="col-xs-12">
-            <div class="box-content">
-                <h4 class="box-title"><b>{{ $sub }}</b><br><br>
-                    <a href="{{ route('kategori.create') }}" title="Tambah Data">
-                        <span class="btn btn-success btn-xs waves-effect waves-light">Tambah</span>
+<!-- template -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{$sub}} <br><br>
+                    <a href="{{ route('customer.create') }}" title="Tambah data">
+                        <button type="button" class="btn btn-success btn-xs waves-effect waves-light">Tambah</button>
                     </a>
-                </h4>
+                </h5>
                 <!-- /.dropdown js__dropdown -->
-                <table id="example" class="table-striped table-bordered display table" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th align="center">No</th>
-                            <th>Kategori</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($kategori as $index => $row)
+                <div class="table-responsive">
+                    <table id="zero_config" class="table table-striped table-bordered">
+                        <thead>
+                            <tr align="center">
+                                <th>No</th>
+                                <th>Kategori</th>
+                                <th>Aksi</th>
+                            </tr>
+                        <tbody>
+                        <tbody>
+                            @foreach ($kategori as $index => $row)
                             <tr>
                                 <td align="center">{{ $index + 1 }}</td>
-                                <td> {{ $row->nama_kategori }} </td>
+                                <td align="center">{{ $row->nama_kategori }}</td>
                                 <td align="center">
                                     <a href="{{ route('kategori.edit', $row->id) }}" title="Ubah Data">
-                                        <span class="btn btn-primary btn-xs waves-effect waves-light"><i
-                                                class="fa fa-edit"></i>Ubah</span>
+                                        <span class="btn btn-success btn-xs waves-effect waves-light">
+                                            <i class="fa fa-edit"></i> Ubah
+                                        </span>
                                     </a>
-                                    <form method="POST" action="{{ route('kategori.destroy', $row->id) }}"
-                                        style="display: inline-block;">
+                                    <form method="POST" action="{{ route('kategori.destroy', $row->id) }}" style="display: inline-block;">
                                         @method('delete')
                                         @csrf
-                                        <button type="button"
-                                            class="btn btn-danger btn-xs waves-effect waves-light show_confirm"
-                                            data-toggle="tooltip" title='Delete' data-konf-delete="{{ $row->kategori }}"><i
-                                                class="fa fa-trash"></i>Hapus</button></button>
+                                        <button type="button" class="btn btn-danger btn-xs waves-effect waves-light show_confirm" data-toggle="tooltip" title='Delete' data-konf-delete="{{ $row->nama_kategori }}">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
                                     </form>
+                                </td>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <!-- /.box-content -->
         </div>

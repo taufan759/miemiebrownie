@@ -12,9 +12,9 @@
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
             <div class="p-4 pt-5">
-                <!-- Gambar logo menggunakan asset Laravel -->
-                <a href="#" class="img logo rounded-circle mb-5" style="background-image: url('images/logo.jpg')"></a>
-                
+                @if (auth()->user()->foto)
+                <img src="{{ asset('storage/img-user/' . auth()->user()->foto) }}"  class="img logo rounded-circle mb-5">
+                @endif
                 <!-- Menu Sidebar -->
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
@@ -55,7 +55,7 @@
                 <br/>
 
                 <div class="footer">
-                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a></p>
                 </div>
             </div>
         </nav>

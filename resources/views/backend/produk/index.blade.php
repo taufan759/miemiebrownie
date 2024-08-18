@@ -1,13 +1,14 @@
 @extends('backend.layouts.app')
 @section('content')
-    <div class="row small-spacing">
-        <div class="col-xs-12">
-            <div class="box-content">
-                <h4 class="box-title"><b>{{ $sub }}</b><br><br>
-                    <a href="{{ route('produk.create') }}" title="Tambah Data">
-                        <span class="btn btn-success btn-xs waves-effect waves-light">Tambah</span>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{$sub}} <br><br>
+                    <a href="{{ route('customer.create') }}" title="Tambah data">
+                        <button type="button" class="btn btn-success btn-xs waves-effect waves-light">Tambah</button>
                     </a>
-                </h4>
+                </h5>
                 <!-- /.dropdown js__dropdown -->
                 <table id="example" class="table-striped table-bordered display table" style="width:100%">
                     <thead>
@@ -35,7 +36,7 @@
                                 <td>Rp. {{ number_format($row->harga, 0, ',', '.') }} </td>
                                 <td align="center">
                                     <a href="{{ route('produk.edit', $row->id) }}" title="Ubah Data">
-                                        <span class="btn btn-primary btn-xs waves-effect waves-light"><i
+                                        <span class="btn btn-success btn-xs waves-effect waves-light"><i
                                                 class="fa fa-edit"></i>Ubah</span>
                                     </a>
                                     <form method="POST" action="{{ route('produk.destroy', $row->id) }}"

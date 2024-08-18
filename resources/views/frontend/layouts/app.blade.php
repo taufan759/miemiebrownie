@@ -26,26 +26,6 @@
 </head>
 
 <body>
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="offcanvas__option">
-            <div class="offcanvas__links">
-                <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
-                <a href="#"><i class="fa fa-shopping-cart" style="color: grey;"></i>
-                <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
-                <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
-            </div>
-            <div class="offcanvas__top__hover">
-            </div>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__text">
-            <p>Miemie Brownie X Lost In Coffee</p>
-        </div>
-    </div>
-    <!-- Offcanvas Menu End -->
-
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -62,13 +42,13 @@
                                 <a href="/">Home</a>
                             </li>
                             <li class="{{ request()->is('produk') ? 'active' : '' }}">
-                                <a href="/produk">Produk</a>
+                                <a href="/page/produk">Produk</a>
                             </li>
                             <li class="{{ request()->is('tentang') ? 'active' : '' }}">
-                                <a href="/tentang">Tentang Kami</a>
+                                <a href="/page/tentang">Tentang Kami</a>
                             </li>
                             <li class="{{ request()->is('mitra')  ? 'active' : '' }}">
-                                <a href="/mitra">Info Kemitraan</a>
+                                <a href="/page/mitra">Info Kemitraan</a>
                             </li>
                         </ul>
                     </nav>
@@ -77,7 +57,7 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
                         <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
-                        <a href="#"><i class="fa fa-shopping-cart" style="color: grey;""></i>
+                        <a href="/page/keranjang"><i class="fa fa-shopping-cart" style="color: grey;""></i>
                         <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
                     </div>
                 </div>

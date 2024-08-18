@@ -9,10 +9,10 @@ use App\Http\Controllers\Backend\KategoriBackend;
 use App\Http\Controllers\Backend\ProdukBackend;
 use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
+
+
 use App\Http\Controllers\Frontend\HomeFrontend;
-use App\Http\Controllers\Frontend\ProdukFrontend;
-use App\Http\Controllers\Frontend\MitraFrontend;
-use App\Http\Controllers\Frontend\TentangFrontend;
+use App\Http\Controllers\Frontend\PageFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +30,11 @@ Route::get('/login', [LoginBackend::class, 'index'])->name('login');
 Route::post('/login', [LoginBackend::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginBackend::class, 'logout'])->name('logout');
 
+// Rute Signup
+Route::get('/signup', [SignupController::class, 'index'])->name('signup');
+Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
+
+
 // Rute Backend dengan middleware auth dan is_admin
 Route::middleware(['auth'])->group(function () {
     Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
@@ -45,10 +50,12 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
 });
 
 // Rute untuk Frontend
+
 Route::get('/', function () {
     return view('frontend.home.index');
 });
 // Route::resource('/produk', ProdukFrontend::class);
-Route::get('/produk', [ProdukFrontend::class, 'produk']);
-Route::get('/mitra', [MitraFrontend::class, 'mitra']);
-Route::get('/tentang', [TentangFrontend::class, 'tentang']);
+Route::get('/page/produk', [PageFrontend::class, 'produk']);
+Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
+Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
+Route::get('/page/keranjang', [PageFrontend::class, 'keranjang']);
