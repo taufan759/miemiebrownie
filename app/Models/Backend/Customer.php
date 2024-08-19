@@ -2,26 +2,20 @@
 
 namespace App\Models\Backend;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class Customer extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use Notifiable;
 
-    protected $fillable = [
-        'nama', 'email', 'hp', 'password',
-    ];
+    public $timestamps = true;
+    protected $table = "customer";
+    protected $guarded = ['id'];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // Jika Anda memerlukan field lain yang bersifat mass assignable
+    protected $fillable = ['nama', 'email', 'hp', 'password'];
 
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+    // Jika Anda ingin menyembunyikan field tertentu dari array yang dikonversi ke JSON
+    protected $hidden = ['password', 'remember_token'];
 }

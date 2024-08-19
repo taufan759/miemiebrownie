@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Auth\Customer;
+use App\Models\Backend\Customer;
 
 class CustomerAuth extends Controller
 {
@@ -23,7 +23,7 @@ class CustomerAuth extends Controller
 
         if (Auth::guard('customer')->attempt($credentials)) {
             // Autentikasi berhasil
-            return redirect()->intended('customer/home');
+            return redirect()->intended('customer/');
         }
 
         return back()->withErrors([
@@ -54,7 +54,7 @@ class CustomerAuth extends Controller
 
         Auth::guard('customer')->login($customer);
 
-        return redirect()->intended('customer/home');
+        return redirect()->intended('customer/');
     }
 
     public function logout()
