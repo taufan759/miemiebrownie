@@ -2275,6 +2275,12 @@ ol {
 .team__item img {
 	min-width: 100%;
 	margin-bottom: 25px;
+	filter: grayscale(100%); 
+    transition: filter 0.3s ease; 
+}
+
+.team__item img:hover {
+    filter: grayscale(0%); 
 }
 
 .team__item h4 {
@@ -2298,11 +2304,18 @@ ol {
 	padding-bottom: 25px;
 }
 
-.client__item {
-	display: block;
+.client__item img {
+    display: block;
 	margin-bottom: 75px;
 	text-align: center;
+    filter: grayscale(100%); 
+    transition: filter 0.3s ease; 
 }
+
+.client__item img:hover {
+    filter: grayscale(0%); 
+}
+
 
 /*---------------------
   Shopping Cart
@@ -3860,91 +3873,212 @@ ol {
 }
 
 .categories__slider-container {
-    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.categories__slider {
     display: flex;
-    align-items: center;
-    overflow: hidden;
+    gap: 20px;
+    width: max-content;
 }
 
 .categories__item {
-	flex: 0 0 150px; /* Lebar setiap kotak */
-	background-color: #f8f8f8;
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	text-align: center;
-	padding: 20px;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.categories__slider {
-	display: flex;
-	gap: 15px; /* Jarak antar kotak lebih kecil */
-	overflow-x: scroll;
-	padding: 15px 0;
-	-ms-overflow-style: none;  /* Menghilangkan scrollbar di Internet Explorer dan Edge */
-	scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
-}
-
-.categories__slider::-webkit-scrollbar {
-	display: none;  /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
-}
-
-
-.categories__item:hover {
-	transform: translateY(-10px); /* Efek melayang saat hover */
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #3E2723;
+    border-radius: 10px;
+    background-color: #FF4DA3;
+    color: #3E2723;
+    width: 120px;
 }
 
 .categories__item__icon {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.categories__item__icon h5 {
-	margin-top: 10px;
-	font-size: 16px;
-	color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .categories__item__icon span {
-	color: #e91e63; /* Warna ikon */
-	font-size: 2rem; /* Mengurangi ukuran ikon */
-    margin-bottom: 5px; /* Mengurangi jarak antara ikon dan teks */
-	
-}
-.shop__sidebar__categories ul {
-	list-style: none;
-	padding: 0;
+    color: #3E2723;
 }
 
-.shop__sidebar__categories i {
-	margin-right: 10px;
-	font-size: 15px; /* Ukuran ikon */
-	color: #FF4DA3;
-	transition: transform 0.3s ease, color 0.3s ease;
+.categories__item h5 {
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #3E2723;
 }
 
-.shop__sidebar__categories a:hover {
-	color: #FF4DA3; /* Warna teks saat hover */
+/* Wishlist Page Styles */
+.wishlist {
+    padding: 60px 0;
 }
 
-.shop__sidebar__categories a:hover i {
-	transform: scale(1.2); /* Efek membesar pada ikon saat hover */
-	color: #FF4DA3; /* Warna ikon saat hover */
+.wishlist__table {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
 }
-.slider__control {
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
+
+.wishlist__table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wishlist__table thead {
+    background: #f2f2f2;
+    color: #111111;
+}
+
+.wishlist__table thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.wishlist__table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.product__wishlist__item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.product__wishlist__item__pic {
+    flex: 0 0 100px;
+}
+
+.product__wishlist__item__pic img {
+    width: 100%;
+    height: auto;
+}
+
+.product__wishlist__item__text {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.product__wishlist__item__text h6 {
+    margin: 0;
+    font-size: 16px;
+    color: #3E2723;
+}
+
+.product__wishlist__item__text h5 {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #FF4DA3;
+}
+
+.wishlist__price {
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    color: #3E2723;
+}
+
+.wishlist__actions {
+    text-align: center;
+    padding: 15px;
+}
+
+.wishlist__actions .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 3px;
     border: none;
     cursor: pointer;
-    z-index: 0;
+    margin: 0 5px;
 }
 
-.slider__control--left {
-	left: -20px;
+.wishlist__actions .btn-primary {
+    background-color: #FF4DA3;
+    color: white;
 }
 
-.slider__control--right {
-	right: -20px; 
+.wishlist__actions .btn-danger {
+    background-color: #CA0B00;
+    color: white;
+}
+
+.wishlist__total {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.wishlist__total h6 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3E2723;
+}
+
+.wishlist__total ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wishlist__total ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.wishlist__total ul li span {
+    float: right;
+    font-weight: bold;
+    color: #3E2723;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #FF4DA3;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.primary-btn:hover {
+    background-color: #e55d50;
+}
+
+.continue__btn {
+    text-align: left;
+}
+
+.continue__btn a,
+.update__btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #FF4DA3;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.continue__btn a:hover,
+.update__btn a:hover {
+    background-color: #e55d50;
+}
+
+.update__btn a {
+    background-color: #3E2723;
+}
+
+.update__btn a:hover {
+    background-color: #5d4037;
 }

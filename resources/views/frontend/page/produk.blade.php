@@ -23,18 +23,13 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider-container">
-                    <!-- Left Arrow Control -->
-                    <button class="slider__control slider__control--left" aria-label="Previous">
-                        <span class="fas fa-chevron-left fa-2x"></span>
-                    </button>
-
                     <!-- Categories Slider -->
                     <div class="categories__slider">
                         <!-- Category Item -->
-                        <div class="categories__item" data-category="cake-tart">
+                        <div class="categories__item" data-category="bolen-pisang">
                             <div class="categories__item__icon">
-                                <span class="fas fa-cake fa-4x"></span>
-                                <h5>Cake Tart</h5>
+                                <span class="fas fa-square fa-4x"></span>
+                                <h5>Bolen Pisang</h5>
                             </div>
                         </div>
 
@@ -73,25 +68,20 @@
                             </div>
                         </div>
 
+                        <div class="categories__item" data-category="cake-tart">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-cake fa-4x"></span>
+                                <h5>Cake Tart</h5>
+                            </div>
+                        </div>
+
                         <div class="categories__item" data-category="meals">
                             <div class="categories__item__icon">
                                 <span class="fas fa-utensils fa-4x"></span>
                                 <h5>Meals</h5>
                             </div>
                         </div>
-
-                        <div class="categories__item" data-category="bolen-pisang">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-apple-alt fa-4x"></span>
-                                <h5>Bolen Pisang</h5>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- Right Arrow Control -->
-                    <button class="slider__control slider__control--right" aria-label="Next">
-                        <span class="fas fa-chevron-right fa-2x"></span>
-                    </button>
                 </div>
             </div>
         </div>
