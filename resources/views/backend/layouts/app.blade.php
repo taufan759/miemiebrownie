@@ -27,14 +27,19 @@
                         <a href="{{ route('customer.index') }}">Customer</a>
                     </li>
                     <li>
-                        <a href="{{ route('produk.index') }}">Produk</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('kategori.index') }}">Kategori</a>
-                    </li>
-                    <li>
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Produk</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="{{ route('kategori.index') }}">Kategori</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('produk.index') }}">Produk</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#kategoriSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a>
+                        <ul class="collapse list-unstyled" id="kategoriSubmenu">
                             <li>
                                 <a href="{{ route('pesanan.index') }}">Pesanan</a>
                             </li>

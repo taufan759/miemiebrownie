@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">{{$sub}} <br><br>
-                    <a href="{{ route('customer.create') }}" title="Tambah data">
+                    <a href="{{ route('kategori.create') }}" title="Tambah data">
                         <button type="button" class="btn btn-success btn-xs waves-effect waves-light">Tambah</button>
                     </a>
                 </h5>

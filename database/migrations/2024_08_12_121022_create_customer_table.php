@@ -14,10 +14,14 @@ return new class extends Migration
         Schema::create('customer', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->string('hp');
+            $table->string('password');
             $table->timestamps();
         });
     }
+    
+
 
     /**
      * Reverse the migrations.

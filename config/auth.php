@@ -36,11 +36,16 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
     ],
+
+    'customer' => [
+        'driver' => 'session',
+        'provider' => 'customers',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +65,10 @@ return [
     */
 
     'providers' => [
+        'customers' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Auth\Customer::class,
+    ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\Backend\User::class,

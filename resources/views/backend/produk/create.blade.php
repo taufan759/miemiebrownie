@@ -1,10 +1,10 @@
-@extends('backend.layouts.app')enderror
+@extends('backend.layouts.app')
 @section('content')
-    <div class="row small-spacing">
-        <div class="col-xs-12">
-            <div class="card white box-content">
+<div class="card">
+    <div class="card-header">
                 <h4 class="box-title">{{ $sub }}</h4>
-                <div class="card-content">
+                <div class="card white box-content">
+                <div class="card-body">
                     <form action="{{ route('produk.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">

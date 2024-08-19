@@ -57,8 +57,8 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><i class="fa fa-search" style="color: grey;"></i></a>
                         <a href="#"> <i class="fa fa-heart" style="color: grey;"></i></a>
-                        <a href="/page/keranjang"><i class="fa fa-shopping-cart" style="color: grey;""></i>
-                        <a href="/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
+                        <a href="/cart/keranjang"><i class="fa fa-shopping-cart" style="color: grey;"></i></a>
+                        <a href="/customer/login"><i class="fa fa-user" style="color: grey;"></i></i></a>
                     </div>
                 </div>
             </div>

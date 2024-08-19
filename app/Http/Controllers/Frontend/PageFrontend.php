@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Kategori; // Pastikan ini sesuai dengan namespace model
 
 class PageFrontend extends Controller
 {
@@ -18,7 +19,8 @@ class PageFrontend extends Controller
 
     public function produk()
     {
-        return view('frontend.page.produk');
+        $kategori = Kategori::orderBy('id', 'desc')->get(); 
+        return view('frontend.page.produk', ['kategori' => $kategori]); 
     }
 
     public function mitra()
@@ -26,4 +28,3 @@ class PageFrontend extends Controller
         return view('frontend.page.mitra');
     }
 }
-

@@ -3,12 +3,25 @@
 namespace App\Models\Backend;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
-    public $timestamps = true;
-    protected $table = "customer";
-    // protected $fillable = ['nama', 'email', 'hp'];
-    protected $guarded = ['id'];
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $fillable = [
+        'nama', 'email', 'hp', 'password',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
 }

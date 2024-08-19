@@ -3,15 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\LoginBackend;
 use App\Http\Controllers\Backend\HomeBackend;
-use App\Http\Controllers\Backend\CustomerBackend;
 use App\Http\Controllers\Backend\UserBackend;
+use App\Http\Controllers\Backend\CustomerBackend;
 use App\Http\Controllers\Backend\KategoriBackend;
 use App\Http\Controllers\Backend\ProdukBackend;
 use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
 
-
-use App\Http\Controllers\Frontend\HomeFrontend;
+use App\Http\Controllers\Auth\CustomerAuth;
+use App\Http\Controllers\Frontend\KeranjangFrontend;
 use App\Http\Controllers\Frontend\PageFrontend;
 
 /*
@@ -25,15 +25,17 @@ use App\Http\Controllers\Frontend\PageFrontend;
 |
 */
 
-// Rute Login
+// Rute Login Backend
 Route::get('/login', [LoginBackend::class, 'index'])->name('login');
 Route::post('/login', [LoginBackend::class, 'authenticate'])->name('login');
 Route::post('/logout', [LoginBackend::class, 'logout'])->name('logout');
 
-// Rute Signup
-Route::get('/signup', [SignupController::class, 'index'])->name('signup');
-Route::post('/signup', [SignupController::class, 'store'])->name('signup.store');
+// Route untuk Customer Login
+Route::get('/customer/login', [CustomerAuth::class, 'showLoginForm'])->name('customer.login');
+Route::post('/customer/login', [CustomerAuth::class, 'login']);
 
+Route::get('/customer/signup', [CustomerAuth::class, 'showSignUpForm'])->name('customer.signup');
+Route::post('/customer/signup', [CustomerAuth::class, 'signUp']);
 
 // Rute Backend dengan middleware auth dan is_admin
 Route::middleware(['auth'])->group(function () {
@@ -58,4 +60,6 @@ Route::get('/', function () {
 Route::get('/page/produk', [PageFrontend::class, 'produk']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
-Route::get('/page/keranjang', [PageFrontend::class, 'keranjang']);
+
+Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
+

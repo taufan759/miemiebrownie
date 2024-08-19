@@ -118,13 +118,11 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a href="#"><i class="fas fa-birthday-cake" style="color: pink;"></i> Cake Tart (20)</a></li>
-                                                    <li><a href="#"><i class="fas fa-box"style="color: pink;"></i> Brownies Box (20)</a></li>
-                                                    <li><a href="#"><i class="fas fa-coffee" style="color: pink;"></i> Coffee & Drink (20)</a></li>
-                                                    <li><a href="#"><i class="fas fa-cookie" style="color: pink;"></i> Cookies & Snack (20)</a></li>
-                                                    <li><a href="#"><i class="fas fa-ice-cream" style="color: pink;"></i> Dessert Box (20)</a></li>
-                                                    <li><a href="#"><i class="fas fa-gift" style="color: pink;"></i> Hampers (20)</a></li>
-                                                    <li><a href="#"><i class="fas fa-utensils" style="color: pink;"></i> Meals (20)</a></li>
+                                                    @foreach($kategori as $item)
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-tag" style="color: pink;"></i> {{ $item->nama_kategori }} (20)</a>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
