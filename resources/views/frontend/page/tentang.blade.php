@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="about__pic" style="margin-top: 0;">
-                            <img src="{{ asset('frontend/img/bg2.png') }}" alt="Jadi Mitra" style="margin-top: 0;">
+                            <img src="{{ asset('frontend/img/franchise/banner-product.jpeg') }}" alt="Jadi Mitra" style="margin-top: 0;">
                         </div>
                     </div>
                 </div>
@@ -40,13 +40,13 @@
                         <div class="testimonial__text" style="background-color: #f9f9f9; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: center;">
                             <span class="icon_quotations" style="font-size: 50px; color: #333;"></span>
                             <p style="font-size: 20px; line-height: 1.6; margin-top: 20px;">“Bergabung dengan program kemitraan ini adalah keputusan terbaik yang pernah saya buat. Dukungan dari tim sangat luar biasa.”</p>
-                            <div class="testimonial__author" style="margin-top: 30px;">
-                                <div class="testimonial__author__pic" style="display: inline-block;">
-                                    <img src="img/franchise/testimonial-author.jpg" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
+                            <div class="testimonial__author" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+                                <div class="testimonial__author__pic" style="flex-shrink: 0;">
+                                    <img src="{{ asset('frontend/img/about/testimonial-author.jpg') }}" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
                                 </div>
-                                <div class="testimonial__author__text" style="display: inline-block; vertical-align: middle; text-align: left; margin-left: 15px;">
-                                    <h5 style="font-size: 24px; font-weight: bold;">Andi Wijaya</h5>
-                                    <p style="font-size: 16px; color: #666;">Mitra Sejak 2020</p>
+                                <div class="testimonial__author__text" style="margin-left: 15px; text-align: left;">
+                                    <h5 style="font-size: 24px; font-weight: bold; margin: 0;">Ardi Setiawan</h5>
+                                    <p style="font-size: 16px; color: #666; margin: 0;">Mitra Sejak 2020</p>
                                 </div>
                             </div>
                         </div>
@@ -113,28 +113,28 @@
                     <!-- Anggota tim diubah sesuai kebutuhan -->
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="img/franchise/team-1.jpg" alt="Tim">
+                            <img src="{{ asset('frontend/img/about/team-1.jpg' )}}" alt="Tim">
                             <h4>Fulan Bin Fulan</h4>
                             <span>Founder</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="img/franchise/team-2.jpg" alt="Tim">
+                            <img src="{{ asset('frontend/img/about/team-2.jpg' )}}" alt="Tim">
                             <h4>Fulan Bin Fulan</h4>
                             <span>Manager Kemitraan</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="img/franchise/team-3.jpg" alt="Tim">
+                            <img src="{{ asset('frontend/img/about/team-3.jpg' )}}" alt="Tim">
                             <h4>Fulan Bin Fulan</h4>
                             <span>Marketing</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="team__item">
-                            <img src="img/franchise/team-4.jpg" alt="Tim">
+                            <img src="{{ asset('frontend/img/about/team-4.jpg' )}}" alt="Tim">
                             <h4>Fulan Bin Fulan</h4>
                             <span>Customer Support</span>
                         </div>
@@ -158,22 +158,22 @@
                 <div class="row">
                     <!-- Client logos -->
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="img/franchise/client-1.png" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="img/franchise/client-2.png" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="img/franchise/client-3.png" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="img/franchise/client-4.png" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="img/franchise/client-5.png" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="img/franchise/client-6.png" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
                     </div>
                 </div>
             </div>

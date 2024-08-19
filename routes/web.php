@@ -59,3 +59,4 @@ Route::get('/page/produk', [PageFrontend::class, 'produk']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
 Route::get('/page/keranjang', [PageFrontend::class, 'keranjang']);
+Route::get('/page/wishlist', [PageFrontend::class, 'wishlist']);
