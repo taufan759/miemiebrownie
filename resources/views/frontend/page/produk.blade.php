@@ -1,14 +1,13 @@
 @extends('frontend.layouts.app')
 @section('content')
 <body>
-    <!-- Shop Section Begin -->
-    <section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.png') }}">
+<section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.png') }}">
     <div class="container">
-    <section class="breadcrumb-option">
-        <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-option">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb__text">
+                    <div class="breadcrumb__text text-center">
                         <h4>Temukan Brownies Miemie Lezat Kami!</h4>
                         <div class="breadcrumb__links">
                             <span>Jelajahi pilihan Brownies Miemie yang lezat dan berbagai hidangan nikmat lainnya.</span>
@@ -17,76 +16,91 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Categories Filter Section -->
-    <div class="categories">
-        <div class="container">
+        <!-- Categories -->
+        <div class="categories">
             <div class="row">
                 <div class="categories__slider-container">
-                    <!-- Categories Slider -->
+                    <!-- Kontrol Panah Kiri -->
+                    <button class="slider__control slider__control--left">
+                        <span class="fas fa-chevron-left fa-2x"></span>
+                    </button>
+                    
+                    <!-- Slider Kategori -->
                     <div class="categories__slider">
-                        <!-- Category Item -->
-                        <div class="categories__item" data-category="bolen-pisang">
+                        <!-- Kategori Cake Tart -->
+                        <div class="categories__item">
                             <div class="categories__item__icon">
-                                <span class="fas fa-square fa-4x"></span>
-                                <h5>Bolen Pisang</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item" data-category="brownies-box">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-cube fa-4x"></span>
-                                <h5>Brownies Box</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item" data-category="coffee-drink">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-coffee fa-4x"></span>
-                                <h5>Coffee & Drink</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item" data-category="cookies-snack">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-cookie fa-4x"></span>
-                                <h5>Cookies & Snack</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item" data-category="dessert-box">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-box-open fa-4x"></span>
-                                <h5>Dessert Box</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item" data-category="hampers">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-gift fa-4x"></span>
-                                <h5>Hampers</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item" data-category="cake-tart">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-cake fa-4x"></span>
+                                <span class="fas fa-cake fa-4x"></span> <!-- Ikon kue -->
                                 <h5>Cake Tart</h5>
                             </div>
                         </div>
 
-                        <div class="categories__item" data-category="meals">
+                        <!-- Kategori Brownies Box -->
+                        <div class="categories__item">
                             <div class="categories__item__icon">
-                                <span class="fas fa-utensils fa-4x"></span>
+                                <span class="fas fa-cube fa-4x"></span> <!-- Ikon Brownies Box -->
+                                <h5>Brownies Box</h5>
+                            </div>
+                        </div>
+
+                        <!-- Kategori Coffee & Drink -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-coffee fa-4x"></span> <!-- Ikon Coffee & Drink -->
+                                <h5>Coffee & Drink</h5>
+                            </div>
+                        </div>
+
+                        <!-- Kategori Cookies & Snack -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-cookie fa-4x"></span> <!-- Ikon Cookies & Snack -->
+                                <h5>Cookies & Snack</h5>
+                            </div>
+                        </div>
+
+                        <!-- Kategori Dessert Box -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-box-open fa-4x"></span> <!-- Ikon Dessert Box -->
+                                <h5>Dessert Box</h5>
+                            </div>
+                        </div>
+
+                        <!-- Kategori Hampers -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-gift fa-4x"></span> <!-- Ikon Hampers -->
+                                <h5>Hampers</h5>
+                            </div>
+                        </div>
+
+                        <!-- Kategori Meals -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-utensils fa-4x"></span> <!-- Ikon Meals -->
                                 <h5>Meals</h5>
                             </div>
                         </div>
+                        <!-- Kategori Bolen Pisang -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-apple-alt fa-4x"></span>
+                                <h5>Bolen Pisang</h5>
+                            </div>
+                        </div>
                     </div>
+                    <!-- Kontrol Panah Kanan -->
+                    <button class="slider__control slider__control--right">
+                        <span class="fas fa-chevron-right fa-2x"></span>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-    </section>
+</section>
+<!-- Combined Section End -->
+
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -108,11 +122,13 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    @foreach($kategori as $item)
-                                                        <li>
-                                                            <a href="#"><i class="fas fa-tag" style="color: pink;"></i> {{ $item->nama_kategori }} (20)</a>
-                                                        </li>
-                                                    @endforeach
+                                                    <li><a href="#"><i class="fas fa-birthday-cake" style="color: pink;"></i> Cake Tart (20)</a></li>
+                                                    <li><a href="#"><i class="fas fa-box"style="color: pink;"></i> Brownies Box (20)</a></li>
+                                                    <li><a href="#"><i class="fas fa-coffee" style="color: pink;"></i> Coffee & Drink (20)</a></li>
+                                                    <li><a href="#"><i class="fas fa-cookie" style="color: pink;"></i> Cookies & Snack (20)</a></li>
+                                                    <li><a href="#"><i class="fas fa-ice-cream" style="color: pink;"></i> Dessert Box (20)</a></li>
+                                                    <li><a href="#"><i class="fas fa-gift" style="color: pink;"></i> Hampers (20)</a></li>
+                                                    <li><a href="#"><i class="fas fa-utensils" style="color: pink;"></i> Meals (20)</a></li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -3873,44 +3873,93 @@ ol {
 }
 
 .categories__slider-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 20px 0;
-}
-
-.categories__slider {
+    position: relative;
     display: flex;
-    gap: 20px;
-    width: max-content;
+    align-items: center;
+    overflow: hidden;
 }
 
 .categories__item {
-    flex: 0 0 auto;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #3E2723;
-    border-radius: 10px;
-    background-color: #FF4DA3;
-    color: #3E2723;
-    width: 120px;
+	flex: 0 0 150px; /* Lebar setiap kotak */
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.categories__slider {
+	display: flex;
+	gap: 15px; /* Jarak antar kotak lebih kecil */
+	overflow-x: scroll;
+	padding: 15px 0;
+	-ms-overflow-style: none;  /* Menghilangkan scrollbar di Internet Explorer dan Edge */
+	scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
+}
+
+.categories__slider::-webkit-scrollbar {
+	display: none;  /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
+}
+
+
+.categories__item:hover {
+	transform: translateY(-10px); /* Efek melayang saat hover */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .categories__item__icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.categories__item__icon h5 {
+	margin-top: 10px;
+	font-size: 16px;
+	color: #333;
 }
 
 .categories__item__icon span {
-    color: #3E2723;
+	color: #e91e63; /* Warna ikon */
+	font-size: 2rem; /* Mengurangi ukuran ikon */
+    margin-bottom: 5px; /* Mengurangi jarak antara ikon dan teks */
+	
+}
+.shop__sidebar__categories ul {
+	list-style: none;
+	padding: 0;
 }
 
-.categories__item h5 {
-    margin-top: 10px;
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #3E2723;
+.shop__sidebar__categories i {
+	margin-right: 10px;
+	font-size: 15px; /* Ukuran ikon */
+	color: #FF4DA3;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.shop__sidebar__categories a:hover {
+	color: #FF4DA3; /* Warna teks saat hover */
+}
+
+.shop__sidebar__categories a:hover i {
+	transform: scale(1.2); /* Efek membesar pada ikon saat hover */
+	color: #FF4DA3; /* Warna ikon saat hover */
+}
+.slider__control {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.slider__control--left {
+	left: -20px;
+}
+
+.slider__control--right {
+	right: -20px; 
 }
 
 /* Wishlist Page Styles */
