@@ -20,11 +20,6 @@
         <div class="categories">
             <div class="row">
                 <div class="categories__slider-container">
-                    <!-- Kontrol Panah Kiri -->
-                    <button class="slider__control slider__control--left">
-                        <span class="fas fa-chevron-left fa-2x"></span>
-                    </button>
-                    
                     <!-- Slider Kategori -->
                     <div class="categories__slider">
                         <!-- Kategori Cake Tart -->
@@ -90,10 +85,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Kontrol Panah Kanan -->
-                    <button class="slider__control slider__control--right">
-                        <span class="fas fa-chevron-right fa-2x"></span>
-                    </button>
                 </div>
             </div>
         </div>

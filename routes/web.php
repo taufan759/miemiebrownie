@@ -37,6 +37,7 @@ Route::post('/customer/login', [CustomerAuth::class, 'login']);
 Route::get('/customer/signup', [CustomerAuth::class, 'showSignUpForm'])->name('customer.signup');
 Route::post('/customer/signup', [CustomerAuth::class, 'signUp']);
 
+Route::post('/customer/logout', [CustomerAuth::class, 'logout'])->name('customer.logout');
 // Rute Backend dengan middleware auth dan is_admin
 Route::middleware(['auth'])->group(function () {
     Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');

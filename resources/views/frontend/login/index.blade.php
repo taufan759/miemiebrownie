@@ -28,27 +28,33 @@
     </div>
     <div class="forms">
         <div class="form-content">
-          <div class="login-form">
-            <div class="title">Login</div>
-          <form action="{{ route('customer.login') }}" method="POST">
-            @csrf
-            <div class="input-boxes">
-              <div class="input-box">
+        <div class="login-form">
+    <div class="title">Login</div>
+    @if(session('error'))
+        <div class="alert alert-danger" style="color: red; margin-bottom: 15px;">
+            {{ session('error') }}
+        </div>
+    @endif
+    <form action="{{ route('customer.login') }}" method="POST">
+        @csrf
+        <div class="input-boxes">
+            <div class="input-box">
                 <i class="fas fa-envelope"></i>
                 <input type="email" name="email" placeholder="Enter your email" required>
-              </div>
-              <div class="input-box">
+            </div>
+            <div class="input-box">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Enter your password" required>
-              </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <input type="submit" value="Submit">
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
-        </form>
-      </div>
+            <div class="text"><a href="#">Forgot password?</a></div>
+            <div class="button input-box">
+                <input type="submit" value="Submit">
+            </div>
+            <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+        </div>
+    </form>
+</div>
+
         <div class="signup-form">
           <div class="title">Signup</div>
         <form action="{{ route('customer.signup') }}" method="POST">

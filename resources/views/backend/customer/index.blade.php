@@ -31,14 +31,13 @@
                                         <span class="btn btn-success btn-xs waves-effect waves-light"><i
                                                 class="fa fa-edit"></i>Ubah</span>
                                     </a>
-                                    <form method="POST" action="{{ route('customer.destroy', $row->id) }}"
-                                        style="display: inline-block;">
+                                    <form method="POST" action="{{ route('customer.destroy', $row->id) }}" style="display: inline-block;">
                                         @method('delete')
                                         @csrf
-                                        <button type="button"
-                                            class="btn btn-danger btn-xs waves-effect waves-light show_confirm"
-                                            data-toggle="tooltip" title='Delete' data-konf-delete="{{ $row->customer }}"><i
-                                                class="fa fa-trash"></i>Hapus</button></button>
+                                        <button type="submit" class="btn btn-danger btn-xs waves-effect waves-light show_confirm" 
+                                            data-toggle="tooltip" title="Hapus" data-konf-delete="{{ $row->customer }}">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

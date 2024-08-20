@@ -2063,7 +2063,7 @@ ol {
 }
 
 .breadcrumb__text h4 {
-	color: #3E2723;
+	color: whitesmoke;
 	font-weight: 700;
 	margin-bottom: 8px;
 	font-size: 2rem;
@@ -2090,7 +2090,7 @@ ol {
 
 .breadcrumb__links span {
 	font-size: 20px;
-	color: #3E2723;
+	color: whitesmoke;
 	display: inline-block;
 	font-weight: 700;
 }

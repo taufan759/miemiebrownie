@@ -7,6 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- CKEditor CSS (optional if required) -->
+    <link rel="stylesheet" href="path-to-ckeditor-css-if-required">
+    <!-- Include other necessary CSS files here -->
+
 </head>
 <body>
     <div class="wrapper d-flex align-items-stretch">
@@ -113,6 +119,19 @@
     <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('backend/js/main.js') }}"></script>
 
+    <script src="{{ asset('sweetalert/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
+
+
+    <!-- SweetAlert JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- CKEditor JS -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <!-- Include other necessary JS files here -->
+
+
+
+    <!-- Your custom scripts -->
     <script>
         // DataTables Initialization
         $('#zero_config').DataTable();
@@ -184,7 +203,8 @@
         }
         // Tambahkan fungsi preview lainnya sesuai kebutuhan
     </script>
-
+</body>
+</html>
     <!-- SweetAlert Script -->
     <script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
 </body>

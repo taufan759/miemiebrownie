@@ -300,9 +300,12 @@ class ProdukBackend extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-    {
-        $produk = Produk::findOrFail($id);
-        $produk->delete();
-        return redirect('/backend/produk');
-    }
+{
+    $produk = Produk::findOrFail($id);
+    $produk->delete();
+
+    // Menambahkan pesan flash
+    return redirect('/backend/produk')->with('success', 'Produk berhasil dihapus');
+}
+
 }

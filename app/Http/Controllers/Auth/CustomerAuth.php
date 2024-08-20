@@ -18,18 +18,17 @@ class CustomerAuth extends Controller
     }
 
     public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
+{
+    $credentials = $request->only('email', 'password');
 
-        if (Auth::guard('customer')->attempt($credentials)) {
-            // Autentikasi berhasil
-            return redirect()->intended('customer/');
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+    if (Auth::guard('customer')->attempt($credentials)) {
+        return redirect()->intended('/');
+    } else {
+        // Login gagal
+        return redirect()->back()->with('error', 'Login gagal, email atau password salah.');
     }
+}
+
 
     public function showSignUpForm()
     {
@@ -54,14 +53,15 @@ class CustomerAuth extends Controller
 
         Auth::guard('customer')->login($customer);
 
-        return redirect()->intended('customer/');
+        return redirect()->intended('customer/login');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::guard('customer')->logout();
-        request()->session()->invalidate();
-        request()->session()->regenerateToken();
-        return redirect('/customer/login');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/customer/login')->with('status', 'Anda telah berhasil logout.');
     }
 }
