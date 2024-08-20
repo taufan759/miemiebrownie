@@ -12,6 +12,7 @@ use App\Http\Middleware\IsAdmin;
 
 use App\Http\Controllers\Auth\CustomerAuth;
 use App\Http\Controllers\Frontend\KeranjangFrontend;
+use App\Http\Controllers\Frontend\CheckoutFrontend;
 use App\Http\Controllers\Frontend\PageFrontend;
 
 /*
@@ -64,4 +65,5 @@ Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
 Route::get('/page/wishlist', [PageFrontend::class, 'wishlist']);
 Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
-
+Route::get('/cart/keranjang/checkout', [CheckoutFrontend::class, 'showCheckout'])->name('checkout.show');
+Route::post('/cart/keranjang/checkout', [CheckoutFrontend::class, 'processCheckout'])->name('checkout.process');
