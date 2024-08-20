@@ -58,8 +58,10 @@ Route::get('/', function () {
 });
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/page/produk', [PageFrontend::class, 'produk']);
+// Route::get('/page/produk/{id}', [PageFrontend::class, 'detail']);
+Route::get('/page/detail', [PageFrontend::class, 'detail']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
-
+Route::get('/page/wishlist', [PageFrontend::class, 'wishlist']);
 Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 
