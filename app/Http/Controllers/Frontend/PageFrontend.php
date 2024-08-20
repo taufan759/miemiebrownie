@@ -13,11 +13,6 @@ class PageFrontend extends Controller
         return view('frontend.page.keranjang');
     }
 
-    public function wishlist()
-    {
-        return view('frontend.page.wishlist');
-    }
-
     public function tentang()
     {
         return view('frontend.page.tentang');

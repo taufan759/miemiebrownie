@@ -133,10 +133,6 @@
                             </div>
                             <a href="/cart/keranjang" class="primary-btn">add to cart</a>
                         </div>
-                        <div class="product__details__btns__option">
-                            <a href="/page/wishlist"><i class="fa fa-heart"></i> add to wishlist</a>
-                            {{-- <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> --}}
-                        </div>
                         <div class="product__details__last__option">
                             <h5><span>Guaranteed Safe Checkout</span></h5>
                             <img src="{{ asset('frontend/img/shop-details/details-payment.png') }}" alt="">
@@ -287,9 +283,6 @@
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/product-1.jpg') }}">
                         <span class="label">New</span>
-                        <ul class="product__hover">
-                            <li><a href="/page/wishlist"><img src="{{ asset('frontend/img/icon/heart.png') }}" alt=""></a></li>
-                        </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Piqué Biker Jacket</h6>
@@ -319,9 +312,6 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/product-2.jpg') }}">
-                        <ul class="product__hover">
-                            <li><a href="/page/wishlist"><img src="{{ asset('frontend/img/icon/heart.png') }}" alt=""></a></li>
-                        </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Piqué Biker Jacket</h6>
@@ -352,9 +342,6 @@
                 <div class="product__item sale">
                     <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/product-3.jpg') }}">
                         <span class="label">Sale</span>
-                        <ul class="product__hover">
-                            <li><a href="/page/wishlist"><img src="{{ asset('frontend/img/icon/heart.png') }}" alt=""></a></li>
-                        </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Multi-pocket Chest Bag</h6>
@@ -384,9 +371,6 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/product-4.jpg') }}">
-                        <ul class="product__hover">
-                            <li><a href="/page/wishlist"><img src="{{ asset('frontend/img/icon/heart.png') }}" alt=""></a></li>
-                        </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Diagonal Textured Cap</h6>
