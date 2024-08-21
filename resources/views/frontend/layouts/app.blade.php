@@ -31,7 +31,17 @@
         <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <a href="/cart/keranjang"><i class="fa fa-shopping-cart" style="color: grey;"></i></a>
+                @if(Auth::guard('customer')->check())
+                <a href="/customer/profile"><i class="fa fa-user" style="color: grey;"></i></a>
+                <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" class="btn btn-link" style="padding: 0; color: grey; text-decoration: none;">
+                        <i class="fa fa-sign-out-alt"></i>
+                    </button>
+                </form>
+                @else
                 <a href="/customer/login"><i class="fa fa-user" style="color: grey;"></i></a>
+                @endif
             </div>
         </div>
         <div id="mobile-menu-wrap"></div>
@@ -95,65 +105,65 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
+                    <div class="footer__widget">
                         {{-- <div class="footer__logo">
                             <a href="#"><img src="{{ asset('frontend/img/footer-logo.png') }}" alt=""></a>
                         </div> --}}
+                        <h6>Lokasi Kami</h6>
                         <address style="color: #f0f0f0;">
-                            Jl. P. Diponegoro No.102<br>
+                            Jl Diponegoro No 102<br>
                             Kota Tegal - Jawa Tengah 52125<br>
-                            <a href="https://www.facebook.com/miemiebrownie"><i class="fa fa-facebook-f"></i>@miemiebrownie</a><br>
-                            <a href="https://www.instagram.com/miemiebrownie"><i class="fa fa-instagram"></i>@miemieandbrownie</a><br>
-                            <a href="https://wa.me/628152800800">081 52 800 800</a>
+                            <a href="https://wa.me/628152800800" style="color: #f0f0f0;"><i class="fa fa-whatsapp"></i> 081 52 800 800</a>
                         </address>
                         {{-- <a href="#"><img src="{{ asset('frontend/img/payment.png') }}" alt=""></a> --}}
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Review</h6>
-                        <ul>
-                            <li><a href="#">Testimony</a></li>
-                            <li><a href="#">Public Figure</a></li>
-                        </ul>
+                        <h6>Ikuti Kami</h6>
+                        <p style="color: #f0f0f0;">
+                            <a href="https://www.facebook.com/miemiebrownie" style="color: #f0f0f0;"><i class="fa fa-facebook-f"></i> Facebook</a><br>
+                            <a href="https://www.instagram.com/miemiebrownie" style="color: #f0f0f0;"><i class="fa fa-instagram"></i> Instagram</a><br>
+                            <a href="https://www.tiktok.com/@miemie.brownie" style="color: #f0f0f0;"><i class="fa fa-tiktok"></i> TikTok</a><br>
+                            <a href="https://youtube.com/@miemiebrownieofficial" style="color: #f0f0f0;"><i class="fa fa-youtube-play"></i> Youtube</a><br>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Update</h6>
-                        <ul>
-                            <li><a href="#">Promo & Event</a></li>
-                            <li><a href="#">Jadi Mitra</a></li>
-                        </ul>
+                        <h6>Infromasi</h6>
+                        <p style="color: #f0f0f0;">
+                            <a href="#" style="color: #f0f0f0;">Promo & Event</a><br>
+                            <a href="#" style="color: #f0f0f0;">Jadi Mitra</a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
                     <div class="footer__widget">
-                        <h6>Newsletter</h6>
-                        <div class="footer__newsletter">
-                            <p>Always updated with our products and promotions!</p>
-                            <form action="#" method="post">
-                                <input type="text" placeholder="Keep updated">
-                                <button type="submit"><i class="icon_mail_alt"></i></button>
-                            </form>
+                        <div class="footer__about">
+                            <h6>Jam Operasional</h6>
+                                <p style="color: #f0f0f0;">
+                                    Buka setiap hari dari pukul 07:00 hingga 22:00 WIB. <br>
+                                    Pelajari lebih lanjut tentang Miemie Brownie <a href="https://instabio.cc/20707wemr50" style="color: #FF4DA3;">di sini</a>.
+                                </p>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="footer__copyright__text">
+                            <p>&copy; 
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> 
+                                All rights reserved
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="footer__copyright__text">
-                        <p>&copy; 
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> 
-                            All rights reserved
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
     <!-- Footer Section End -->
 
     <!-- Search Begin -->

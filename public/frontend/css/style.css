@@ -4131,3 +4131,84 @@ ol {
 .update__btn a:hover {
     background-color: #5d4037;
 }
+
+/* Styling for the history section */
+.history-section {
+    padding: 0;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.about {
+    padding: 20px 0;
+}
+
+.history-content {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.history-content h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3E2723;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.history-content .subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FF4DA3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.history-content p {
+    font-size: 1rem;
+    color: #555;
+	text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .history-content {
+        padding: 15px;
+    }
+    .history-content h4 {
+        font-size: 1.5rem;
+    }
+    .history-content .subtitle {
+        font-size: 1rem;
+    }
+    .history-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .history-content h4 {
+        font-size: 1.25rem;
+    }
+    .history-content .subtitle {
+        font-size: 0.9rem;
+    }
+    .history-content p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+}

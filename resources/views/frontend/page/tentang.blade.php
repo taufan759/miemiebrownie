@@ -1,37 +1,32 @@
 @extends('frontend.layouts.app')
 @section('content')
 <body>
-    <!-- Jadi Mitra Section Begin -->
-    <div class="container">
-        <section class="about spad" style="padding-top: 0px;">
+        <!-- History Section Begin -->
+        <div class="history-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="about__pic" style="margin-top: 0;">
-                            <img src="{{ asset('frontend/img/franchise/banner-product.jpeg') }}" alt="Jadi Mitra" style="margin-top: 0;">
+                <section class="about">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="history-content">
+                                <h4>Miemie Brownie</h4>
+                                <p class="subtitle">Mimpi Manis yang Menjadi Kenyataan</p>
+                                <p>
+                                    Di sebuah sudut Kota Semarang yang penuh kenangan, pada bulan November 2016, sebuah perjalanan baru dimulai. Tidak seperti kebanyakan cerita sukses lainnya, kisah Miemie Brownie berawal dari mimpi sederhana sepasang suami istri yang penuh semangat dan cita-cita besar. Mereka adalah pasangan yang selalu melangkah bersama, baik dalam kehidupan pribadi maupun karier profesional.
+                                </p>
+                                <p>
+                                    Awalnya, mereka bekerja di perusahaan nasional yang memberikan mereka karier cemerlang dan posisi yang mapan. Namun, di balik kesuksesan tersebut, tersimpan mimpi yang sudah lama mereka rajut: membangun sebuah toko roti yang menyatu dengan coffee shop, tempat di mana aroma kopi segar dan roti hangat berpadu, menciptakan kenangan manis bagi setiap pelanggan yang datang. Pada akhir 2017, dengan penuh keberanian, mereka memutuskan untuk meninggalkan zona nyaman mereka. Mereka resign dari pekerjaan, meninggalkan dunia profesional yang sudah mereka kenal, dan memulai perjalanan sebagai pengusaha. Langkah ini bukanlah hal yang mudah, tetapi tekad mereka tidak pernah goyah. Mereka ingin menghadirkan sesuatu yang istimewa bagi kota yang mereka cintai.
+                                </p>
+                                <p>
+                                    Miemie Brownie pun lahir, dimulai sebagai online store di Kota Semarang. Respons yang positif dari pelanggan membuat mereka yakin untuk membuka outlet fisik pertama di Kota Tegal. Toko ini bukan hanya sekedar tempat berjualan, tetapi juga wujud dari cinta mereka terhadap seni membuat roti. Mereka ingin setiap gigitan dari produk mereka membawa kebahagiaan dan kehangatan bagi siapa saja yang menikmatinya. Nama "Miemie" diambil dari panggilan sayang anak-anak mereka kepada sang ibu, yang juga merupakan salah satu pendiri. Setiap produk yang dihasilkan oleh Miemie Brownie bukan hanya tentang rasa, tetapi juga tentang cerita—tentang cinta, pengorbanan, dan impian yang menjadi nyata. Mereka percaya bahwa setiap orang berhak merasakan momen manis dalam hidup mereka, dan Miemie Brownie hadir untuk mewujudkan momen tersebut.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row" style="width: 100%; margin: 0;">
-                    <div class="col-12">
-                        <div class="about__item" style="width: 100%; padding: 20px;">
-                            <h4>Miemie Brownie</h4>
-                            <p style="text-align: justify; margin-bottom: 20px;">
-                                Miemie Brownie: Mimpi Manis yang Menjadi Kenyataan Di sebuah sudut Kota Semarang yang penuh kenangan, pada bulan November 2016, sebuah perjalanan baru dimulai. Tidak seperti kebanyakan cerita sukses lainnya, kisah Miemie Brownie berawal dari mimpi sederhana sepasang suami istri yang penuh semangat dan cita-cita besar. Mereka adalah pasangan yang selalu melangkah bersama, baik dalam kehidupan pribadi maupun karier profesional. 
-                            </p>
-                            <p style="text-align: justify; margin-bottom: 20px;">
-                                Awalnya, mereka bekerja di perusahaan nasional yang memberikan mereka karier cemerlang dan posisi yang mapan. Namun, di balik kesuksesan tersebut, tersimpan mimpi yang sudah lama mereka rajut: membangun sebuah toko roti yang menyatu dengan coffee shop, tempat di mana aroma kopi segar dan roti hangat berpadu, menciptakan kenangan manis bagi setiap pelanggan yang datang. Pada akhir 2017, dengan penuh keberanian, mereka memutuskan untuk meninggalkan zona nyaman mereka. Mereka resign dari pekerjaan, meninggalkan dunia profesional yang sudah mereka kenal, dan memulai perjalanan sebagai pengusaha. Langkah ini bukanlah hal yang mudah, tetapi tekad mereka tidak pernah goyah. Mereka ingin menghadirkan sesuatu yang istimewa bagi kota yang mereka cintai.
-                            </p>
-                            <p style="text-align: justify">
-                                Miemie Brownie pun lahir, dimulai sebagai online store di Kota Semarang. Respons yang positif dari pelanggan membuat mereka yakin untuk membuka outlet fisik pertama di Kota Tegal. Toko ini bukan hanya sekedar tempat berjualan, tetapi juga wujud dari cinta mereka terhadap seni membuat roti. Mereka ingin setiap gigitan dari produk mereka membawa kebahagiaan dan kehangatan bagi siapa saja yang menikmatinya. Nama "Miemie" diambil dari panggilan sayang anak-anak mereka kepada sang ibu, yang juga merupakan salah satu pendiri. Setiap produk yang dihasilkan oleh Miemie Brownie bukan hanya tentang rasa, tetapi juga tentang cerita—tentang cinta, pengorbanan, dan impian yang menjadi nyata. Mereka percaya bahwa setiap orang berhak merasakan momen manis dalam hidup mereka, dan Miemie Brownie hadir untuk mewujudkan momen tersebut.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
-        </section>
-        <!-- Jadi Mitra Section End -->
-    
+        </div>
+        <!-- History Section End -->
+
         <!-- Testimonial Section Begin -->
         <section class="testimonial spad">
             <div class="container">
