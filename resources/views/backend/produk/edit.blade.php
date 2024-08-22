@@ -1,4 +1,4 @@
-@extends('backend.layouts.app')enderror
+@extends('backend.layouts.app')
 @section('content')
 <div class="card">
     <div class="card-header">
@@ -82,8 +82,8 @@
                         <div class="form-group">
                             <label>Foto Depan</label>
                             {{-- view image --}}
-                            <img src="{{ asset('storage/img-produk/depan/medium/thumb_md_' . $edit->img_produk_depan) }}"
-                                class="img-produk-depan-preview" width="100%">
+                            <img src="{{ asset('storage/img-produk/img_produk_depan/' . $edit->img_produk_depan) }}"
+                                class="img-produk-depan-preview" width="50%" alt="{{$edit->img_produk_depan}}">
                             <p></p>
                             <label>Ganti Image Produk Depan</label>
                             <img class="img-produk-depan-preview">
@@ -98,8 +98,8 @@
                         <div class="form-group">
                             <label>Foto Belakang</label>
                             {{-- view image --}}
-                            <img src="{{ asset('storage/img-produk/belakang/thumb_belakang_' . $edit->img_produk_belakang) }}"
-                                class="img-produk-belakang-preview" width="100%">
+                            <img src="{{ asset('storage/img-produk/img_produk_belakang/' . $edit->img_produk_belakang) }}"
+                                class="img-produk-belakang-preview" width="100%" alt="{{$edit->img_produk_belakang}}">
                             <p></p>
                             <label>Ganti Image Produk Belakang</label>
                             <img class="img-produk-belakang-preview">
@@ -114,8 +114,8 @@
                         <div class="form-group">
                             <label>Foto Kanan</label>
                             {{-- view image --}}
-                            <img src="{{ asset('storage/img-produk/kanan/thumb_kanan_' . $edit->img_produk_kanan) }}"
-                                class="img-produk-kanan-preview" width="100%">
+                            <img src="{{ asset('storage/img-produk/img_produk_kanan/' . $edit->img_produk_kanan) }}"
+                                class="img-produk-kanan-preview" width="100%" alt="{{$edit->img_produk_kanan}}">
                             <p></p>
                             <label>Ganti Image Produk Kanan</label>
                             <img class="img-produk-kanan-preview">
@@ -130,8 +130,8 @@
                         <div class="form-group">
                             <label>Foto Kiri</label>
                             {{-- view image --}}
-                            <img src="{{ asset('storage/img-produk/kiri/thumb_kiri_' . $edit->img_produk_kiri) }}"
-                                class="img-produk-kiri-preview" width="100%">
+                            <img src="{{ asset('storage/img-produk/img_produk_kiri/' . $edit->img_produk_kiri) }}"
+                                class="img-produk-kiri-preview" width="100%" alt="{{$edit->img_produk_kiri}}">
                             <p></p>
                             <label>Ganti Image Produk Kiri</label>
                             <img class="img-produk-kiri-preview">

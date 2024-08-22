@@ -15,17 +15,15 @@ return new class extends Migration
         $table->id();
         $table->string('nama_produk');
         $table->boolean('status');
-        $table->float('harga');
+        $table->double('harga',8,2  );
         $table->text('deskripsi');
         $table->string('img_produk_depan')->nullable();
         $table->string('img_produk_belakang')->nullable();
         $table->string('img_produk_kanan')->nullable();
         $table->string('img_produk_kiri')->nullable();
         $table->unsignedBigInteger('kategori_id');
-        $table->unsignedBigInteger('user_id');
         $table->timestamps();
         $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
-        $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
     });
 }
 

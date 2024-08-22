@@ -42,73 +42,60 @@ class ProdukBackend extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        // dd($request);
-        $validatedData = $request->validate([
-            'nama_produk' => 'required',
-            'kategori_id' => 'required',
-            'deskripsi' => 'required',
-            'harga' => 'required',
-            'img_produk_depan' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024',
-            'img_produk_belakang' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024',
-            'img_produk_kanan' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024',
-            'img_produk_kiri' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024',
-        ], [
-            'img_produk_depan.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
-            'img_produk_depan.max' => 'Ukuran file gambar Maksimal adalah 1024 KB.'
-        ], [
-            'img_produk_belakang.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
-            'img_produk_belakang.max' => 'Ukuran file gambar Maksimal adalah 1024 KB.'
-        ], [
-            'img_produk_kanan.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
-            'img_produk_kanan.max' => 'Ukuran file gambar Maksimal adalah 1024 KB.'
-        ], [
-            'img_produk_kiri.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
-            'img_produk_kiri.max' => 'Ukuran file gambar Maksimal adalah 1024 KB.'
-        ]);
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'nama_produk' => 'required',
+        'kategori_id' => 'required',
+        'deskripsi' => 'required',
+        'harga' => 'required',
+        'img_produk_depan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
+        'img_produk_belakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
+        'img_produk_kanan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
+        'img_produk_kiri' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
+    ], [
+        'img_produk_depan.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
+        'img_produk_depan.max' => 'Ukuran file gambar maksimal adalah 3024 KB.',
+        'img_produk_belakang.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
+        'img_produk_belakang.max' => 'Ukuran file gambar maksimal adalah 3024 KB.',
+        'img_produk_kanan.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
+        'img_produk_kanan.max' => 'Ukuran file gambar maksimal adalah 3024 KB.',
+        'img_produk_kiri.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
+        'img_produk_kiri.max' => 'Ukuran file gambar maksimal adalah 3024 KB.',
+    ]);
 
-        //Deklarasi Image Depan
-        if ($request->file('img_produk')) {
-            $file = $request->file('img_produk');
+    // Proses upload gambar jika ada
+    $imageFields = ['img_produk_depan', 'img_produk_belakang', 'img_produk_kanan', 'img_produk_kiri'];
+    foreach ($imageFields as $field) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
             $extension = $file->getClientOriginalExtension();
             $fileName = date('YmdHis') . '_' . uniqid() . '.' . $extension;
-            // $destinationPath = public_path('/storage/img-produk/depan/');
+            
+            // Simpan gambar asli
+            $destinationPath = public_path("/storage/img-produk/{$field}/");
             $image = Image::make($file);
-            //simpan gambar asli
-            //$image->save($destinationPath . $fileName);
-            $validatedData['img_produk'] = $fileName;
-            // create thumbnail 1 (large)
-            $destinationPath = public_path('/storage/img-produk/depan/large/');
-            $thumbnailPath1 = 'thumb_lg_' . $fileName;
-            $thumbnail1 = $image->resize(800, null, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            $thumbnail1->save($destinationPath . $thumbnailPath1);
+            $image->save($destinationPath . $fileName);
 
-            // create thumbnail 2 (medium)
-            $destinationPath = public_path('/storage/img-produk/depan/medium/');
-            $thumbnailPath2 = 'thumb_md_' . $fileName;
-            $thumbnail2 = $image->resize(500, null, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
-            $thumbnail2->save($destinationPath . $thumbnailPath2);
-
-            // create thumbnail 3 (small)
-            $destinationPath = public_path('/storage/img-produk/depan/small/');
-            $thumbnailPath3 = 'thumb_sm_' . $fileName;
-            $thumbnail3 = $image->fit(100, 100, function ($constraint) {
-                $constraint->upsize();
-            });
-            $thumbnail3->save($destinationPath . $thumbnailPath3);
+            
+            // Simpan nama file ke dalam array yang akan disimpan ke database
+            $validatedData[$field] = $fileName;
+        } else {
+            // Jika tidak ada file di-upload, biarkan kosong di database
+            $validatedData[$field] = null;
         }
-        
-        $validatedData['status'] = 0;
-        $validatedData['user_id'] = auth()->user()->id;
-        Produk::create($validatedData);
-        return redirect('backend/produk')->with('success', 'Data berhasil tersimpan');
     }
+
+    // Tambahan data lain sebelum simpan ke database
+    $validatedData['status'] = 0;
+    $validatedData['user_id'] = auth()->user()->id;
+
+    // Simpan data ke database
+    Produk::create($validatedData);
+
+    // Redirect dengan pesan sukses
+    return redirect('backend/produk')->with('success', 'Data berhasil tersimpan');
+}
 
     /**
      * Display the specified resource.

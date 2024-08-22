@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
-            $table->string('no_pesanan');
-            $table->string('alamat');
+            $table->string('no_pesanan')->unique();
+            $table->text('alamat');
             $table->string('metode_pembayaran');
             $table->string('nama_customer');
             $table->string('jumlah_pesanan');
-            $table->string('total_pesanan');
+            $table->string('status_kode')->nullable();
+            $table->string('transaksi_id')->nullable();
+            $table->datetime('tanggal');
+            $table->string('harga');
             $table->string('status_pesanan');
             $table->unsignedBigInteger('produk_id');
             $table->unsignedBigInteger('user_id');
