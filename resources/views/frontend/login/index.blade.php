@@ -14,8 +14,8 @@
       <div class="front">
         <img src="{{ asset('frontend/images/frontImg.jpg') }}" alt="">
         <div class="text">
-          <span class="text-1">Every new friend is a <br> new adventure</span>
-          <span class="text-2">Let's get connected</span>
+          <span class="text-1">Daftarkan akunmu dulu yuk, <br> Dapatkan banyak promo menarik di</span>
+          <span class="text-2">Miemie Brownie</span>
         </div>
       </div>
       <div class="back">
