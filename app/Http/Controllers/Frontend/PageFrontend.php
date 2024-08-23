@@ -20,9 +20,14 @@ class PageFrontend extends Controller
 
     public function produk()
     {
-        $kategori = Kategori::orderBy('id', 'desc')->get(); 
-        return view('frontend.page.produk', ['kategori' => $kategori]); 
+        $kategori = Kategori::orderBy('id', 'desc')->get();
+        $products = Produk::orderBy('id', 'desc')->get();
+        return view('frontend.page.produk', [
+            'kategori' => $kategori,
+            'products' => $products
+        ]);
     }
+    
 
     // public function detai($id)
     // {
