@@ -22,11 +22,11 @@
                 <div class="categories__slider-container">
                     <!-- Slider Kategori -->
                     <div class="categories__slider">
-                        <!-- Kategori Cake Tart -->
+                        <!-- Kategori Bolen Pisang -->
                         <div class="categories__item">
                             <div class="categories__item__icon">
-                                <span class="fas fa-cake fa-4x"></span> <!-- Ikon kue -->
-                                <h5>Cake Tart</h5>
+                                <span class="fas fa-apple-alt fa-4x"></span>
+                                <h5>Bolen Pisang</h5>
                             </div>
                         </div>
 
@@ -70,18 +70,19 @@
                             </div>
                         </div>
 
+                        <!-- Kategori Cake Tart -->
+                        <div class="categories__item">
+                            <div class="categories__item__icon">
+                                <span class="fas fa-cake fa-4x"></span> <!-- Ikon kue -->
+                                <h5>Cake Tart</h5>
+                            </div>
+                        </div>
+
                         <!-- Kategori Meals -->
                         <div class="categories__item">
                             <div class="categories__item__icon">
                                 <span class="fas fa-utensils fa-4x"></span> <!-- Ikon Meals -->
                                 <h5>Meals</h5>
-                            </div>
-                        </div>
-                        <!-- Kategori Bolen Pisang -->
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-apple-alt fa-4x"></span>
-                                <h5>Bolen Pisang</h5>
                             </div>
                         </div>
                     </div>

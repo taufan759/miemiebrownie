@@ -1,7 +1,5 @@
 @extends('frontend.layouts.app')
-
 @section('title', 'Checkout')
-
 @section('content')
 <!-- Checkout Form Section -->
 <div class="container py-5">
@@ -63,15 +61,16 @@
                             <textarea id="order_notes" name="order_notes" class="form-control" rows="3" placeholder="Catatan khusus untuk pesanan Anda, misalnya instruksi pengiriman."></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label for="payment_method">Metode Pembayaran<span class="text-danger">*</span></label>
-                            <select id="payment_method" name="payment_method" class="form-control" required>
+                            <label for="payment_method" class="form-label">Metode Pembayaran <span class="text-danger">*</span></label><br>
+                            <select id="payment_method" name="payment_method" class="form-select" required>
+                                <option value="" disabled>Pilih Metode Pembayaran</option>
                                 <option value="bank_transfer">Transfer Bank</option>
                                 <option value="credit_card">Kartu Kredit</option>
                                 <option value="cod">Pembayaran Saat Pengiriman (COD)</option>
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg">BUAT PESANAN</button>
+                    <button type="submit" class="btn btn-primary">BUAT PESANAN</button>
                 </form>
             </div>
         </div>
@@ -125,13 +124,19 @@
     .form-check-label {
         font-size: 0.875rem;
     }
+    .form-select {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    }
     .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: #FF4DA3;
+        border-color: #FF4DA3;
     }
     .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #004085;
+        background-color: #FF3A85;
+        border-color: #FF4DA3;
     }
     .order-summary__products li {
         border-bottom: 1px solid #dee2e6;
