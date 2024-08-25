@@ -65,7 +65,13 @@
                         <ul>
                             <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
                             <li class="{{ request()->is('page/produk') ? 'active' : '' }}"><a href="/page/produk">Produk</a></li>
-                            <li class="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/tentang">Tentang Kami</a></li>
+                            <li><a href="#">Info</a>
+                                <ul class="dropdown">
+                                    <li class="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/tentang">Tentang Kami</a></li>
+                                    <li><a href="#">Keranjang</a></li>
+                                    <li><a href="#">Check Out</a></li>
+                                    <li><a href="#">Blog Artikel</a></li>
+                                </ul>
                             <li class="{{ request()->is('page/mitra') ? 'active' : '' }}"><a href="/page/mitra">Info Kemitraan</a></li>
                         </ul>
                     </nav>

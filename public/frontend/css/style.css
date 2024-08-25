@@ -545,9 +545,13 @@ ol {
 }
 
 .hero__items {
-	height: 800px;
-	padding-top: 230px;
-}
+	width: 100%;
+    height: 450px;
+    background-size: cover;
+	padding-top: 130px;
+    padding-bottom: 40px;
+	position: relative;
+} 
 
 .hero__text h6 {
 	color: #FF4DA3;
@@ -562,6 +566,8 @@ ol {
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
 }
 
 .hero__text h2 {
@@ -576,6 +582,8 @@ ol {
 	-webkit-transition: all, 0.6s;
 	-o-transition: all, 0.6s;
 	transition: all, 0.6s;
+	-moz-transition: all, 0.6s;
+	-ms-transition: all, 0.6s;
 }
 
 .hero__text p {
@@ -588,6 +596,8 @@ ol {
 	-webkit-transition: all, 0.9s;
 	-o-transition: all, 0.9s;
 	transition: all, 0.9s;
+	-moz-transition: all, 0.9s;
+	-ms-transition: all, 0.9s;
 }
 
 .hero__text .primary-btn {
@@ -597,6 +607,8 @@ ol {
 	-webkit-transition: all, 1.1s;
 	-o-transition: all, 1.1s;
 	transition: all, 1.1s;
+	-moz-transition: all, 1.1s;
+	-ms-transition: all, 1.1s;
 }
 
 .hero__text .primary-btn span {
@@ -671,7 +683,14 @@ ol {
 }
 
 .banner__item__text h2 {
-	color: #111111;
+	color: #3E2723;
+	font-weight: 700;
+	line-height: 46px;
+	margin-bottom: 10px;
+}
+
+.banner__item__text span {
+	color: #FF4DA3;
 	font-weight: 700;
 	line-height: 46px;
 	margin-bottom: 10px;
@@ -839,18 +858,23 @@ ol {
 }
 
 .instagram__pic__item {
-	width: 33.33%;
-	float: left;
-	height: 261px;
+	width: 750px;
+	height: 500px;
 	background-position: center center;
 }
 
 .instagram__text {
-	padding-top: 130px;
+	padding-top: 0px;
 }
 
 .instagram__text h2 {
 	color: #FF4DA3;
+	font-weight: 700;
+	margin-bottom: 0px;
+}
+
+.instagram__text span {
+	color: #3E2723;
 	font-weight: 700;
 	margin-bottom: 30px;
 }
@@ -3302,11 +3326,27 @@ Breadcrumb
 	.container {
 		max-width: 1170px;
 	}
+	.hero__items {
+        height: 450px; 
+        padding-top: 110px;
+        padding-bottom: 35px;
+    }
 }
 
 /* Medium Device = 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.hero__items {
+		width: 100%;
+        height: 330px; 
+        padding-top: 90px;
+        padding-bottom: 30px;
+    }
+	.instagram__pic__item {
+		width: 100%;
+		height: 300px;
+		background-position: center center;
+	}
 	.categories__text h2 {
 		font-size: 26px;
 	}
@@ -3327,6 +3367,19 @@ Breadcrumb
 /* Tablet Device = 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	.hero__items {
+		width: 100%;
+		height: 280px;
+		object-fit: cover;
+		padding-top: 70px;
+        padding-bottom: 25px;
+		right: -0.1%; 
+	}
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
+	}
 	.header__menu ul li {
 		margin-right: 10px;
 	}
@@ -3395,6 +3448,11 @@ Breadcrumb
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
+	}
 	.canvas__open {
 		display: block;
 		font-size: 22px;
@@ -3620,7 +3678,7 @@ Breadcrumb
 		float: none;
 	}
 	.banner__item__pic img {
-		min-width: 100%;
+		width: auto;
 	}
 	.banner__item__text {
 		max-width: 100%;
@@ -3735,9 +3793,15 @@ Breadcrumb
 		padding: 35px 30px 40px;
 	}
 	.hero__items {
-		height: auto;
-		padding-top: 130px;
-		padding-bottom: 40px;
+		width: 100%;          
+		height: 120;        
+		padding-top: 60px;    
+		padding-bottom: 20px; 
+	}	
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
 	}
 	.hero__text h2 {
 		font-size: 36px;
@@ -4093,6 +4157,19 @@ Breadcrumb
 }
 
 @media (max-width: 768px) {
+	.hero__items {
+		width: 100%;
+		height: 255px;
+		object-fit: cover;
+		padding-top: 70px;
+        padding-bottom: 25px;
+		right: -0.1%; 
+	}
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
+	}
     .history-content {
         padding: 15px;
     }
@@ -4108,6 +4185,17 @@ Breadcrumb
 }
 
 @media (max-width: 576px) {
+	.hero__items {
+		width: 100%;
+        height: 190px; 
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
+	}
     .history-content h4 {
         font-size: 1.25rem;
     }
@@ -4118,4 +4206,16 @@ Breadcrumb
         font-size: 0.9rem;
         margin-bottom: 10px;
     }
+}
+
+@media (max-width: 360px) {
+    .hero__image {
+		width: 100%;
+        height: 100px; 
+    }
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
+	}
 }
