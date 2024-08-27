@@ -7,6 +7,8 @@
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Miemie Brownie | Oleh-oleh Exclusive Tegal</title>
 
     <!-- Google Font -->
@@ -78,17 +80,22 @@
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="/cart/keranjang"><i class="fa fa-shopping-cart" style="color: #3E2723;"></i></a>
+                        <a href="/cart/keranjang">
+                            <i class="fa fa-shopping-cart" style="color: #3E2723;"></i>
+                            @if(session()->has('cart'))
+                                <span class="badge badge-danger">{{ count(session('cart')) }}</span>
+                            @endif
+                        </a>
                         @if(Auth::guard('customer')->check())
-                        <a href="/customer/profile"><i class="fa fa-user" style="color: #3E2723;"></i></a>
-                        <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
-                            @csrf
-                            <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
-                                <i class="fa fa-sign-out-alt"></i>
-                            </button>
-                        </form>
+                            <a href="/customer/profile"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                            <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
+                                @csrf
+                                <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
+                                    <i class="fa fa-sign-out-alt"></i>
+                                </button>
+                            </form>
                         @else
-                        <a href="/customer/login"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                            <a href="/customer/login"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                         @endif
                     </div>
                 </div>

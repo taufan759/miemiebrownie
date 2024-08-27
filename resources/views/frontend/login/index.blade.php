@@ -14,15 +14,15 @@
       <div class="front">
         <img src="{{ asset('frontend/images/frontImg.jpg') }}" alt="">
         <div class="text">
-          <span class="text-1">Daftarkan akunmu dulu yuk, <br> Dapatkan banyak promo menarik di</span>
+          <span class="text-1">Masuk ke akunmu dulu yuk, <br> Dapatkan banyak promo menarik di</span>
           <span class="text-2">Miemie Brownie</span>
         </div>
       </div>
       <div class="back">
         <img class="backImg" src="{{ asset('frontend/images/backImg.jpg') }}" alt="">
         <div class="text">
-          <span class="text-1">Complete miles of journey <br> with one step</span>
-          <span class="text-2">Let's get started</span>
+          <span class="text-1">Daftarkan akunmu dulu yuk <br> Dapatkan banyak promo menarik di</span>
+          <span class="text-2">Miemie Brownie</span>
         </div>
       </div>
     </div>

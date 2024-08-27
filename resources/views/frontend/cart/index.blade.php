@@ -1,5 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
+
 <section class="shopping-cart spad">
     <div class="container">
         <div class="row">
@@ -9,94 +10,41 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
+                                <th>Nama Produk</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($cartItems as $item)
                             <tr>
-                                <td class="product__cart__item">
+                                <td class="product__cart__item" style="width: 15%;">
                                     <div class="product__cart__item__pic">
-                                        <img src="img/shopping-cart/cart-1.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>T-shirt Contrast Pocket</h6>
-                                        <h5>$98.49</h5>
+                                        <img src="{{ asset('storage/img-produk/img_produk_depan/' . $item['img_produk_depan']) }}" width="100%" alt="{{ $item['nama_produk'] }}">
                                     </div>
                                 </td>
-                                <td class="quantity__item">
+                                <td class="product__cart__name" style="padding-left: 20px;">
+                                    <!-- Menampilkan nama produk -->
+                                    <h6>{{ $item['nama_produk'] }}</h6> 
+                                </td>
+                                <td class="quantity__item" style="width: 20%;">
                                     <div class="quantity">
                                         <div class="pro-qty-2">
-                                            <input type="text" value="1">
+                                            <input type="number" class="item-quantity" data-id="{{ $loop->index }}" value="{{ $item['quantity'] }}" min="0">
                                         </div>
                                     </div>
                                 </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                                <td class="cart__price" style="width: 20%;">
+                                    ${{ $item['harga'] * $item['quantity'] }}
+                                </td>
+                                <td class="cart__close" style="width: 10%;">
+                                    <button type="button" class="delete-item" data-id="{{ $loop->index }}"><i class="fa fa-close"></i></button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="img/shopping-cart/cart-2.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Diagonal Textured Cap</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 32.50</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="img/shopping-cart/cart-3.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Basic Flowing Scarf</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 47.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="img/shopping-cart/cart-4.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Basic Flowing Scarf</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
+                            @endforeach
                         </tbody>
-                    </table>
+                    </table>                                        
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -106,7 +54,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
+                            <a href="#" id="update-cart"><i class="fa fa-spinner"></i> Update cart</a>
                         </div>
                     </div>
                 </div>
@@ -122,8 +70,8 @@
                 <div class="cart__total">
                     <h6>Cart total</h6>
                     <ul>
-                        <li>Subtotal <span>$ 169.50</span></li>
-                        <li>Total <span>$ 169.50</span></li>
+                        <li>Subtotal <span id="cart-total">${{ $cartTotal }}</span></li>
+                        <li>Total <span id="cart-total">${{ $cartTotal }}</span></li>
                     </ul>
                     <a href="/cart/keranjang/checkout" class="primary-btn">Proceed to checkout</a>
                 </div>
@@ -131,4 +79,6 @@
         </div>
     </div>
 </section>
+<script src="{{ asset('frontend/js/main.js') }}"></script>
+
 @endsection

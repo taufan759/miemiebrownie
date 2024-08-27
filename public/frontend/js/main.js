@@ -214,3 +214,106 @@
     });
 
 })(jQuery);
+
+$(document).ready(function() {
+    // Menghapus item dari keranjang
+    $('.delete-item').on('click', function () {
+        var itemId = $(this).data('id');
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/cart/remove', // Ganti dengan route yang sesuai
+                    type: 'POST',
+                    data: {
+                        id: itemId,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        // Mengupdate total cart di tampilan
+                        $('#cart-total').text('$' + response.cartTotal);
+                        // Menghapus item dari DOM
+                        $('button[data-id="' + itemId + '"]').closest('tr').remove();
+                    }
+                });
+            }
+        });
+    });
+
+    // Memperbarui kuantitas item di keranjang
+    $('.item-quantity').on('change', function () {
+        var itemId = $(this).data('id');
+        var quantity = $(this).val();
+        
+        if (quantity == 0) {
+            $(this).closest('tr').find('.delete-item').click();
+        } else {
+            $.ajax({
+                url: '/cart/update', // Ganti dengan route yang sesuai
+                type: 'POST',
+                data: {
+                    id: itemId,
+                    quantity: quantity,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    // Mengupdate total cart di tampilan
+                    $('#cart-total').text('$' + response.cartTotal);
+                }
+            });
+        }
+    });
+
+    // Update cart button
+    $('#update-cart').on('click', function (e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Update cart?',
+            text: "Are you sure you want to update the cart?",
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, update it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var cartItems = [];
+                $('.item-quantity').each(function() {
+                    var itemId = $(this).data('id');
+                    var quantity = $(this).val();
+                    if (quantity > 0) {
+                        cartItems.push({id: itemId, quantity: quantity});
+                    }
+                });
+
+                $.ajax({
+                    url: '/cart/update', // Ganti dengan route yang sesuai
+                    type: 'POST',
+                    data: {
+                        items: cartItems,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        // Mengupdate total cart di tampilan
+                        $('#cart-total').text('$' + response.cartTotal);
+                        Swal.fire(
+                            'Updated!',
+                            'Your cart has been updated.',
+                            'success'
+                        );
+                    }
+                });
+            }
+        });
+    });
+});
+
+

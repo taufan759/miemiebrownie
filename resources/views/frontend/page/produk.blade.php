@@ -1,5 +1,15 @@
 @extends('frontend.layouts.app')
 @section('content')
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style-page.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+</head>
 <body>
 <section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.jpeg') }}">
     <div class="container">
@@ -82,32 +92,19 @@
             <div class="col-lg-12">
                 <div class="row">
                     @foreach ($products as $product)
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" 
-                                     data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>{{ $product->nama_produk }}</h6>
-                                    <a href="/cart/keranjang" class="add-cart">+ Tambah ke Keranjang</a>
-                                    <!-- Hapus atau komentar bagian rating -->
-                                    <!-- <div class="rating">
-                                        @for ($i = 0; $i < 5; $i++)
-                                            <i class="fa fa-star-o"></i>
-                                        @endfor
-                                    </div> -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" 
+                                 data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
+                            </div>
+                            <div class="product__item__text">
+                                <h6>{{ $product->nama_produk }}</h6>
+                                <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="submit" class="add-cart" style="border: none; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer;">+ Tambah ke Keranjang</button>
+                                </form>
                                     <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-{{ $product->id }}-1">
-                                            <input type="radio" id="pc-{{ $product->id }}-1">
-                                        </label>
-                                        <label class="active black" for="pc-{{ $product->id }}-2">
-                                            <input type="radio" id="pc-{{ $product->id }}-2">
-                                        </label>
-                                        <label class="grey" for="pc-{{ $product->id }}-3">
-                                            <input type="radio" id="pc-{{ $product->id }}-3">
-                                        </label>
-                                    </div>
                                 </div>
                             </div>
                         </div>
