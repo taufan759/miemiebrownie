@@ -131,11 +131,40 @@ ol {
 	line-height: 46px;
 }
 
+
 .set-bg {
-	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top center;
+    background-position: center;
+    height: 30vh; /* Full height viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Bayangan putih transparan */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    z-index: 1; /* Pastikan teks di atas overlay */
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem; /* Ukuran teks lebih besar */
+    color: #472323; /* Warna teks */
+    font-weight: bold; /* Membuat teks tebal */
+}
+
 
 .spad {
 	padding-top: 100px;
@@ -922,7 +951,7 @@ ol {
 
 .product__item {
 	overflow: hidden;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .product__item.sale .product__item__pic .label {
@@ -3848,35 +3877,76 @@ Breadcrumb
 	}
 }
 
-.categories__slider-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
 
 .categories__item {
 	flex: 0 0 150px; /* Lebar setiap kotak */
-	background-color: #f8f8f8;
-	border: 1px solid #ddd;
+	background-color: white;
+	border: 1px solid white;
 	border-radius: 10px;
 	text-align: center;
 	padding: 20px;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+@media (max-width: 1024px) {
+    .categories__item {
+        flex: 0 0 30%; /* Three items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .categories__item {
+        flex: 0 0 48%; /* Two items per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .categories__item {
+        flex: 0 0 100%; /* One item per row on very small screens */
+    }
+}
+
+.categories__slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Pastikan container slider memiliki lebar penuh */
+}
+
 .categories__slider {
-	display: flex;
-	gap: 15px; /* Jarak antar kotak lebih kecil */
-	overflow-x: scroll;
-	padding: 15px 0;
-	-ms-overflow-style: none;  /* Menghilangkan scrollbar di Internet Explorer dan Edge */
-	scrollbar-width: none;  /* Menghilangkan scrollbar di Firefox */
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    scrollbar-width: none; 
 }
 
-.categories__slider::-webkit-scrollbar {
-	display: none;  /* Menghilangkan scrollbar di Chrome, Safari, dan Opera */
+.wd-btn-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff; /* Ubah sesuai kebutuhan */
+    border: 1px solid #ddd; /* Ubah sesuai kebutuhan */
+    border-radius: 50%;
+    width: 40px; /* Ukuran tombol */
+    height: 40px; /* Ukuran tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+	
 }
 
+
+.owl-prev {
+    left: 50px;
+}
+
+.owl-next {
+    right: 50px;
+}
+
+.wd-btn-arrow.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 .categories__item:hover {
 	transform: translateY(-10px); /* Efek melayang saat hover */
@@ -3896,7 +3966,7 @@ Breadcrumb
 }
 
 .categories__item__icon span {
-	color: #e91e63; /* Warna ikon */
+	color: #FF4DA3; /* Warna ikon */
 	font-size: 2rem; /* Mengurangi ukuran ikon */
     margin-bottom: 5px; /* Mengurangi jarak antara ikon dan teks */
 	

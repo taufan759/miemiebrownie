@@ -10,81 +10,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Registration</title>
 </head>
+
 <body>
 <section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.jpeg') }}">
-    <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb-option">
-            <div class="row">
-
-            </div>
-        </div>
-        <!-- Categories -->
-        <div class="categories">
-            <div class="row">
-                <div class="categories__slider-container">
-                    <div class="categories__slider">
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-apple-alt fa-4x"></span>
-                                <h5>Bolen Pisang</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-cube fa-4x"></span> 
-                                <h5>Brownies Box</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-coffee fa-4x"></span> 
-                                <h5>Coffee & Drink</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-cookie fa-4x"></span> 
-                                <h5>Cookies & Snack</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-box-open fa-4x"></span> 
-                                <h5>Dessert Box</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-gift fa-4x"></span> 
-                                <h5>Hampers</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-cake fa-4x"></span> 
-                                <h5>Cake Tart</h5>
-                            </div>
-                        </div>
-
-                        <div class="categories__item">
-                            <div class="categories__item__icon">
-                                <span class="fas fa-utensils fa-4x"></span>
-                                <h5>Meals</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="overlay">
+        <div class="content">
+            <h1>Produk Miemie Brownie</h1>
         </div>
     </div>
 </section>
+<!-- Categories Slider di luar gambar -->
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="categories__slider-container" style="position: relative; overflow: hidden;">
+                <div class="categories__slider" style="display: flex; transition: transform 0.3s ease;">
+                <div class="categories__item" onclick="window.location.href='/brownies'">
+                        <div class="categories__item__icon">
+                            <img src="{{ asset('frontend/img/icon/brownis.png') }}" alt="Brownies" style="width: 4rem; height: auto;">
+                            <h5>Brownies</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/Bolen'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/bolen1.png') }}" alt="Bolen" style="width: 4rem; height: auto;">
+                            <h5>Bolen</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/Kaya Kue Cake'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/cake2.png') }}" alt="Kaya Kue Cake" style="width: 4rem; height: auto;">
+                            <h5>Kaya Kue Cake</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/cookies-snack'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/dessert.png') }}" alt="Dessert" style="width: 4rem; height: auto;">
+                            <h5>Dessert</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/Roti Bread'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/roti.png') }}" alt="Roti Bread" style="width: 4rem; height: auto;">
+                            <h5>Roti Bread</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/hampers'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/hampers.png') }}" alt="hampers" style="width: 4rem; height: auto;">
+                            <h5>Hampers</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/cake-tart'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/cookies.png') }}" alt="Brownies" style="width: 4rem; height: auto;">
+                            <h5>Cookies</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/meals'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/momen.png') }}" alt="Special moment" style="width: 4rem; height: auto;">
+                            <h5>Special Moment</h5>
+                        </div>
+                    </div>
+
+                    <div class="categories__item" onclick="window.location.href='/meals'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/cake.png') }}" alt="Brownies" style="width: 4rem; height: auto;">
+                            <h5>Gift and Sofenir</h5>
+                        </div>
+                    </div>
+                    <div class="categories__item" onclick="window.location.href='/meals'">
+                        <div class="categories__item__icon">
+                        <img src="{{ asset('frontend/img/icon/hantaran.png') }}" alt="Hantaran" style="width: 4rem; height: auto;">
+                            <h5>Hantaran</h5>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="owl-prev wd-btn-arrow">
+  <span class="fas fa-chevron-left fa-2x" style="color: #472323;"></span>
+</div>
+
+<div class="owl-next wd-btn-arrow">
+  <span class="fas fa-chevron-right fa-2x" style="color: #472323;"></span>
+</div>
+    </div>
+
+</section>
+<script>
+  // Dapatkan referensi ke elemen slider dan tombol navigasi
+  const slider = document.querySelector('.categories__slider');
+  const prevBtn = document.querySelector('.owl-prev');
+  const nextBtn = document.querySelector('.owl-next');
+
+  const scrollStep = 150; // Jarak scroll untuk setiap klik, sesuaikan dengan ukuran item
+
+  // Event listener untuk tombol prev
+  prevBtn.addEventListener('click', () => {
+    slider.scrollBy({
+      left: -scrollStep, // Geser ke kiri
+      behavior: 'smooth' // Scroll halus
+    });
+  });
+
+  // Event listener untuk tombol next
+  nextBtn.addEventListener('click', () => {
+    slider.scrollBy({
+      left: scrollStep, // Geser ke kanan
+      behavior: 'smooth' // Scroll halus
+    });
+  });
+</script>
 
 <section class="shop spad">
     <div class="container">
