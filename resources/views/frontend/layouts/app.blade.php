@@ -48,7 +48,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Miemie Brownie X Lost In Coffee</p>
+            <p>Miemie Brownie X Miemie Coffe</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -67,12 +67,10 @@
                         <ul>
                             <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
                             <li class="{{ request()->is('page/produk') ? 'active' : '' }}"><a href="/page/produk">Produk</a></li>
-                            <li><a href="#">Info</a>
+                            <li><a href="#">About</a>
                                 <ul class="dropdown">
                                     <li class="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/tentang">Tentang Kami</a></li>
-                                    <li><a href="#">Keranjang</a></li>
-                                    <li><a href="#">Check Out</a></li>
-                                    <li><a href="#">Blog Artikel</a></li>
+                                    <li><a href="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/blog">Blog Artikel</a></li>
                                 </ul>
                             <li class="{{ request()->is('page/mitra') ? 'active' : '' }}"><a href="/page/mitra">Info Kemitraan</a></li>
                         </ul>

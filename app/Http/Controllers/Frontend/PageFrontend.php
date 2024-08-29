@@ -44,4 +44,14 @@ class PageFrontend extends Controller
     {
         return view('frontend.page.mitra');
     }
+
+    public function blog()
+    {
+        return view('frontend.page.blog');
+    }
+
+    public function blogdetails()
+    {
+        return view('frontend.page.blog-details');
+    }
 }

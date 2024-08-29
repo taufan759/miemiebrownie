@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\CustomerAuth;
 use App\Http\Controllers\Frontend\KeranjangFrontend;
 use App\Http\Controllers\Frontend\CheckoutFrontend;
 use App\Http\Controllers\Frontend\PageFrontend;
+use App\Http\Controllers\Frontend\CustomerFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,9 @@ Route::get('/page/produk', [PageFrontend::class, 'produk']);
 Route::get('/page/detail', [PageFrontend::class, 'detail']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
+Route::get('/customer/profile', [CustomerFrontend::class, 'customerdetail']);
+Route::get('/page/blog', [PageFrontend::class, 'blog']);
+Route::get('/page/blog/details', [PageFrontend::class, 'blogdetails']);
 Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 Route::post('/cart/add', [KeranjangFrontend::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/update', [KeranjangFrontend::class, 'updateItem']);

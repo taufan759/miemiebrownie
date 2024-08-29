@@ -5,6 +5,33 @@
         <section class="hero">
             <div class="hero__slider owl-carousel">
                 <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero.jpeg')}}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-7 col-md-8">
+                                <div class="hero__text">
+                                    <h6>Lorem, ipsum.</h6>
+                                    <h2>Lorem ipsum dolor sit amet.</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, alias.</p>
+                                    <a href="/page/produk" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero2.png')}}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-7 col-md-8">
+                                <div class="hero__text">
+                                    <h6>Lorem, ipsum.</h6>
+                                    <h2>Lorem ipsum dolor sit amet.</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, alias.</p>
+                                    <a href="/page/produk" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- Hero Section End -->
@@ -58,16 +85,13 @@
                     <div class="col-lg-12">
                         <ul class="filter__controls">
                             <li class="active" data-filter="*">Best Sellers</li>
-                            <li data-filter=".new-arrivals">New Arrivals</li>
-                            <li data-fil ter=".hot-sales">Hot Sales</li>
                         </ul>
                     </div>
                 </div>
                 <div class="row product__filter">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p1.jpg')}}">
-                                <span class="label">New</span>
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
@@ -76,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p2.jpg')}}">
                             </div>
@@ -87,10 +111,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                        <div class="product__item sale">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                        <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p3.jpg')}}">
-                                <span class="label">Sale</span>
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
@@ -99,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p4.jpg')}}">
                             </div>
@@ -110,7 +133,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p5.jpg')}}">
                             </div>
@@ -121,10 +144,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-                        <div class="product__item sale">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                        <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p6.jpg')}}">
-                                <span class="label">Sale</span>
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
@@ -133,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p7.jpg')}}">
                             </div>
@@ -144,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p8.jpg')}}">
                             </div>
@@ -173,10 +195,7 @@
                         <div class="instagram__text">
                             <h2>Miemie</h2>
                             <h2><span>Brownie</span></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                            <h3>#miemie<span>brownie</span></h3>
-                            <p>Miemie Brownie X Lost In Coffee</p>
+                            <p>Miemie Brownie & Miemie Coffe</p>
                         </div>
                     </div>
                 </div>
@@ -184,23 +203,23 @@
         </section>
         <!-- Instagram Section End -->
     
-        <!-- Testimony Begin -->
-        <section class="latest spad">
+        <!-- Blog Section Begin -->
+        <section class="blog spad">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
                             <h2>Blog Artikel</h2>
+                            <p>Lihat Blog Artikel lainnya <a href="page/blog" style="color: #FF4DA3">di sini</a></p>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="blog__item">
                             <div class="blog__item__pic set-bg" data-setbg="{{ asset('frontend/img/blog/blog1.png')}}"></div>
                             <div class="blog__item__text">
-                                <span><img src="{{ asset('frontend/img/icon/calendar.png')}}" alt=""> 29 February 2029</span>
-                                <h5>Judul</h5>
+                                <span><img src="{{ asset('img/icon/calendar.png')}}" alt=""> 16 February 2020</span>
+                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                <a href="/page/blog/details">Lihat Detail</a>
                             </div>
                         </div>
                     </div>
@@ -208,8 +227,9 @@
                         <div class="blog__item">
                             <div class="blog__item__pic set-bg" data-setbg="{{ asset('frontend/img/blog/blog2.jpg')}}"></div>
                             <div class="blog__item__text">
-                                <span><img src="{{ asset('frontend/img/icon/calendar.png')}}" alt=""> 29 February 2029</span>
-                                <h5>Judul</h5>
+                                <span><img src="{{ asset('img/icon/calendar.png')}}" alt=""> 21 February 2020</span>
+                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                <a href="/page/blog/details">Lihat Detail</a>
                             </div>
                         </div>
                     </div>
@@ -217,14 +237,15 @@
                         <div class="blog__item">
                             <div class="blog__item__pic set-bg" data-setbg="{{ asset('frontend/img/blog/blog3.jpg')}}"></div>
                             <div class="blog__item__text">
-                                <span><img src="{{ asset('frontend/img/icon/calendar.png')}}" alt=""> 29 February 2029</span>
-                                <h5>Judul</h5>
+                                <span><img src="{{ asset('img/icon/calendar.png')}}" alt=""> 28 February 2020</span>
+                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                <a href="/page/blog/details">Lihat Detail</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Testimony End -->
+        <!-- Blog Section End -->
 </body>
 @endsection

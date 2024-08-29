@@ -34,14 +34,14 @@
                     <div class="col-lg-8">
                         <div class="testimonial__text" style="background-color: #f9f9f9; padding: 40px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); text-align: center;">
                             <span class="icon_quotations" style="font-size: 50px; color: #333;"></span>
-                            <p style="font-size: 20px; line-height: 1.6; margin-top: 20px;">“Bergabung dengan program kemitraan ini adalah keputusan terbaik yang pernah saya buat. Dukungan dari tim sangat luar biasa.”</p>
+                            <p style="font-size: 20px; line-height: 1.6; margin-top: 20px;">“Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, veniam!”</p>
                             <div class="testimonial__author" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
                                 <div class="testimonial__author__pic" style="flex-shrink: 0;">
-                                    <img src="{{ asset('frontend/img/about/testimonial-author.jpg') }}" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
+                                    <img src="{{ asset('frontend/img/about/RamaSahidp.jpeg') }}" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
                                 </div>
                                 <div class="testimonial__author__text" style="margin-left: 15px; text-align: left;">
-                                    <h5 style="font-size: 24px; font-weight: bold; margin: 0;">Ardi Setiawan</h5>
-                                    <p style="font-size: 16px; color: #666; margin: 0;">Mitra Sejak 2020</p>
+                                    <h5 style="font-size: 24px; font-weight: bold; margin: 0;">Rama Sahid</h5>
+                                    <p style="font-size: 16px; color: #666; margin: 0;">Owner Miemie Brownie</p>
                                 </div>
                             </div>
                         </div>
@@ -55,37 +55,29 @@
         <section class="counter spad">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="counter__item">
                             <div class="counter__item__number">
-                                <h2 class="cn_num">120</h2>
+                                <h2 class="cn_num">8</h2>
                             </div>
-                            <span>Mitra <br />Aktif</span>
+                            <span>Tahun Beroperasi</span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="counter__item">
                             <div class="counter__item__number">
                                 <h2 class="cn_num">50</h2>
                             </div>
-                            <span>Proyek <br />Berjalan</span>
+                            <span>Lebih Variasi Menu</span>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter__item">
-                            <div class="counter__item__number">
-                                <h2 class="cn_num">30</h2>
-                            </div>
-                            <span>Lokasi <br />Beroperasi</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="counter__item">
                             <div class="counter__item__number">
                                 <h2 class="cn_num">95</h2>
                                 <strong>%</strong>
                             </div>
-                            <span>Tingkat <br />Kepuasan</span>
+                            <span>Tingkat Kepuasan Pelanggan</span>
                         </div>
                     </div>
                 </div>

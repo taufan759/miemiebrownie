@@ -51,6 +51,7 @@
                 <input type="submit" value="Submit">
             </div>
             <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+            <div class="text sign-up-text"><a style="color: #FF3A85" href="/"><span>&#8592;</span> Home</a></div>
         </div>
     </form>
 </div>
