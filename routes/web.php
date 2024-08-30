@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\HomeBackend;
 use App\Http\Controllers\Backend\UserBackend;
 use App\Http\Controllers\Backend\CustomerBackend;
 use App\Http\Controllers\Backend\KategoriBackend;
+use App\Http\Controllers\Backend\BeritaBackend;
 use App\Http\Controllers\Backend\ProdukBackend;
 use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
@@ -45,7 +46,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('backend/home', [HomeBackend::class, 'index'])->name('home');
     Route::resource('backend/customer', CustomerBackend::class);
     Route::resource('backend/kategori', KategoriBackend::class);
-    Route::resource('backend/produk', ProdukBackend::class);
+    Route::resource('backend/berita', BeritaBackend::class);
+    Route::resource('backend/produk', ProdukBackend::class); 
     Route::resource('backend/pesanan', PesananBackend::class);
 });
 

@@ -33,6 +33,9 @@
                         <a href="{{ route('customer.index') }}">Customer</a>
                     </li>
                     <li>
+                        <a href="{{ route('berita.index') }}">Berita</a>
+                    </li>
+                    <li>
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Produk</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
@@ -95,6 +98,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('customer.index') }}">Customer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('berita.index') }}">Berita</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('produk.index') }}">Produk</a>
