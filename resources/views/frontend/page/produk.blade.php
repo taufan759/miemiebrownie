@@ -94,14 +94,14 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
         <div class="owl-prev wd-btn-arrow">
-  <span class="fas fa-chevron-left fa-2x" style="color: #472323;"></span>
-</div>
+            <span class="fas fa-chevron-left fa-2x" style="color: #472323;"></span>
+        </div>
 
-<div class="owl-next wd-btn-arrow">
-  <span class="fas fa-chevron-right fa-2x" style="color: #472323;"></span>
-</div>
+        <div class="owl-next wd-btn-arrow">
+            <span class="fas fa-chevron-right fa-2x" style="color: #472323;"></span>
+        </div>
     </div>
 
 </section>
@@ -136,17 +136,17 @@
             <div class="col-lg-12">
                 <div class="row">
                     @foreach ($products as $product)
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" 
                                  data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
                             </div>
                             <div class="product__item__text">
-                                <h6>{{ $product->nama_produk }}</h6>
+                                <h6>{{ $product->nama_produk }}</h6>    
                                 <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit" class="add-cart" style="border: none; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer;">+ Tambah ke Keranjang</button>
+                                    <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 </form>
                                     <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
                                 </div>

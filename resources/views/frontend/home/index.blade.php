@@ -89,90 +89,90 @@
                     </div>
                 </div>
                 <div class="row product__filter">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p1.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p2.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p3.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p4.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p5.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p6.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p7.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p8.jpg')}}">
                             </div>
                             <div class="product__item__text">
                                 <h6>Produk</h6>
-                                <a href="/cart/keranjang" class="add-cart">+ Keranjang</a>
+                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
                         </div>
