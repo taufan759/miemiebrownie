@@ -10,7 +10,7 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Nama Produk</th>
+                                <th>Name</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
                                 <th>Action</th>
@@ -19,30 +19,30 @@
                         <tbody>
                             @foreach($groupedCartItems as $item)
                             <tr>
-                                <td class="product__cart__item" style="width: 15%;">
+                                <td class="product__cart__item" data-label="Product">
                                     <div class="product__cart__item__pic">
                                         @if($item['product'])
                                             <img src="{{ asset('storage/img-produk/img_produk_depan/' . $item['product']->img_produk_depan) }}" width="100%" alt="{{ $item['product']->nama_produk }}">
                                         @else
-                                            <img src="{{ asset('path/to/default-image.jpg') }}" width="100%" alt="Default Image">
+                                            <img src="{{ asset('path/to/default-image.jpg') }}" alt="Default Image">
                                         @endif
                                     </div>
                                 </td>
-                                <td class="product__cart__name" style="padding-left: 20px;">
+                                <td class="product__cart__name"  data-label="Nama Produk">
                                     <!-- Menampilkan nama produk -->
                                     <h6>{{ $item['product']->nama_produk ?? 'Produk Tidak Tersedia' }}</h6>
                                 </td>
-                                <td class="quantity__item" style="width: 20%;">
+                                <td class="quantity__item" data-label="Quantity">
                                     <div class="quantity">
                                         <div class="pro-qty-2">
                                             <input type="number" class="item-quantity" data-id="{{ $item['product']->id }}" value="{{ $item['quantity'] }}" min="0">
                                         </div>
                                     </div>
                                 </td>
-                                <td class="cart__price" style="width: 20%;">
+                                <td class="cart__price"data-label="Total">
                                     Rp {{ number_format($item['product']->harga * $item['quantity'], 0, ',', '.') }}
                                 </td>
-                                <td class="cart__close" style="width: 10%;">
+                                <td class="cart__close" data-label="Action">
                                     <button type="button" class="delete-item" data-id="{{ $item['product']->id }}">
                                         <i class="fa fa-close"></i>
                                     </button>

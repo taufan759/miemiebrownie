@@ -135,7 +135,7 @@ ol {
 .set-bg {
 	background-size: cover;
     background-position: center;
-    height: 30vh; /* Full height viewport */
+    height: 80vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,7 +147,7 @@ ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.6); /* Bayangan putih transparan */
+    background: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,20 +155,27 @@ ol {
 
 .content {
     text-align: center;
-    z-index: 1; /* Pastikan teks di atas overlay */
+    z-index: 1; 
 }
 
 h1 {
     margin: 0;
-    font-size: 3rem; /* Ukuran teks lebih besar */
-    color: #472323; /* Warna teks */
-    font-weight: bold; /* Membuat teks tebal */
+    font-size: 3rem; 
+    color: #472323; 
+    font-weight: bold; 
 }
+@media (max-width: 767px) {
+    .set-bg {
+        height: 30vh; 
+    }
 
-
+    h1 {
+        font-size: 1rem; 
+    }
+}
 .spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .text-white h1,
@@ -887,8 +894,8 @@ h1 {
 }
 
 .instagram__pic__item {
-	width: 650px;
-	height: 400px;
+	width: 750px;
+	height: 500px;
 	background-position: center center;
 }
 
@@ -938,6 +945,7 @@ h1 {
 	list-style: none;
 	display: inline-block;
 	margin-right: 88px;
+	cursor: pointer;
 }
 
 .filter__controls li:last-child {
@@ -963,7 +971,7 @@ h1 {
 }
 
 .product__item.sale .product__item__text .rating i:nth-last-child(1) {
-	color: #b7b7b7;
+	color: #fcfafa;
 }
 
 .product__item:hover .product__item__pic .product__hover {
@@ -978,7 +986,7 @@ h1 {
 }
 
 .product__item:hover .product__item__text h6 {
-	opacity: 0;
+	opacity: 1;
 }
 
 .product__item:hover .product__item__text .product__color__select {
@@ -986,9 +994,13 @@ h1 {
 }
 
 .product__item__pic {
-	height: 260px;
 	position: relative;
-	background-position: center center;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+    padding-top: 100%;
+	height: 100px;
+	background-size: cover;
 }
 
 .product__item__pic .label {
@@ -1057,14 +1069,19 @@ h1 {
 }
 
 .product__item__pic .product__hover li img {
-	background: #ffffff;
+	background: #111111;
 	padding: 10px;
 	display: inline-block;
 }
 
 .product__item__text {
-	padding-top: 25px;
+	text-align: center;
+    padding: 10px;
 	position: relative;
+}
+.product__item__text {
+	padding-top: 25px;
+	
 }
 
 .product__item__text a {
@@ -1082,13 +1099,10 @@ h1 {
 }
 
 .product__item__text h6 {
-	color: #111111;
-	font-size: 15px;
-	font-weight: 600;
-	margin-bottom: 5px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
+	color: #FF4DA3;
+	font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .product__item__text .rating {
@@ -1097,13 +1111,54 @@ h1 {
 
 .product__item__text .rating i {
 	font-size: 14px;
-	color: #b7b7b7;
+	color: white;
 	margin-right: -5px;
 }
 
 .product__item__text h5 {
 	color: #0d0d0d;
 	font-weight: 700;
+}
+
+/* Styling untuk tombol "Tambah ke Keranjang" */
+.product-page-cart {
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	background-color: white;
+    color: black;
+    font-size: 12px; /* Ukuran font yang lebih kecil */
+    font-weight: 500; /* Mengurangi ketebalan font */
+    padding: 5px 10px; /* Padding lebih kecil */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+	white-space: nowrap;
+}
+
+/* Menambahkan ikon keranjang */
+.product-page-cart::before {
+    content: "\f07a"; /* Ikon keranjang Font Awesome */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    margin-right: 8px;
+}
+
+/* Efek hover untuk tombol */
+.product-page-cart:hover {
+    background: linear-gradient(135deg, #e84393); 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsif di mobile */
+@media (max-width: 767px) {
+    .product-page-cart {
+        font-size: 12px;
+        padding: 6px 10px;
+        width: 100%; 
+        border-radius: 20px;
+    }
 }
 
 .product__item__text .product__color__select {
@@ -2113,9 +2168,6 @@ Breadcrumb
 	margin-bottom: 0;
 }
 
-/*---------------------
-  Testimonial
------------------------*/
 
 .testimonial {
 	background: #f3f2ee;
@@ -2298,11 +2350,46 @@ Breadcrumb
 }
 
 .shopping__cart__table table thead tr th {
-	color: #111111;
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	padding-bottom: 25px;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 5px; /* Padding horizontal untuk jarak */
+    text-align: left;
+    border-right: 2px solid #f1e3e3; /* Garis pemisah antar kolom */
+}
+
+/* Styling untuk gambar produk */
+.shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic img {
+    max-width: 100px; /* Atur lebar maksimum gambar */
+    max-height: 100px; /* Atur tinggi maksimum gambar */
+    width: auto; /* Menjaga proporsi gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    object-fit: cover; /* Memastikan gambar tetap proporsional dan sesuai dengan area yang disediakan */
+}
+
+/* Styling khusus untuk tampilan mobile */
+@media (max-width: 768px) {
+    .shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic img {
+        max-width: 80px; /* Lebar maksimum gambar di mobile */
+        max-height: 80px; /* Tinggi maksimum gambar di mobile */
+    }
+}
+/* Styling untuk kolom 'Nama Produk' */
+.shopping__cart__table table tbody tr td.product__cart__name {
+    width: 350px; /* Lebar kolom nama produk, dapat disesuaikan */
+    padding-left: 0; /* Menghilangkan padding kiri jika terlalu besar */
+    padding-right: 10px; /* Menambahkan padding kanan untuk jarak */
+    text-align: left; /* Posisi teks ke kiri */
+}
+
+/* Styling khusus untuk tampilan mobile */
+@media (max-width: 768px) {
+    .shopping__cart__table table tbody tr td.product__cart__name {
+        width: auto; /* Lebar otomatis pada tampilan mobile */
+        padding-left: 10px; /* Jarak lebih kecil pada mobile */
+        padding-right: 10px; /* Jarak kanan pada mobile */
+    }
 }
 
 .shopping__cart__table table tbody tr {
@@ -2356,28 +2443,22 @@ Breadcrumb
 	font-size: 16px;
 }
 
-.shopping__cart__table table tbody tr td.quantity__item .quantity .pro-qty-2 .qtybtn {
-	font-size: 16px;
-	color: #888888;
-	width: 10px;
-	cursor: pointer;
-}
 
 .shopping__cart__table table tbody tr td.cart__price {
 	color: #111111;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: 700;
 	width: 140px;
 }
 
 .shopping__cart__table table tbody tr td.cart__close i {
-	font-size: 18px;
-	color: #111111;
-	height: 40px;
-	width: 40px;
+	font-size: 15px;
+	color: #0a0a0a;
+	height: 20px;
+	width: 20px;
 	background: #f3f2ee;
-	border-radius: 50%;
-	line-height: 40px;
+	border-radius: 30%;
+	line-height: 20px;
 	text-align: center;
 }
 
@@ -2396,14 +2477,29 @@ Breadcrumb
 }
 
 .continue__btn a {
-	color: #111111;
-	font-size: 14px;
-	font-weight: 700;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	border: 1px solid #e1e1e1;
-	padding: 14px 35px;
-	display: inline-block;
+    font-size: 12px !important;
+    padding: 8px 20px !important;
+    display: block !important;
+    width: auto !important;
+}
+
+
+@media (max-width: 768px) {
+    .continue__btn {
+        text-align: center; 
+        margin-top: 15px; 
+    }
+
+    .continue__btn.update__btn {
+        text-align: center; 
+    }
+
+    .continue__btn a {
+        font-size: 12px; 
+        padding: 8px 20px; 
+        display: block; 
+        width: auto; 
+    }
 }
 
 .cart__discount {
@@ -3231,6 +3327,341 @@ Breadcrumb
 	letter-spacing: 4px;
 	padding: 14px 35px;
 }
+/* Wide Mobile = 480px */
+
+@media only screen and (max-width: 767px) {
+	.canvas__open {
+		display: block;
+		font-size: 22px;
+		color: #111111;
+		height: 35px;
+		width: 35px;
+		line-height: 35px;
+		text-align: center;
+		border: 1px solid #111111;
+		border-radius: 2px;
+		cursor: pointer;
+		position: absolute;
+		right: 15px;
+		top: 25px;
+	}
+	.offcanvas-menu-overlay {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.7);
+		content: "";
+		z-index: 98;
+		-webkit-transition: all, 0.5s;
+		-o-transition: all, 0.5s;
+		transition: all, 0.5s;
+		visibility: hidden;
+	}
+	.offcanvas-menu-overlay.active {
+		visibility: visible;
+	}
+	.offcanvas-menu-wrapper {
+		position: fixed;
+		left: -300px;
+		width: 300px;
+		height: 100%;
+		background: #ffffff;
+		padding: 50px 20px 30px 30px;
+		display: block;
+		z-index: 99;
+		overflow-y: auto;
+		-webkit-transition: all, 0.5s;
+		-o-transition: all, 0.5s;
+		transition: all, 0.5s;
+		opacity: 0;
+	}
+	.offcanvas-menu-wrapper.active {
+		opacity: 1;
+		left: 0;
+	}
+	.offcanvas__menu {
+		display: none;
+	}
+	.slicknav_btn {
+		display: none;
+	}
+	.slicknav_menu {
+		background: transparent;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+	.slicknav_nav ul {
+		margin: 0;
+	}
+	.slicknav_nav .slicknav_row,
+	.slicknav_nav a {
+		padding: 7px 0;
+		margin: 0;
+		color: #111111;
+		font-weight: 600;
+	}
+	.slicknav_nav .slicknav_arrow {
+		color: #111111;
+	}
+	.slicknav_nav .slicknav_row:hover {
+		border-radius: 0;
+		background: transparent;
+		color: #111111;
+	}
+	.slicknav_nav a:hover {
+		border-radius: 0;
+		background: transparent;
+		color: #111111;
+	}
+	.slicknav_nav {
+		display: block !important;
+	}
+	.offcanvas__option {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.offcanvas__links {
+		display: inline-block;
+		margin-right: 25px;
+	}
+	.offcanvas__links a {
+		color: #111111;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-right: 16px;
+		display: inline-block;
+		font-weight: 600;
+	}
+	.offcanvas__links a:last-child {
+		margin-right: 0;
+	}
+	.offcanvas__top__hover {
+		display: inline-block;
+		position: relative;
+	}
+	.offcanvas__top__hover:hover ul {
+		top: 24px;
+		opacity: 1;
+		visibility: visible;
+	}
+	.offcanvas__top__hover span {
+		color: #111111;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		display: inline-block;
+		cursor: pointer;
+		font-weight: 600;
+	}
+	.offcanvas__top__hover span i {
+		font-size: 20px;
+		position: relative;
+		top: 3px;
+		right: 2px;
+	}
+	.offcanvas__top__hover ul {
+		background: #111111;
+		display: inline-block;
+		padding: 2px 0;
+		position: absolute;
+		left: 0;
+		top: 44px;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 3;
+		-webkit-transition: all, 0.3s;
+		-o-transition: all, 0.3s;
+		transition: all, 0.3s;
+	}
+	.offcanvas__top__hover ul li {
+		list-style: none;
+		font-size: 13px;
+		color: #ffffff;
+		padding: 2px 15px;
+		cursor: pointer;
+	}
+	.offcanvas__nav__option {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	.offcanvas__nav__option a {
+		display: inline-block;
+		margin-right: 26px;
+		position: relative;
+	}
+	.offcanvas__nav__option a span {
+		color: #0d0d0d;
+		font-size: 11px;
+		position: absolute;
+		left: 5px;
+		top: 8px;
+	}
+	.offcanvas__nav__option a:last-child {
+		margin-right: 0;
+	}
+	.offcanvas__nav__option .price {
+		font-size: 15px;
+		color: #111111;
+		font-weight: 700;
+		display: inline-block;
+		margin-left: -20px;
+		position: relative;
+		top: 3px;
+	}
+	.offcanvas__text p {
+		color: #111111;
+		margin-bottom: 0;
+	}
+	.header__top {
+		display: none;
+	}
+	.header .container {
+		position: relative;
+	}
+	.header__menu {
+		display: none;
+	}
+	.header__nav__option {
+		display: none;
+	}
+	.search-model-form input {
+		width: 100%;
+		font-size: 24px;
+	}
+	.hero__slider.owl-carousel .owl-nav button {
+		left: 15px;
+		top: 80%;
+	}
+	.hero__slider.owl-carousel .owl-nav button.owl-next {
+		left: 75px;
+		right: 0;
+	}
+	.banner__item.banner__item--middle {
+		margin-top: 0;
+	}
+	.banner__item.banner__item--last {
+		margin-top: 0;
+	}
+	.banner__item {
+		margin-bottom: 40px;
+	}
+	.banner {
+		padding-bottom: 60px;
+	}
+	.banner__item__pic {
+		float: none;
+	}
+	.banner__item__pic img {
+		width: auto;
+	}
+	.banner__item__text {
+		max-width: 100%;
+		position: relative;
+		top: 0;
+		padding-top: 22px;
+	}
+	.filter__controls li {
+		margin-right: 15px;
+	}
+	.categories__text {
+		margin-bottom: 40px;
+	}
+	.categories__hot__deal {
+		margin-bottom: 40px;
+	}
+	.instagram__text {
+		padding-top: 70px;
+	}
+	.instagram__pic__item {
+		width: 50%;
+	}
+	.shop__product__option__right {
+		text-align: left;
+		padding-top: 20px;
+	}
+	.shop__sidebar {
+		padding-right: 0;
+		margin-bottom: 40px;
+	}
+	.testimonial__text {
+		padding: 100px 40px 100px;
+	}
+	.product__details__breadcrumb {
+		text-align: left;
+	}
+	.product__details__pic .nav-tabs {
+		width: auto;
+		margin-bottom: 40px;
+	}
+	.product__details__pic .nav-tabs .nav-item {
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
+	.product__details__option__size {
+		display: block;
+		margin-right: 0;
+		margin-bottom: 25px;
+	}
+	.product__details__last__option h5:before {
+		width: 440px;
+	}
+	.product__details__tab .nav-tabs .nav-item {
+		margin-bottom: 15px;
+	}
+	.shopping__cart__table {
+		overflow-y: auto;
+	}
+	.shopping__cart__table table tbody tr td.product__cart__item .product__cart__item__pic {
+		float: none;
+		margin-right: 0;
+	}
+	.continue__btn {
+		text-align: center;
+	}
+	.continue__btn.update__btn {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.cart__discount {
+		margin-top: 40px;
+	}
+	.checkout__order {
+		margin-top: 20px;
+	}
+	.blog__details__share {
+		position: relative;
+		left: 0;
+		margin-bottom: 18px;
+	}
+	.blog__details__share span {
+		margin-bottom: 14px;
+		margin-right: 0;
+	}
+	.blog__details__share ul li {
+		margin-bottom: 15px;
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.blog__details__share ul li:last-child {
+		margin-right: 0;
+	}
+	.blog__details__author {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.blog__details__tags {
+		text-align: center;
+	}
+	.contact__text {
+		margin-bottom: 40px;
+	}
+	.hero__social {
+		margin-top: 180px;
+	}
+}
 
 /*---------------------
   Map
@@ -3357,6 +3788,11 @@ Breadcrumb
 	.container {
 		max-width: 1170px;
 	}
+	.hero__items {
+        height: 450px; 
+        padding-top: 110px;
+        padding-bottom: 35px;
+    }
 }
 
 /* Medium Device = 1200px */
@@ -3400,6 +3836,11 @@ Breadcrumb
 		padding-top: 70px;
         padding-bottom: 25px;
 		right: -0.1%; 
+	}
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
 	}
 	.header__menu ul li {
 		margin-right: 10px;
@@ -3469,6 +3910,11 @@ Breadcrumb
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	.instagram__pic__item {
+		width: 100%;
+		height: 190px;
+		background-position: center center;
+	}
 	.canvas__open {
 		display: block;
 		font-size: 22px;
@@ -3808,6 +4254,12 @@ Breadcrumb
 	.cart__total {
 		padding: 35px 30px 40px;
 	}
+	.hero__items {
+		width: 100%;          
+		height: 120;        
+		padding-top: 60px;    
+		padding-bottom: 20px; 
+	}	
 	.instagram__pic__item {
 		width: 100%;
 		height: 190px;
@@ -3860,36 +4312,41 @@ Breadcrumb
 
 
 .categories__item {
-	flex: 0 0 150px; /* Lebar setiap kotak */
+	flex: 0 0 150px; 
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 10px;
 	text-align: center;
-	padding: 20px;
+	padding: 9px;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-@media (max-width: 1024px) {
-    .categories__item {
-        flex: 0 0 30%; /* Three items per row on medium screens */
+@media (max-width: 767px) {
+    .categories__slider {
+        display: flex;
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
     }
-}
 
-@media (max-width: 768px) {
     .categories__item {
-        flex: 0 0 48%; /* Two items per row on small screens */
+        flex: 0 0 33.33%; 
+        scroll-snap-align: start; 
     }
-}
 
-@media (max-width: 480px) {
-    .categories__item {
-        flex: 0 0 100%; /* One item per row on very small screens */
+    .categories__slider-container {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .owl-prev, .owl-next {
+        display: none; 
     }
 }
 
 .categories__slider-container {
     position: relative;
     overflow: hidden;
-    width: 100%; /* Pastikan container slider memiliki lebar penuh */
+    width: 100%; 
 }
 
 .categories__slider {
@@ -3903,11 +4360,8 @@ Breadcrumb
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #fff; /* Ubah sesuai kebutuhan */
-    border: 1px solid #ddd; /* Ubah sesuai kebutuhan */
-    border-radius: 50%;
-    width: 40px; /* Ukuran tombol */
-    height: 40px; /* Ukuran tombol */
+    width: 40px; 
+    height: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3915,13 +4369,30 @@ Breadcrumb
 	
 }
 
-
 .owl-prev {
-    left: 50px;
+    left: 40px;
 }
 
 .owl-next {
-    right: 50px;
+    right: 40px;
+}
+/* Responsif untuk tampilan mobile */
+@media (max-width: 767px) {
+    .owl-prev, .owl-next {
+        padding: 5px; 
+        font-size: 10px; 
+        position: absolute; 
+    }
+
+    .owl-prev {
+        left: 2px; 
+        right: auto; 
+    }
+
+    .owl-next {
+        right: 2px; 
+        left: auto; 
+    }
 }
 
 .wd-btn-arrow.disabled {
@@ -3930,7 +4401,7 @@ Breadcrumb
 }
 
 .categories__item:hover {
-	transform: translateY(-10px); /* Efek melayang saat hover */
+	transform: translateY(-10px); 
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -3959,18 +4430,18 @@ Breadcrumb
 
 .shop__sidebar__categories i {
 	margin-right: 10px;
-	font-size: 15px; /* Ukuran ikon */
+	font-size: 15px; 
 	color: #FF4DA3;
 	transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .shop__sidebar__categories a:hover {
-	color: #FF4DA3; /* Warna teks saat hover */
+	color: #FF4DA3; 
 }
 
 .shop__sidebar__categories a:hover i {
-	transform: scale(1.2); /* Efek membesar pada ikon saat hover */
-	color: #FF4DA3; /* Warna ikon saat hover */
+	transform: scale(1.2); 
+	color: #FF4DA3; 
 }
 .slider__control {
     top: 50%;
@@ -4217,8 +4688,8 @@ Breadcrumb
 		right: -0.1%; 
 	}
 	.instagram__pic__item {
-		width: 650px;
-		height: 400px;
+		width: 100%;
+		height: 190px;
 		background-position: center center;
 	}
     .history-content {
@@ -4238,8 +4709,8 @@ Breadcrumb
 @media (max-width: 576px) {
 	.hero__items {
 		width: 100%;
-        height: auto; 
-        padding-top: 100px;
+        height: 190px; 
+        padding-top: 60px;
         padding-bottom: 20px;
     }
 	.instagram__pic__item {
@@ -4260,6 +4731,10 @@ Breadcrumb
 }
 
 @media (max-width: 360px) {
+    .hero__image {
+		width: 100%;
+        height: 100px; 
+    }
 	.instagram__pic__item {
 		width: 100%;
 		height: 190px;
