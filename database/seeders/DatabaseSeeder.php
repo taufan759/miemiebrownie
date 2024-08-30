@@ -40,19 +40,23 @@ class DatabaseSeeder extends Seeder
         
         // Buat kategori
         Kategori::create([
-            'nama_kategori' => 'Bolen Pisang',
+            'nama_kategori' => 'Brownies',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Brownies Box',
+            'nama_kategori' => 'Bolen',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Cofee',
+            'nama_kategori' => 'Kaya Kue Cake',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Fresh Drink',
+            'nama_kategori' => 'Dessert',
+        ]);
+
+        Kategori::create([
+            'nama_kategori' => 'Roti',
         ]);
 
         Kategori::create([
@@ -60,19 +64,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Dessert Box',
+            'nama_kategori' => 'Spesial Moment',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Souvenir',
+            'nama_kategori' => 'Gift &  Souvenir',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Birthday Cake',
+            'nama_kategori' => 'Hantaran',
         ]);
 
         Kategori::create([
-            'nama_kategori' => 'Meals',
+            'nama_kategori' => 'Coffie & Non Coffie',
         ]);
     }
 }
