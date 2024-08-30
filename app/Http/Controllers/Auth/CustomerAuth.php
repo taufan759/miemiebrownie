@@ -56,12 +56,52 @@ class CustomerAuth extends Controller
         return redirect()->intended('customer/login');
     }
 
+    public function showProfile()
+{
+    $customer = Auth::guard('customer')->user();
+    return view('frontend.customerdetail.index', compact('customer'));
+}
+
+public function updateProfile(Request $request)
+{
+    $customer = Auth::guard('customer')->user();
+
+    $validatedData = $request->validate([
+        'nama' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:customer,email,' . $customer->id,
+        'hp' => 'required|string|max:15',
+        'alamat' => 'nullable|string|max:255',
+        'jenis_kelamin' => 'nullable|string|in:Laki-laki,Perempuan',
+        'sosmed' => 'nullable|string|max:255',
+        'password' => 'nullable|string|min:8|confirmed',
+    ]);
+
+    $customer->update($validatedData);
+
+    return redirect()->back()->with('success', 'Profil berhasil diperbarui.');
+}
+
+public function editProfile()
+{
+    $customer = Auth::guard('customer')->user();
+    return view('frontend.customerdetail.edit', compact('customer'));
+}
+
+    
     public function logout(Request $request)
     {
+        // Melakukan proses logout untuk guard 'customer'
         Auth::guard('customer')->logout();
+    
+        // Invalidasi session yang ada
         $request->session()->invalidate();
+    
+        // Regenerasi token CSRF untuk keamanan
         $request->session()->regenerateToken();
-
+    
+        // Redirect ke halaman login dengan pesan logout
         return redirect('/customer/login')->with('status', 'Anda telah berhasil logout.');
     }
+    
+
 }

@@ -3,97 +3,139 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Produk; 
+use App\Models\Backend\Produk;
+use App\Models\Backend\Customer; 
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class KeranjangFrontend extends Controller
 {
-    public function index()
-    {
-        $cartItems = session()->get('cart', []);
-    
-        // Menghitung total harga
-        $cartTotal = 0;
-        foreach ($cartItems as $item) {
-            $cartTotal += $item['harga'] * $item['quantity'];
-        }
-    
-        return view('frontend.cart.index', compact('cartItems', 'cartTotal'));
+    public function index() {
+        // Mengakses user yang login dengan guard customer
+        $user = auth('customer')->user();
+
+    if (!$user) {
+        return redirect()->route('customer.login')->with('error', 'Anda harus login terlebih dahulu.');
     }
 
-    public function addToCart(Request $request)
-    {
-        $productId = $request->input('product_id');
-        $product = Produk::find($productId);
+    // Mengakses cartItems melalui relasi yang didefinisikan di model Customer
+    $cartItems = $user->cartItems()->with('product')->get();
 
-        if (!$product) {
-            return redirect()->back()->with('error', 'Produk tidak ditemukan!');
-        }
+    // Mengelompokkan item berdasarkan produk
+    $groupedCartItems = $cartItems->groupBy('product_id')->map(function ($items) {
+        $firstItem = $items->first();
+        
+        return [
+            'product' => $firstItem->product ?? null, // Menambahkan pengecekan null
+            'quantity' => $items->sum('quantity')
+        ];
+    });
 
-        $cart = session()->get('cart', []);
-
-        if (isset($cart[$productId])) {
-            $cart[$productId]['quantity']++;
-        } else {
-            $cart[$productId] = [
-                "nama_produk" => $product->nama_produk,
-                "quantity" => 1,
-                "harga" => $product->harga,
-                "img_produk_depan" => $product->img_produk_depan
-            ];
-        }
-
-        session()->put('cart', $cart);
-
-        return redirect()->back()->with('success', 'Produk berhasil ditambahkan ke keranjang!');
-    }
-
-    public function updateItem(Request $request)
-{
-    $cart = session()->get('cart', []);
+    // Menghitung total harga
     $cartTotal = 0;
+    foreach ($groupedCartItems as $items) {
+        if ($items['product']) { // Menambahkan pengecekan null
+            $cartTotal += $items['product']->harga * $items['quantity'];
+        }
+    }
 
+    // Menghitung total quantity
+    $totalQuantity = $cartItems->sum('quantity');
+
+    return view('frontend.cart.index', [
+        'groupedCartItems' => $groupedCartItems,
+        'cartTotal' => $cartTotal,
+        'totalQuantity' => $totalQuantity
+    ]);
+}
+
+public function addToCart(Request $request) {
+    $quantity = $request->input('quantity', 1);
+
+    // Menggunakan guard 'customer' untuk mendapatkan user yang sedang login
+    $user = auth('customer')->user();
+
+    if (!$user) {
+        return redirect()->route('customer.login')->with('error', 'Anda harus login terlebih dahulu.');
+    }
+
+    // Menggunakan user yang sudah terautentikasi
+    $cartItem = Cart::where('customer_id', $user->id)
+        ->where('product_id', $request->product_id)
+        ->first();
+
+    if ($cartItem) {
+        $cartItem->quantity += $quantity;
+        $cartItem->save();
+    } else {
+        Cart::create([
+            'customer_id' => $user->id,
+            'product_id' => $request->product_id,
+            'quantity' => $quantity,
+        ]);
+    }
+
+    return redirect()->back()->with('success', 'Produk berhasil ditambahkan ke keranjang!');
+}
+
+public function updateCart(Request $request)
+{
+    $user = auth('customer')->user();
+
+    if (!$user) {
+        return response()->json(['error' => 'User not authenticated.'], 401);
+    }
+
+    // Validasi input
+    $request->validate([
+        'items' => 'required|array',
+        'items.*.id' => 'required|integer',
+        'items.*.quantity' => 'required|integer|min:0',
+    ]);
+
+    // Loop melalui items yang dikirim
     foreach ($request->items as $item) {
-        $itemId = $item['id'];
-        $quantity = $item['quantity'];
-
-        if (isset($cart[$itemId])) {
-            if ($quantity == 0) {
-                unset($cart[$itemId]); // Menghapus item jika kuantitasnya 0
-            } else {
-                $cart[$itemId]['quantity'] = $quantity;
-            }
+        $cartItem = $user->cartItems()->where('product_id', $item['id'])->first();
+        if ($cartItem) {
+            $cartItem->quantity = $item['quantity'];
+            $cartItem->save();
         }
     }
 
-    session()->put('cart', $cart);
+    // Menghitung ulang total harga
+    $cartTotal = $user->cartItems()->with('product')->get()->sum(function ($cartItem) {
+        return $cartItem->product->harga * $cartItem->quantity;
+    });
 
-    // Menghitung total cart setelah update
-    foreach ($cart as $item) {
-        $cartTotal += $item['harga'] * $item['quantity'];
-    }
-
-    return response()->json(['cartTotal' => $cartTotal]);
+    return response()->json(['cartTotal' => number_format($cartTotal, 0, ',', '.')]);
 }
 
-public function removeItem(Request $request)
+
+
+    // Method untuk menghapus item dari cart
+    public function removeItem(Request $request)
 {
-    $itemId = $request->id;
-    $cart = session()->get('cart', []);
-    
-    // Menghapus item dari keranjang
-    if (isset($cart[$itemId])) {
-        unset($cart[$itemId]);
-        session()->put('cart', $cart);
-    }
-    
-    // Menghitung total cart setelah item dihapus
-    $cartTotal = 0;
-    foreach ($cart as $item) {
-        $cartTotal += $item['harga'] * $item['quantity'];
+    $user = auth('customer')->user();
+
+    if (!$user) {
+        return response()->json(['error' => 'User not authenticated.'], 401);
     }
 
-    return response()->json(['cartTotal' => $cartTotal]);
+    // Hapus semua item dengan produk yang sama
+    $cartItems = $user->cartItems()->where('product_id', $request->id)->get();
+    if ($cartItems) {
+        foreach ($cartItems as $cartItem) {
+            $cartItem->delete();
+        }
+    }
+
+    // Menghitung ulang total harga
+    $cartTotal = $user->cartItems()->with('product')->get()->sum(function ($cartItem) {
+        return $cartItem->product->harga * $cartItem->quantity;
+    });
+
+    return response()->json(['cartTotal' => number_format($cartTotal, 0, ',', '.')]);
 }
+
    
 }

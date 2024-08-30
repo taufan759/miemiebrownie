@@ -271,6 +271,34 @@ $(document).ready(function() {
             });
         }
     });
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.delete-item').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const itemId = this.getAttribute('data-id');
+                
+                fetch(`/cart/remove/${itemId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        id: itemId
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        location.reload();
+                    } else {
+                        alert('Gagal menghapus item');
+                    }
+                });
+            });
+        });
+    });
+
 
     // Update cart button
     $('#update-cart').on('click', function (e) {

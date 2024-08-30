@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Backend\User;
 use App\Models\Backend\Kategori;
-use App\Models\Backend\Subkategori;
 
 class DatabaseSeeder extends Seeder
 {

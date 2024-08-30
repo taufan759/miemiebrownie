@@ -65,12 +65,21 @@ Route::get('/page/produk', [PageFrontend::class, 'produk']);
 Route::get('/page/detail', [PageFrontend::class, 'detail']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
-Route::get('/customer/profile', [CustomerFrontend::class, 'customerdetail']);
+
+// Halaman profil customer
+Route::get('/customer/profile', [CustomerAuth::class, 'showProfile'])->name('customer.profile');
+
+// Halaman edit profil customer
+Route::get('/customer/profile/edit', [CustomerAuth::class, 'editProfile'])->name('customer.editProfile');
+
+// Mengupdate profil customer
+Route::post('/customer/profile', [CustomerAuth::class, 'updateProfile'])->name('customer.updateProfile');
+
 Route::get('/page/blog', [PageFrontend::class, 'blog']);
 Route::get('/page/blog/details', [PageFrontend::class, 'blogdetails']);
 Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 Route::post('/cart/add', [KeranjangFrontend::class, 'addToCart'])->name('cart.add');
-Route::post('/cart/update', [KeranjangFrontend::class, 'updateItem']);
-Route::post('/cart/remove', [KeranjangFrontend::class, 'removeItem']);
+Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart']);
+Route::post('/cart/keranjang/delete', [KeranjangFrontend::class, 'removeItem']);
 Route::get('/cart/keranjang/checkout', [CheckoutFrontend::class, 'showCheckout'])->name('checkout.show');
 Route::post('/cart/keranjang/checkout', [CheckoutFrontend::class, 'processCheckout'])->name('checkout.process');

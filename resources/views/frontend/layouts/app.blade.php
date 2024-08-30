@@ -32,17 +32,22 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="/cart/keranjang"><i class="fa fa-shopping-cart" style="color: #3E2723;"></i></a>
+                <a href="/cart/keranjang">
+                    <i class="fa fa-shopping-cart" style="color: #3E2723;"></i>
+                    @if(Auth::guard('customer')->check())
+                        <span class="badge badge-danger">{{ $totalQuantity }}</span>
+                    @endif
+                </a>
                 @if(Auth::guard('customer')->check())
-                <a href="/customer/profile"><i class="fa fa-user" style="color: #3E2723;"></i></a>
-                <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
-                    @csrf
-                    <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
-                        <i class="fa fa-sign-out-alt"></i>
-                    </button>
-                </form>
+                    <<a href="{{ route('customer.profile') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                    <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
+                            <i class="fa fa-sign-out-alt"></i>
+                        </button>
+                    </form>
                 @else
-                <a href="/customer/login"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                    <a href="/customer/login"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                 @endif
             </div>
         </div>
@@ -80,12 +85,12 @@
                     <div class="header__nav__option">
                         <a href="/cart/keranjang">
                             <i class="fa fa-shopping-cart" style="color: #3E2723;"></i>
-                            @if(session()->has('cart'))
-                                <span class="badge badge-danger">{{ count(session('cart')) }}</span>
+                            @if(Auth::guard('customer')->check())
+                                <span class="badge badge-danger">{{ $totalQuantity }}</span>
                             @endif
                         </a>
                         @if(Auth::guard('customer')->check())
-                            <a href="/customer/profile"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                        <a href="{{ route('customer.profile') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                             <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
                                 @csrf
                                 <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
@@ -96,7 +101,7 @@
                             <a href="/customer/login"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                         @endif
                     </div>
-                </div>
+                </div>                                                                                          
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>
         </div>
