@@ -39,7 +39,7 @@
                     @endif
                 </a>
                 @if(Auth::guard('customer')->check())
-                    <<a href="{{ route('customer.profile') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                    <a href="{{ route('customer.profile') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                     <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
                         @csrf
                         <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
@@ -70,12 +70,11 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
+                            <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Beranda</a></li>
                             <li class="{{ request()->is('page/produk') ? 'active' : '' }}"><a href="/page/produk">Produk</a></li>
-                            <li><a href="#">About</a>
+                            <li class="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/tentang">Tentang Kami</a>
                                 <ul class="dropdown">
-                                    <li class="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/tentang">Tentang Kami</a></li>
-                                    <li><a href="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/blog">Blog Artikel</a></li>
+                                    <li class="{{ request()->is('page/blog') ? 'active' : '' }}"><a href="/page/blog">Blog Artikel</a></li>
                                 </ul>
                             <li class="{{ request()->is('page/mitra') ? 'active' : '' }}"><a href="/page/mitra">Info Kemitraan</a></li>
                         </ul>
@@ -145,8 +144,8 @@
                     <div class="footer__widget">
                         <h6>Informasi</h6>
                         <p style="color: #3E2723;">
-                            <a href="#" style="color: #3E2723;">Promo & Event</a><br>
-                            <a href="#" style="color: #3E2723;">Jadi Mitra</a>
+                            <a href="/page/blog" style="color: #3E2723;">Blog Artikel</a><br>
+                            <a href="/page/mitra" style="color: #3E2723;">Jadi Mitra</a>
                         </p>
                     </div>
                 </div>

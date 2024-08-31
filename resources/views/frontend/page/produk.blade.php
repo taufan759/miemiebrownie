@@ -56,7 +56,7 @@
                     <div class="categories__item" onclick="window.location.href='/Roti Bread'">
                         <div class="categories__item__icon">
                         <img src="{{ asset('frontend/img/icon/roti.png') }}" alt="Roti Bread" style="width: 4rem; height: auto;">
-                            <h5>Roti Bread</h5>
+                            <h5>Roti</h5>
                         </div>
                     </div>
 
@@ -139,7 +139,7 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" 
-                                 data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
+                            data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $product->nama_produk }}</h6>    

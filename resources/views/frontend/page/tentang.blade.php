@@ -37,7 +37,7 @@
                             <p style="font-size: 20px; line-height: 1.6; margin-top: 20px;">“Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, veniam!”</p>
                             <div class="testimonial__author" style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
                                 <div class="testimonial__author__pic" style="flex-shrink: 0;">
-                                    <img src="{{ asset('frontend/img/about/RamaSahidp.jpeg') }}" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
+                                    <img src="{{ asset('frontend/img/about/RamaSahid.jpeg') }}" alt="Testimonial Author" style="width: 100px; height: 100px; border-radius: 50%;">
                                 </div>
                                 <div class="testimonial__author__text" style="margin-left: 15px; text-align: left;">
                                     <h5 style="font-size: 24px; font-weight: bold; margin: 0;">Rama Sahid</h5>

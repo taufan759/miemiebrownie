@@ -94,7 +94,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p1.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>KayaKue Cake</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -105,7 +105,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p2.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>KayaKue Cake</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -116,7 +116,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p3.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>KayaKue Cake</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -127,7 +127,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p4.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>Dessert Box</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -138,7 +138,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p5.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>Dessert Box</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -149,7 +149,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p6.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>Dessert Box</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -160,7 +160,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p7.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>Dessert Box</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
@@ -171,7 +171,7 @@
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p8.jpg')}}">
                             </div>
                             <div class="product__item__text">
-                                <h6>Produk</h6>
+                                <h6>Dessert Box</h6>
                                 <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 <h5>Rp 50.000</h5>
                             </div>
