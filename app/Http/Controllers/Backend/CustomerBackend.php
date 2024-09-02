@@ -38,19 +38,20 @@ class CustomerBackend extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required',
-            'email' => 'required|email|unique:customer',
-            'hp' => 'required|min:10|max:13',
-            'password' => 'required|min:8', // Password diperlukan jika membuat customer baru dari admin
+            'nama' => 'nullable|string|max:255',
+            'email' => 'required|email|unique:customer,email',
+            'hp' => 'nullable|string|min:10|max:13',
+            'alamat' => 'nullable|string|max:255',
+            'jenis_kelamin' => 'nullable|string|in:Pria,Wanita',
+            'sosmed' => 'nullable|string|max:255',
+            'password' => 'required|string|min:8', // Password diperlukan jika membuat customer baru dari admin
         ]);
 
         // Encrypt password if provided
-        if ($request->filled('password')) {
-            $validatedData['password'] = bcrypt($validatedData['password']);
-        }
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         Customer::create($validatedData);
-        return redirect('backend/customer')->with('success', 'Data berhasil tersimpan');
+        return redirect()->route('backend.customer.index')->with('success', 'Data berhasil tersimpan');
     }
 
     /**
@@ -83,28 +84,32 @@ class CustomerBackend extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        $customer = Customer::findOrFail($id);
-        $rules = [
-            'nama' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'hp' => 'required|min:10|max:13',
-            'password' => 'nullable|min:8', // Password opsional saat update
-        ];
+{
+    $customer = Customer::findOrFail($id);
+    $rules = [
+        'nama' => 'nullable|string|max:255',
+        'email' => 'required|email|max:255|unique:customer,email,' . $id,
+        'hp' => 'nullable|string|min:10|max:13',
+        'alamat' => 'nullable|string|max:255',
+        'jenis_kelamin' => 'nullable|string|in:Pria,Wanita',
+        'sosmed' => 'nullable|string|max:255',
+        'password' => 'nullable|string|min:8',
+    ];
 
-        $validatedData = $request->validate($rules);
+    $validatedData = $request->validate($rules);
 
-        // Encrypt password if provided
-        if ($request->filled('password')) {
-            $validatedData['password'] = bcrypt($validatedData['password']);
-        } else {
-            // Remove password key if not provided
-            unset($validatedData['password']);
-        }
-
-        $customer->update($validatedData);
-        return redirect('backend/customer')->with('success', 'Data berhasil diperbaharui');
+    if ($request->filled('password')) {
+        $validatedData['password'] = bcrypt($validatedData['password']);
+    } else {
+        unset($validatedData['password']);
     }
+
+    $customer->update($validatedData);
+    return redirect()->route('customer.index')->with('success', 'Data berhasil diperbaharui');
+}
+
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -113,6 +118,7 @@ class CustomerBackend extends Controller
     {
         $customer = Customer::findOrFail($id);
         $customer->delete();
-        return redirect('backend/customer')->with('warning', 'Data berhasil dihapus');
+        return redirect()->route('backend.customer.index')->with('warning', 'Data berhasil dihapus');
     }
 }
+

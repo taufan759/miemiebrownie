@@ -188,40 +188,24 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h2>Blog Artikel</h2>
-                            <p>Lihat Blog Artikel lainnya <a href="page/blog" style="color: #FF4DA3">di sini</a></p>
+                            <h2>Artikel Terbaru</h2>
+                            <p>Lihat Blog Artikel lainnya <a href="{{ url('page/blog') }}" style="color: #FF4DA3">di sini</a></p>
                         </div>
                     </div>
+                    
+                    @foreach($berita as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="blog__item">
-                            <div class="blog__item__pic set-bg" data-setbg="{{ asset('frontend/img/blog/blog1.png')}}"></div>
+                            <div class="blog__item__pic set-bg" data-setbg="{{ asset('storage/img-berita/thumb_md_'.$item->img_berita) }}"></div>
                             <div class="blog__item__text">
-                                <span><img src="{{ asset('img/icon/calendar.png')}}" alt=""> 16 February 2020</span>
-                                <h5>Lorem ipsum dolor sit amet.</h5>
-                                <a href="/page/blog/details">Lihat Detail</a>
+                                <span><img src="{{ asset('img/icon/calendar.png') }}" alt=""> {{ \Carbon\Carbon::parse($item->tanggal)->format('d F Y') }}</span>
+                                <h5>{{ $item->judul }}</h5>
+                                <a href="{{ route('blogdetails', $item->id) }}">Lihat Detail</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic set-bg" data-setbg="{{ asset('frontend/img/blog/blog2.jpg')}}"></div>
-                            <div class="blog__item__text">
-                                <span><img src="{{ asset('img/icon/calendar.png')}}" alt=""> 21 February 2020</span>
-                                <h5>Lorem ipsum dolor sit amet.</h5>
-                                <a href="/page/blog/details">Lihat Detail</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="blog__item">
-                            <div class="blog__item__pic set-bg" data-setbg="{{ asset('frontend/img/blog/blog3.jpg')}}"></div>
-                            <div class="blog__item__text">
-                                <span><img src="{{ asset('img/icon/calendar.png')}}" alt=""> 28 February 2020</span>
-                                <h5>Lorem ipsum dolor sit amet.</h5>
-                                <a href="/page/blog/details">Lihat Detail</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+        
                 </div>
             </div>
         </section>

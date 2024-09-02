@@ -53,10 +53,10 @@ public function store(Request $request)
         'judul' => 'required|max:255|unique:berita',
         'tanggal' => 'required',
         'detail' => 'required',
-        'img_berita' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024'
+        'img_berita' => 'image|mimes:jpeg,jpg,png,gif|file|max:3024'
     ], [
         'img_berita.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
-        'img_berita.max' => 'Ukuran file gambar Maksimal adalah 1024 KB.'
+        'img_berita.max' => 'Ukuran file gambar Maksimal adalah 3024 KB.'
     ]);
 
     $validatedData['slug'] = Str::slug($validatedData['judul']);
@@ -125,11 +125,11 @@ public function store(Request $request)
         'status' => 'required',
         'tanggal' => 'required',
         'detail' => 'required',
-        'img_berita' => 'image|mimes:jpeg,jpg,png,gif|file|max:1024'
+        'img_berita' => 'image|mimes:jpeg,jpg,png,gif|file|max:3024'
     ];
     $messages = [
         'img_berita.image' => 'Format gambar gunakan file dengan ekstensi jpeg, jpg, png, atau gif.',
-        'img_berita.max' => 'Ukuran file gambar Maksimal adalah 1024 KB.'
+        'img_berita.max' => 'Ukuran file gambar Maksimal adalah 3024 KB.'
     ];
 
     if ($request->judul != $berita->judul) {

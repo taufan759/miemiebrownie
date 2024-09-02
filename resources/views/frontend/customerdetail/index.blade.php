@@ -1,51 +1,58 @@
 @extends('frontend.layouts.app')
-@section('title', 'User Detail')
+
+@section('title', 'Customer Profile')
+
 @section('content')
 <link rel="stylesheet" href="{{ asset('frontend/css/style-customerdetail.css') }}">
 
-<!-- User Detail Section Begin -->
-<section class="user-detail spad">
+<!-- Profile Detail Section Begin -->
+<section class="profile-detail spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-5 d-flex align-items-center justify-content-center">
-                <div class="user-detail__pic" style="width: 200px; height: 200px; overflow: hidden;">
-                    <img src="{{ asset('frontend/img/about/team-2.jpg') }}" alt="User Avatar" class="img-fluid rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Detail Profile</h2>
+                    <p>Detail Profile kamu tersedia di sini</p>
                 </div>
-            </div>
-            <div class="col-lg-8 col-md-7">
-                <div class="user-detail__text">
-                    <h3 class="user-name">{{ $customer->nama ?? 'Nama belum diisi' }}</h3>
-                    <form class="space-y-4">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" value="{{ $customer->email }}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="hp">No. HP</label>
-                            <input type="text" id="hp" class="form-control" value="{{ $customer->hp ?? 'No. HP belum diisi' }}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" id="alamat" class="form-control" value="{{ $customer->alamat ?? 'Alamat belum diisi' }}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <input type="text" id="jenis_kelamin" class="form-control" value="{{ $customer->jenis_kelamin ?? 'Jenis kelamin belum diisi' }}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="sosmed">Akun Sosmed</label>
-                            <input type="text" id="sosmed" class="form-control" value="{{ $customer->sosmed ?? 'Akun sosmed belum diisi' }}" disabled>
-                        </div>
-                        <div class="form-group">
-                            <a href="{{ route('customer.editProfile') }}" class="btn btn-primary">Edit Profile</a>
-                        </div>
-                    </form>
+                    <table class="table">
+                        <tr>
+                            <th>Nama:</th>
+                            <td>{{ $customer->nama }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ $customer->email }}</td>
+                        </tr>
+                        <tr>
+                            <th>No. HP:</th>
+                            <td>{{ $customer->hp }}</td>
+                        </tr>
+                        <tr>
+                            <th>Alamat:</th>
+                            <td>{{ $customer->alamat }}</td>
+                        </tr>
+                        <tr>
+                            <th>Jenis Kelamin:</th>
+                            <td>{{ $customer->jenis_kelamin }}</td>
+                        </tr>
+                        <tr>
+                            <th>Akun Sosmed:</th>
+                            <td>{{ $customer->sosmed }}</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <td></td>
+                            </th>
+                        </tr>
+                    </table>
+                    <a href="{{ route('customer.profile.edit') }}" class="btn btn-primary">Edit Profile</a>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- User Detail Section End -->
+<!-- Profile Detail Section End -->
 
 <section class="user-orders spad">
     <div class="container">

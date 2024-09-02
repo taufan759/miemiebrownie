@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\KeranjangFrontend;
 use App\Http\Controllers\Frontend\CheckoutFrontend;
 use App\Http\Controllers\Frontend\PageFrontend;
 use App\Http\Controllers\Frontend\CustomerFrontend;
+use App\Http\Controllers\Frontend\HomeFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,9 +59,7 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
 
 // Rute untuk Frontend
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-});
+Route::get('/', [HomeFrontend::class, 'index']);
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/page/produk', [PageFrontend::class, 'produk']);
 // Route::get('/page/produk/{id}', [PageFrontend::class, 'detail']);
@@ -69,13 +68,13 @@ Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
 
 // Halaman profil customer
-Route::get('/customer/profile', [CustomerAuth::class, 'showProfile'])->name('customer.profile');
+Route::get('/customer/profile', [CustomerFrontend::class, 'customerdetail'])->name('customer.profile');
 
-// Halaman edit profil customer
-Route::get('/customer/profile/edit', [CustomerAuth::class, 'editProfile'])->name('customer.editProfile');
+// Route untuk menampilkan form edit profil customer
+Route::get('/customer/profile/edit', [CustomerFrontend::class, 'editProfile'])->name('customer.profile.edit');
 
-// Mengupdate profil customer
-Route::post('/customer/profile', [CustomerAuth::class, 'updateProfile'])->name('customer.updateProfile');
+// Route untuk memperbarui profil customer
+Route::post('/customer/profile', [CustomerFrontend::class, 'updateProfile'])->name('customer.updateProfile');
 
 Route::get('/page/blog', [PageFrontend::class, 'blog']);
 Route::get('/blog/details/{id}', [PageFrontend::class, 'blogdetails'])->name('blogdetails'); 

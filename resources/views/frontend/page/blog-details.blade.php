@@ -31,7 +31,7 @@
                 <div class="col-lg-8">
                     <div class="blog__details__content">
                         <div class="blog__details__text">
-                            <p style="text-align: justify">{{ $berita->detail }}</p>
+                            <p style="text-align: justify">{{ strip_tags($berita->detail) }}</p>
                         </div>
                         <div class="blog__details__quote">
                             <i class="fa fa-quote-left"></i>
