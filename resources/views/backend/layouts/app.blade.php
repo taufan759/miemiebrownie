@@ -124,76 +124,93 @@
     <script src="{{ asset('backend/js/popper.js') }}"></script>
     <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('backend/js/main.js') }}"></script>
-
-    <script src="{{ asset('sweetalert/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
-
-
-    <!-- SweetAlert JS -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- CKEditor JS -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-    <!-- Include other necessary JS files here -->
-
-
-
-    <!-- Your custom scripts -->
     <script>
         // DataTables Initialization
         $('#zero_config').DataTable();
+    </script>
 
-        // SweetAlert for Delete Confirmation
-        $('.show_confirm').click(function(event) {
-            var form = $(this).closest("form");
-            var konfdelete = $(this).data("konf-delete");
-            event.preventDefault();
-            Swal.fire({
-                title: 'Konfirmasi Hapus Data?',
-                html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapat dikembalikan!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, dihapus',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire('Terhapus!', 'Data berhasil dihapus.', 'success')
-                        .then(() => {
-                            form.submit();
-                        });
-                }
-            });
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script> -->
+<script>
+    ClassicEditor
+        .create(document.querySelector('#ckeditor'))
+        .catch(error => {
+            console.error(error);
         });
+</script>
 
-        // SweetAlert for Logout Confirmation
-        $('.btn-logout').click(function(event) {
-            var form = $(this).closest("form");
-            event.preventDefault();
-            Swal.fire({
-                title: 'Apakah Anda ingin Log Out?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, Log Out',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire('Log Out Berhasil!', 'success')
-                        .then(() => {
-                            form.submit();
-                        });
-                }
-            });
+
+<!-- sweetalert -->
+<script src="{{ asset('sweetalert/sweetalert2.all.min.js') }}"></script>
+
+<!-- sweetalert success-->
+@if (session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: "{{ session('success') }}"
+    });
+</script>
+@endif
+
+<script type="text/javascript">
+    //Konfirmasi delete
+    $('.show_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        var konfdelete = $(this).data("konf-delete");
+        event.preventDefault();
+        Swal.fire({
+            title: 'Konfirmasi Hapus Data?',
+            html: "Data yang dihapus <strong>" + konfdelete + "</strong> tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, dihapus',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Terhapus!', 'Data berhasil dihapus.', 'success')
+                    .then(() => {
+                        form.submit();
+                    });
+            }
         });
+    });
+    //Konfirmasi Status Selesai
+    $('.show_confirm_selesai').click(function(event) {
+        var form = $(this).closest("form");
+        var konfselesai = $(this).data("konf-selesai");
+        event.preventDefault();
+        Swal.fire({
+            title: 'Status Selesai',
+            html: "Yakin mengubah kestatus <strong>Selesai</strong> dengan kode <strong>" + konfselesai + "</strong> ",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, selesai',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('selesai!', 'Data berhasil diubah keselesai.', 'success')
+                    .then(() => {
+                        form.submit();
+                    });
+            }
+        });
+    });
+</script>
 
-        // CKEditor Initialization
-        ClassicEditor
-            .create(document.querySelector('#ckeditor'))
-            .catch(error => {
-                console.error(error);
-            });
+<script>
+    //hanya angka
+    function hanyaAngka(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
 
         // Preview Image Functions
         function previewFoto() {

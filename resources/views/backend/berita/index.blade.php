@@ -40,7 +40,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('berita.edit', $item->id) }}" class="btn btn-primary btn-sm">
+                                    <a href="{{ route('berita.edit', $item->id) }}" class="btn btn-success btn-xs waves-effect waves-light">
                                         Edit
                                     </a>
                                     <form action="{{ route('berita.destroy', $item->id) }}" method="post" class="d-inline">
