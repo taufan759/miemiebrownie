@@ -107,8 +107,12 @@ ol {
 }
 
 /*---------------------
-  Helper CSS
+Helper CSS
 -----------------------*/
+.badge.badge-danger {
+    background-color: #FF4DA3;
+    color: white; 
+}
 
 .section-title {
 	margin-bottom: 45px;
@@ -582,10 +586,10 @@ h1 {
 
 .hero__items {
 	width: 100%;
-    height: 450px;
-    background-size: cover;
-	padding-top: 130px;
+    height: 665px; 
+    padding-top: 130px;
     padding-bottom: 40px;
+    background-size: cover;
 	position: relative;
 } 
 
@@ -895,7 +899,7 @@ h1 {
 
 .instagram__pic__item {
 	width: 750px;
-	height: 500px;
+	height: 400px;
 	background-position: center center;
 }
 
@@ -1572,7 +1576,7 @@ h1 {
 
 .product__details__pic {
 	text-align: center;
-	background: #f3f2ee;
+	background: white;
 	padding: 40px 0 60px;
 	margin-bottom: 100px;
 }
@@ -3790,9 +3794,10 @@ Breadcrumb
 		max-width: 1170px;
 	}
 	.hero__items {
-        height: 450px; 
-        padding-top: 110px;
-        padding-bottom: 35px;
+		width: 100%;
+        height: 665px; 
+        padding-top: 130px;
+        padding-bottom: 40px;
     }
 	.breadcrumb-blog {
 		height: 450px; 
@@ -3806,9 +3811,9 @@ Breadcrumb
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.hero__items {
 		width: 100%;
-        height: 330px; 
-        padding-top: 90px;
-        padding-bottom: 30px;
+        height: 550px; 
+        padding-top: 130px;
+		padding-bottom: 40px;
     }
 	.breadcrumb-blog {
 		width: 100%;
@@ -3818,7 +3823,7 @@ Breadcrumb
     }
 	.instagram__pic__item {
 		width: 100%;
-		height: 300px;
+		height: 350px;
 		background-position: center center;
 	}
 	.categories__text h2 {
@@ -3843,7 +3848,7 @@ Breadcrumb
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.hero__items {
 		width: 100%;
-		height: 280px;
+		height: 430px;
 		object-fit: cover;
 		padding-top: 70px;
         padding-bottom: 25px;
@@ -3851,7 +3856,7 @@ Breadcrumb
 	}
 	.instagram__pic__item {
 		width: 100%;
-		height: 330px;
+		height: 400px;
 		background-position: center center;
 	}
 	.header__menu ul li {
@@ -4693,7 +4698,7 @@ Breadcrumb
 @media (max-width: 768px) {
 	.hero__items {
 		width: 100%;
-		height: 255px;
+		height: 420px;
 		object-fit: cover;
 		padding-top: 70px;
         padding-bottom: 25px;
@@ -4709,7 +4714,7 @@ Breadcrumb
 	}
 	.instagram__pic__item {
 		width: 100%;
-		height: 330px;
+		height: 400px;
 		background-position: center center;
 	}
     .history-content {
@@ -4729,7 +4734,7 @@ Breadcrumb
 @media (max-width: 576px) {
 	.hero__items {
 		width: 100%;
-        height: 190px; 
+        height: 220px; 
         padding-top: 60px;
         padding-bottom: 20px;
     }
@@ -4741,7 +4746,7 @@ Breadcrumb
     }
 	.instagram__pic__item {
 		width: 100%;
-		height: 190px;
+		height: 205px;
 		background-position: center center;
 	}
     .history-content h4 {
@@ -4757,13 +4762,15 @@ Breadcrumb
 }
 
 @media (max-width: 360px) {
-    .hero__image {
+    .hero__items {
 		width: 100%;
-        height: 100px; 
+        height: 180px; 
+        padding-top: 60px;
+        padding-bottom: 20px;
     }
 	.instagram__pic__item {
 		width: 100%;
-		height: 190px;
+		height: 160px;
 		background-position: center center;
 	}
 }

@@ -85,7 +85,7 @@
                         <a href="/cart/keranjang">
                             <i class="fa fa-shopping-cart" style="color: #3E2723;"></i>
                             @if(Auth::guard('customer')->check())
-                                <span class="badge badge-danger">{{ $totalQuantity }}</span>
+                                <span class="badge badge-danger" style="background-color: #FF4DA3; color: white;">{{ $totalQuantity }}</span>
                             @endif
                         </a>
                         @if(Auth::guard('customer')->check())

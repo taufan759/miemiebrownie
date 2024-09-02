@@ -4,34 +4,13 @@
         <!-- Hero Section Begin -->
         <section class="hero">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero.jpeg')}}">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-7 col-md-8">
-                                <div class="hero__text">
-                                    <h6>Lorem, ipsum.</h6>
-                                    <h2>Lorem ipsum dolor sit amet.</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, alias.</p>
-                                    <a href="/page/produk" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/hero2.png')}}">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-5 col-lg-7 col-md-8">
-                                <div class="hero__text">
-                                    <h6>Lorem, ipsum.</h6>
-                                    <h2>Lorem ipsum dolor sit amet.</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, alias.</p>
-                                    <a href="/page/produk" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/1.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/2.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/3.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/4.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/5.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/6.png')}}"></div>
+                <div class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/7.png')}}"></div>
             </div>
         </section>
         <!-- Hero Section End -->
@@ -188,7 +167,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="instagram__pic">
-                            <div class="instagram__pic__item set-bg" data-setbg="{{ asset('frontend/img/featured-produk.jpeg')}}"></div>
+                            <div class="instagram__pic__item set-bg" data-setbg="{{ asset('frontend/img/info-home.png')}}"></div>
                         </div>
                     </div>
                     <div class="col-lg-4">

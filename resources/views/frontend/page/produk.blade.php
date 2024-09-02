@@ -1,16 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ asset('frontend/css/style-page.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Registration</title>
-</head>
-
 <body>
 <section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.jpeg') }}">
     <div class="overlay">

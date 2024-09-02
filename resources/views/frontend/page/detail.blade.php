@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product__details__breadcrumb">
-                        <a href="/">Home</a>
+                        <a href="/">Beranda</a>
                         <a href="/page/produk">Produk</a>
                         <span>Detail Produk</span>
                     </div>
@@ -17,54 +17,13 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-1.png') }}">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-2.png') }}">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-3.png') }}">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="{{ asset('frontend/img/shop-details/thumb-4.png') }}">
-                                    <i class="fa fa-play"></i>
-                                </div>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-9">
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img src="{{ asset('frontend/img/shop-details/product-big-2.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-2" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{ asset('frontend/img/shop-details/product-big-3.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-3" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{ asset('frontend/img/shop-details/product-big.png') }}" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-4" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{ asset('frontend/img/shop-details/product-big-4.png') }}" alt="">
-                                <a href="#" class="video-popup"><i class="fa fa-play"></i></a>
+                                <img src="{{ asset('frontend/img/banner/bolen.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -77,51 +36,16 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <div class="product__details__text">
-                        <h4>Hooded thermal anorak</h4>
-                        <div class="rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                            <span> - 5 Reviews</span>
-                        </div>
-                        <h3>$270.00 <span>70.00</span></h3>
-                        <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
-                            cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
-                        with placket.</p>
+                        <h4>Bolen Pisang</h4>
+                        <h3>Rp 75.000 <span>79.000</span></h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptatibus quaerat alias aliquid, quidem voluptatem vel non!
+                        </p>
                         <div class="product__details__option">
                             <div class="product__details__option__size">
-                                <span>Size:</span>
-                                <label for="xxl">xxl
-                                    <input type="radio" id="xxl">
-                                </label>
-                                <label class="active" for="xl">xl
-                                    <input type="radio" id="xl">
-                                </label>
-                                <label for="l">l
-                                    <input type="radio" id="l">
-                                </label>
-                                <label for="sm">s
-                                    <input type="radio" id="sm">
-                                </label>
-                            </div>
-                            <div class="product__details__option__color">
-                                <span>Color:</span>
-                                <label class="c-1" for="sp-1">
-                                    <input type="radio" id="sp-1">
-                                </label>
-                                <label class="c-2" for="sp-2">
-                                    <input type="radio" id="sp-2">
-                                </label>
-                                <label class="c-3" for="sp-3">
-                                    <input type="radio" id="sp-3">
-                                </label>
-                                <label class="c-4" for="sp-4">
-                                    <input type="radio" id="sp-4">
-                                </label>
-                                <label class="c-9" for="sp-9">
-                                    <input type="radio" id="sp-9">
+                                <span>Kategori</span>
+                                <label for="bolen">bolen
+                                    <input type="radio" id="bolen">
                                 </label>
                             </div>
                         </div>
@@ -131,16 +55,11 @@
                                     <input type="text" value="1">
                                 </div>
                             </div>
-                            <a href="/cart/keranjang" class="primary-btn">add to cart</a>
+                            <a href="/cart/keranjang" class="primary-btn">+<i class="fa fa-shopping-cart"></i></a>
                         </div>
                         <div class="product__details__last__option">
                             <h5><span>Guaranteed Safe Checkout</span></h5>
                             <img src="{{ asset('frontend/img/shop-details/details-payment.png') }}" alt="">
-                            <ul>
-                                <li><span>SKU:</span> 3812912</li>
-                                <li><span>Categories:</span> Clothes</li>
-                                <li><span>Tag:</span> Clothes, Skin, Body</li>
-                            </ul>
                         </div>
                     </div>
                 </div>

@@ -9,11 +9,11 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Name</th>
-                                <th>Quantity</th>
+                                <th>Foto</th>
+                                <th>Nama</th>
+                                <th>Jumlah</th>
                                 <th>Total</th>
-                                <th>Action</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
