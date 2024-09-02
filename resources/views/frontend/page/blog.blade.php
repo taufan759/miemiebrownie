@@ -2,12 +2,10 @@
 @section('content')
 <body>
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-blog set-bg" data-setbg="{{ asset('frontend/img/breadcrumb-bg3.jpg') }}">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 style="color: #3E2723">Miemie Brownie Blog</h2>
-                </div>
+    <section class="breadcrumb-blog set-bg" data-setbg="{{ asset('frontend/img/info-home.png') }}">
+        <div class="overlay">
+            <div class="content">
+                <h1>Blog Artikel</h1>
             </div>
         </div>
     </section>
