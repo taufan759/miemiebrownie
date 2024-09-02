@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique();
             $table->enum('status', [0, 1])->default(0); // 0 = Blok , 1 = Publik
             $table->timestamp('tanggal');
             $table->string('judul');

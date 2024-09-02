@@ -78,7 +78,7 @@ Route::get('/customer/profile/edit', [CustomerAuth::class, 'editProfile'])->name
 Route::post('/customer/profile', [CustomerAuth::class, 'updateProfile'])->name('customer.updateProfile');
 
 Route::get('/page/blog', [PageFrontend::class, 'blog']);
-Route::get('/page/blog/details', [PageFrontend::class, 'blogdetails']);
+Route::get('/blog/details/{id}', [PageFrontend::class, 'blogdetails'])->name('blogdetails'); 
 Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 Route::post('/cart/add', [KeranjangFrontend::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart']);

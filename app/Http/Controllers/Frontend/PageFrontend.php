@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Kategori;
 use App\Models\Backend\Produk;
+use App\Models\Backend\Berita;
 
 class PageFrontend extends Controller
 {
@@ -45,13 +46,17 @@ class PageFrontend extends Controller
         return view('frontend.page.mitra');
     }
 
+
     public function blog()
     {
-        return view('frontend.page.blog');
+        $berita = Berita::orderBy('created_at', 'desc')->get();
+        return view('frontend.page.blog', compact('berita'));
     }
 
-    public function blogdetails()
+    public function blogdetails($id)
     {
-        return view('frontend.page.blog-details');
+        $berita = Berita::find($id);
+        return view('frontend.page.blog-details', compact('berita'));
     }
+
 }
