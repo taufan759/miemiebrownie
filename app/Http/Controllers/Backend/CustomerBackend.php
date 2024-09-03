@@ -51,7 +51,7 @@ class CustomerBackend extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         Customer::create($validatedData);
-        return redirect()->route('backend.customer.index')->with('success', 'Data berhasil tersimpan');
+        return redirect()->route('customer.index')->with('success', 'Data berhasil tersimpan');
     }
 
     /**
@@ -118,7 +118,7 @@ class CustomerBackend extends Controller
     {
         $customer = Customer::findOrFail($id);
         $customer->delete();
-        return redirect()->route('backend.customer.index')->with('warning', 'Data berhasil dihapus');
+        return redirect()->route('customer.index')->with('warning', 'Data berhasil dihapus');
     }
 }
 

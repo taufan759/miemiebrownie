@@ -8,16 +8,22 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="history-content">
-                                <h4>Miemie Brownie</h4>
-                                <p class="subtitle">Mimpi Manis yang Menjadi Kenyataan</p>
+                                <h4>PT Nibras Berkah Mulia</h4>
+                                <p class="subtitle">Miemie Brownie</p>
                                 <p>
-                                    Di sebuah sudut Kota Semarang yang penuh kenangan, pada bulan November 2016, sebuah perjalanan baru dimulai. Tidak seperti kebanyakan cerita sukses lainnya, kisah Miemie Brownie berawal dari mimpi sederhana sepasang suami istri yang penuh semangat dan cita-cita besar. Mereka adalah pasangan yang selalu melangkah bersama, baik dalam kehidupan pribadi maupun karier profesional.
+                                    PT Nibras Berkah Mulia adalah sebuah perusahaan dinamis yang bergerak di sektor F&B, dengan fokus pada produk bakery, coffee shop, dan snack. Perusahaan ini menghadirkan beberapa brand unggulan seperti <strong>Miemie Brownie, Miemie Coffee, dan Brownie To Go.</strong>
                                 </p>
                                 <p>
-                                    Awalnya, mereka bekerja di perusahaan nasional yang memberikan mereka karier cemerlang dan posisi yang mapan. Namun, di balik kesuksesan tersebut, tersimpan mimpi yang sudah lama mereka rajut: membangun sebuah toko roti yang menyatu dengan coffee shop, tempat di mana aroma kopi segar dan roti hangat berpadu, menciptakan kenangan manis bagi setiap pelanggan yang datang. Pada akhir 2017, dengan penuh keberanian, mereka memutuskan untuk meninggalkan zona nyaman mereka. Mereka resign dari pekerjaan, meninggalkan dunia profesional yang sudah mereka kenal, dan memulai perjalanan sebagai pengusaha. Langkah ini bukanlah hal yang mudah, tetapi tekad mereka tidak pernah goyah. Mereka ingin menghadirkan sesuatu yang istimewa bagi kota yang mereka cintai.
+                                    Didirikan pada bulan November 2016 di Semarang, Jawa Tengah, awalnya beroperasi sebagai toko online selama setahun. Berkat kerja keras dan visi dari pasangan suami istri yang penuh energi, aktif, dan inovatif, Kemudian berhasil membuka <strong>outlet pertama di Kota Tegal</strong> pada akhir tahun 2017.
                                 </p>
                                 <p>
-                                    Miemie Brownie pun lahir, dimulai sebagai online store di Kota Semarang. Respons yang positif dari pelanggan membuat mereka yakin untuk membuka outlet fisik pertama di Kota Tegal. Toko ini bukan hanya sekedar tempat berjualan, tetapi juga wujud dari cinta mereka terhadap seni membuat roti. Mereka ingin setiap gigitan dari produk mereka membawa kebahagiaan dan kehangatan bagi siapa saja yang menikmatinya. Nama "Miemie" diambil dari panggilan sayang anak-anak mereka kepada sang ibu, yang juga merupakan salah satu pendiri. Setiap produk yang dihasilkan oleh Miemie Brownie bukan hanya tentang rasa, tetapi juga tentang cerita—tentang cinta, pengorbanan, dan impian yang menjadi nyata. Mereka percaya bahwa setiap orang berhak merasakan momen manis dalam hidup mereka, dan Miemie Brownie hadir untuk mewujudkan momen tersebut.
+                                    Pasangan pendiri ini sebelumnya memiliki karir yang cemerlang di perusahaan skala nasional, namun mereka memutuskan untuk meninggalkan dunia profesional dan beralih menjadi pengusaha. Salah satu alasan utama mereka mendirikan Miemie Brownie adalah untuk mewujudkan impian masa muda mereka: memiliki sebuah <strong>bakery shop</strong> yang berpadu dengan <strong>coffee shop</strong>, dan menawarkan oleh-oleh eksklusif di kota yang mereka cintai. Selain itu, mereka juga berkomitmen untuk memberikan dampak positif bagi masyarakat sekitar.
+                                </p>
+                                <p>
+                                    Nama <strong>"Miemie"</strong> sendiri diambil dari panggilan sayang anak-anak kepada sang ibu, yang juga merupakan salah satu pendiri, sehingga memberikan sentuhan personal dan kehangatan pada brand ini.
+                                </p>
+                                <p>
+                                    Dengan dedikasi dan cinta pada setiap produk yang dihasilkan, terus tumbuh dan berinovasi, menghadirkan pengalaman kuliner yang unik dan berkualitas tinggi bagi para pelanggannya.
                                 </p>
                             </div>
                         </div>
@@ -41,7 +47,7 @@
                                 </div>
                                 <div class="testimonial__author__text" style="margin-left: 15px; text-align: left;">
                                     <h5 style="font-size: 24px; font-weight: bold; margin: 0;">Rama Sahid</h5>
-                                    <p style="font-size: 16px; color: #666; margin: 0;">Owner Miemie Brownie</p>
+                                    <p style="font-size: 16px; color: #666; margin: 0;">CEO PT Nibras Berkah Mulia </p>
                                 </div>
                             </div>
                         </div>
@@ -91,8 +97,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <span>Tim Kami</span>
-                            <h2>Temui Tim Kami</h2>
+                            <h2>Tim Kami</h2>
                         </div>
                     </div>
                 </div>
@@ -137,30 +142,29 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <span>Partner Kami</span>
-                            <h2>Mitra Terpercaya Kami</h2>
+                            <h2>Partner Kami</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <!-- Client logos -->
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner1.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner2.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner1.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner2.png' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner1.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/client-9.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner2.png' )}}" alt="Partner"></a>
                     </div>
                 </div>
             </div>
