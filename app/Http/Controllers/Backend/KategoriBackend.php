@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Backend\Kategori;
+use Intervention\Image\Facades\Image;
 
 class KategoriBackend extends Controller
 {
@@ -36,50 +37,75 @@ class KategoriBackend extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        // ddd($request);
-        $validatedData = $request->validate([
-            'nama_kategori' => 'required',
-        ]);
-        Kategori::create($validatedData);
-        return redirect('backend/kategori')->with('success', 'Data berhasil tersimpan');
+{
+    $validatedData = $request->validate([
+        'nama_kategori' => 'required|max:255',
+        'foto' => 'image|mimes:jpeg,jpg,png,gif|file|max:8024',
+    ], [
+        'foto.image' => 'Format gambar harus berupa file dengan ekstensi jpeg, jpg, png, atau gif.',
+        'foto.max' => 'Ukuran file gambar maksimal adalah 8024 KB.'
+    ]);
+
+    if ($request->file('foto')) {
+        $file = $request->file('foto');
+        $extension = $file->getClientOriginalExtension();
+        $fileName = date('YmdHis') . '_' . uniqid() . '.' . $extension;
+        $destinationPath = public_path('storage/img-kategori/');
+        $image = Image::make($file);
+        $image->fit(400, 400, function ($constraint) {
+            $constraint->upsize();
+        });
+        $image->save($destinationPath . $fileName);
+        $validatedData['foto'] = $fileName;
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    Kategori::create($validatedData);
+    return redirect('backend/kategori')->with('success', 'Data berhasil tersimpan');
+}
+
+public function update(Request $request, string $id)
+{
+    $kategori = Kategori::findOrFail($id);
+    $validatedData = $request->validate([
+        'nama_kategori' => 'required|max:255',
+        'foto' => 'image|mimes:jpeg,jpg,png,gif|file|max:8024',
+    ], [
+        'foto.image' => 'Format gambar harus berupa file dengan ekstensi jpeg, jpg, png, atau gif.',
+        'foto.max' => 'Ukuran file gambar maksimal adalah 8024 KB.'
+    ]);
+
+    if ($request->file('foto')) {
+        if ($kategori->foto) {
+            $oldImagePath = public_path('storage/img-kategori/') . $kategori->foto;
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+        }
+        $file = $request->file('foto');
+        $extension = $file->getClientOriginalExtension();
+        $fileName = date('YmdHis') . '_' . uniqid() . '.' . $extension;
+        $destinationPath = public_path('storage/img-kategori/');
+        $image = Image::make($file);
+        $image->fit(400, 400, function ($constraint) {
+            $constraint->upsize();
+        });
+        $image->save($destinationPath . $fileName);
+        $validatedData['foto'] = $fileName;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        $kategori = Kategori::findOrFail($id);
-        return view('backend.kategori.edit', [
-            'judul' => 'Kategori',
-            'sub' => 'Ubah Kategori',
-            'edit' => $kategori
-        ]);
-    }
+    $kategori->update($validatedData);
+    return redirect('backend/kategori')->with('success', 'Data berhasil diperbarui');
+}
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        $kategori = Kategori::findOrFail($id);
-        $rules = [
-            'nama_kategori' => 'required|max:255',
-        ];
-
-        $validatedData = $request->validate($rules);
-        Kategori::where('id', $id)->update($validatedData);
-        return redirect('backend/kategori')->with('success', 'Data berhasil diperbaharui');
-    }
+public function edit(string $id)
+{
+    $kategori = Kategori::findOrFail($id);
+    return view('backend.kategori.edit', [
+        'judul' => 'Kategori',
+        'sub' => 'Edit Kategori',
+        'edit' => $kategori
+    ]);
+}
 
     /**
      * Remove the specified resource from storage.

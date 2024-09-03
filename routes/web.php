@@ -62,6 +62,8 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
 Route::get('/', [HomeFrontend::class, 'index']);
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/page/produk', [PageFrontend::class, 'produk']);
+Route::get('/produk/{kategori?}', [PageFrontend::class, 'produk'])->name('produk');
+
 // Route::get('/page/produk/{id}', [PageFrontend::class, 'detail']);
 Route::get('/page/detail', [PageFrontend::class, 'detail']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);

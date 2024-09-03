@@ -19,15 +19,41 @@ class PageFrontend extends Controller
         return view('frontend.page.tentang');
     }
 
-    public function produk()
-    {
-        $kategori = Kategori::orderBy('id', 'desc')->get();
-        $products = Produk::orderBy('id', 'desc')->get();
-        return view('frontend.page.produk', [
-            'kategori' => $kategori,
-            'products' => $products
-        ]);
+    public function produk($kategori = null)
+{
+    // Ambil semua kategori
+    $kategoriList = Kategori::all();
+    
+    // Jika kategori dipilih, filter produk berdasarkan kategori
+    if ($kategori) {
+        $kategoriId = Kategori::where('nama_kategori', $kategori)->pluck('id')->first();
+        $products = Produk::where('kategori_id', $kategoriId)->get();
+    } else {
+        // Jika tidak ada kategori yang dipilih, ambil semua produk
+        $products = Produk::all();
     }
+
+    return view('frontend.page.produk', [
+        'products' => $products,
+        'kategori' => $kategoriList, // Mengirim semua kategori ke view
+    ]);
+}
+
+public function produkByKategori($nama_kategori)
+{
+    // Ambil kategori berdasarkan nama
+    $kategori = Kategori::where('nama_kategori', $nama_kategori)->firstOrFail();
+    
+    // Ambil semua produk yang termasuk dalam kategori ini
+    $products = Produk::where('kategori_id', $kategori->id)->get();
+
+    // Kirim data kategori dan produk ke view
+    return view('frontend.produk', [
+        'products' => $products,
+        'kategori' => $kategori,  // Ini adalah instance dari model Kategori
+    ]);
+}
+
     
 
     // public function detai($id)

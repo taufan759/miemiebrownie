@@ -7,6 +7,18 @@
         <div class="card-body">
                     <form action="{{ route('kategori.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <div class="col-md-4">
+                            {{-- div left --}}
+                            <div class="form-group">
+                                <label>Foto</label>
+                                <img class="foto-preview">
+                                <input type="file" name="foto"
+                                    class="form-control @error('foto') is-invalid @enderror" onchange="previewFoto()">
+                                @error('foto')
+                                    <div class="invalid-feedback alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="text" name="nama_kategori" value="{{ old('nama_kategori') }}"

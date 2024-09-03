@@ -8,6 +8,28 @@
                     <form action="{{ route('kategori.update', $edit->id) }}" method="post" enctype="multipart/form-data">
                         @method('put')
                         @csrf
+                        <div class="col-md-4">
+                            {{-- div left --}}
+                            <div class="form-group">
+                                <label>Foto</label>
+                                {{-- view image --}}
+                                @if ($edit->foto)
+                                    <img src="{{ asset('storage/img-kategori/' . $edit->foto) }}" class="foto-preview"
+                                        width="100%">
+                                    <p></p>
+                                @else
+                                    <img src="{{ asset('storage/img-kategori/img-default.jpg') }}" class="foto-preview"
+                                        width="100%">
+                                    <p></p>
+                                @endif
+                                {{-- file foto --}}
+                                <input type="file" name="foto"
+                                    class="form-control @error('foto') is-invalid @enderror" onchange="previewFoto()">
+                                @error('foto')
+                                    <div class="invalid-feedback alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="text" name="nama_kategori"

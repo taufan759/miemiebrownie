@@ -8,92 +8,40 @@
         </div>
     </div>
 </section>
+
+<!-- Categories Slider di luar gambar -->
 <!-- Categories Slider di luar gambar -->
 <section class="categories">
     <div class="container">
         <div class="row">
             <div class="categories__slider-container" style="position: relative; overflow: hidden;">
                 <div class="categories__slider" style="display: flex; transition: transform 0.3s ease;">
-                <div class="categories__item" onclick="window.location.href='/brownies'">
+                    @foreach($kategori as $kat)
+                    <div class="categories__item" onclick="window.location.href='{{ route('produk', ['kategori' => $kat->nama_kategori]) }}'">
                         <div class="categories__item__icon">
-                            <img src="{{ asset('frontend/img/icon/brownis.png') }}" alt="Brownies" style="width: 4rem; height: auto;">
-                            <h5>Brownies</h5>
+                            @if($kat->foto)
+                                <img src="{{ asset('storage/img-kategori/' . $kat->foto) }}" alt="{{ $kat->nama_kategori }}" style="width: 4rem; height: auto;">
+                            @else
+                                <img src="{{ asset('frontend/img/icon/default-icon.png') }}" alt="{{ $kat->nama_kategori }}" style="width: 4rem; height: auto;">
+                            @endif
+                            <h5>{{ $kat->nama_kategori }}</h5>
                         </div>
                     </div>
-
-                    <div class="categories__item" onclick="window.location.href='/Bolen'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/bolen1.png') }}" alt="Bolen" style="width: 4rem; height: auto;">
-                            <h5>Bolen</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/Kaya Kue Cake'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/cake2.png') }}" alt="Kaya Kue Cake" style="width: 4rem; height: auto;">
-                            <h5>Kaya Kue Cake</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/cookies-snack'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/dessert.png') }}" alt="Dessert" style="width: 4rem; height: auto;">
-                            <h5>Dessert</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/Roti Bread'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/roti.png') }}" alt="Roti Bread" style="width: 4rem; height: auto;">
-                            <h5>Roti</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/hampers'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/hampers.png') }}" alt="hampers" style="width: 4rem; height: auto;">
-                            <h5>Hampers</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/cake-tart'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/cookies.png') }}" alt="Brownies" style="width: 4rem; height: auto;">
-                            <h5>Cookies</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/meals'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/momen.png') }}" alt="Special moment" style="width: 4rem; height: auto;">
-                            <h5>Special Moment</h5>
-                        </div>
-                    </div>
-
-                    <div class="categories__item" onclick="window.location.href='/meals'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/cake.png') }}" alt="Brownies" style="width: 4rem; height: auto;">
-                            <h5>Gift and Sofenir</h5>
-                        </div>
-                    </div>
-                    <div class="categories__item" onclick="window.location.href='/meals'">
-                        <div class="categories__item__icon">
-                        <img src="{{ asset('frontend/img/icon/hantaran.png') }}" alt="Hantaran" style="width: 4rem; height: auto;">
-                            <h5>Hantaran</h5>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        <div class="owl-prev wd-btn-arrow">
-            <span class="fas fa-chevron-left fa-2x" style="color: #472323;"></span>
-        </div>
 
-        <div class="owl-next wd-btn-arrow">
-            <span class="fas fa-chevron-right fa-2x" style="color: #472323;"></span>
+            <div class="owl-prev wd-btn-arrow">
+                <span class="fas fa-chevron-left fa-2x" style="color: #472323;"></span>
+            </div>
+
+            <div class="owl-next wd-btn-arrow">
+                <span class="fas fa-chevron-right fa-2x" style="color: #472323;"></span>
+            </div>
         </div>
     </div>
-
 </section>
+
 <script>
   // Dapatkan referensi ke elemen slider dan tombol navigasi
   const slider = document.querySelector('.categories__slider');
@@ -119,6 +67,7 @@
   });
 </script>
 
+<!-- Products Section -->
 <section class="shop spad">
     <div class="container">
         <div class="row">
@@ -137,10 +86,10 @@
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
                                 </form>
-                                    <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
-                                </div>
+                                <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
                             </div>
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>

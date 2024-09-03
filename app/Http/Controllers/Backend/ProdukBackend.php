@@ -46,10 +46,10 @@ class ProdukBackend extends Controller
             'kategori_id' => 'required',
             'deskripsi' => 'required',
             'harga' => 'required',
-            'img_produk_depan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
-            'img_produk_belakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
-            'img_produk_kanan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
-            'img_produk_kiri' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:3024',
+            'img_produk_depan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:8024',
+            'img_produk_belakang' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:8024',
+            'img_produk_kanan' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:8024',
+            'img_produk_kiri' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:8024',
         ]);
 
         $imageFields = ['img_produk_depan', 'img_produk_belakang', 'img_produk_kanan', 'img_produk_kiri'];
@@ -101,10 +101,10 @@ class ProdukBackend extends Controller
             'kategori_id' => 'required',
             'deskripsi' => 'required',
             'harga' => 'required',
-            'img_produk_depan' => 'image|mimes:jpeg,jpg,png,gif|file|max:3024',
-            'img_produk_belakang' => 'image|mimes:jpeg,jpg,png,gif|file|max:3024',
-            'img_produk_kanan' => 'image|mimes:jpeg,jpg,png,gif|file|max:3024',
-            'img_produk_kiri' => 'image|mimes:jpeg,jpg,png,gif|file|max:3024',
+            'img_produk_depan' => 'image|mimes:jpeg,jpg,png,gif|file|max:8024',
+            'img_produk_belakang' => 'image|mimes:jpeg,jpg,png,gif|file|max:8024',
+            'img_produk_kanan' => 'image|mimes:jpeg,jpg,png,gif|file|max:8024',
+            'img_produk_kiri' => 'image|mimes:jpeg,jpg,png,gif|file|max:8024',
         ];
 
         $validatedData = $request->validate($rules);
