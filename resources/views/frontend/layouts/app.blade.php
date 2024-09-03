@@ -74,9 +74,9 @@
                             <li class="{{ request()->is('page/produk') ? 'active' : '' }}"><a href="/page/produk">Produk</a></li>
                             <li class="{{ request()->is('page/tentang') ? 'active' : '' }}"><a href="/page/tentang">Tentang Kami</a>
                                 <ul class="dropdown">
-                                    <li class="{{ request()->is('page/blog') ? 'active' : '' }}"><a href="/page/blog">Blog Artikel</a></li>
+                                    <li class="{{ request()->is('page/blog') ? 'active' : '' }}"><a href="/page/blog">Blog</a></li>
                                 </ul>
-                            <li class="{{ request()->is('page/mitra') ? 'active' : '' }}"><a href="/page/mitra">Info Kemitraan</a></li>
+                            <li class="{{ request()->is('page/mitra') ? 'active' : '' }}"><a href="/page/mitra">Jadi Mitra</a></li>
                         </ul>
                     </nav>
                 </div>

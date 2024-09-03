@@ -161,27 +161,6 @@
         </section>
         <!-- Product Section End -->
     
-        <!-- Instagram Section Begin -->
-        <section class="instagram spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="instagram__pic">
-                            <div class="instagram__pic__item set-bg" data-setbg="{{ asset('frontend/img/info-home.png')}}"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="instagram__text">
-                            <h2>Miemie</h2>
-                            <h2><span>Brownie</span></h2>
-                            <p>Miemie Brownie & Miemie Coffe</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Instagram Section End -->
-    
         <!-- Blog Section Begin -->
         <section class="blog spad">
             <div class="container">
