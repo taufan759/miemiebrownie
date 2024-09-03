@@ -4,6 +4,7 @@ namespace App\Models\Backend;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model; // Tambahkan jika belum ada
 use App\Models\Cart;
 
 class Customer extends Authenticatable
@@ -33,11 +34,4 @@ class Customer extends Authenticatable
     {
         return $this->hasMany(Cart::class, 'customer_id');
     }
-
-    // Relasi Cart dengan model Produk (ini seharusnya di model Cart, bukan di model Customer)
-    // Pindahkan fungsi ini ke model Cart
-    // public function product()
-    // {
-    //     return $this->belongsTo(Produk::class, 'product_id');
-    // }
 }

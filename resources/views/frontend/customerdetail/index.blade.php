@@ -45,7 +45,7 @@
                             </th>
                         </tr>
                     </table>
-                    <a href="{{ route('customer.profile.edit') }}" class="btn btn-primary">Edit Profile</a>
+                    <a href="{{ route('customerdetail.edit') }}" class="btn btn-primary">Edit Profile</a>
 
                 </div>
             </div>

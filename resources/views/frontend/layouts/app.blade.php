@@ -39,7 +39,7 @@
                     @endif
                 </a>
                 @if(Auth::guard('customer')->check())
-                    <a href="{{ route('customer.profile') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                    <a href="{{ route('customerdetail.index') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                     <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
                         @csrf
                         <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">
@@ -89,7 +89,7 @@
                             @endif
                         </a>
                         @if(Auth::guard('customer')->check())
-                        <a href="{{ route('customer.profile') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
+                        <a href="{{ route('customerdetail.index') }}"><i class="fa fa-user" style="color: #3E2723;"></i></a>
                             <form action="{{ route('customer.logout') }}" method="POST" style="display:inline;">
                                 @csrf
                                 <button type="submit" class="btn btn-link" style="padding: 0; color: #3E2723; text-decoration: none;">

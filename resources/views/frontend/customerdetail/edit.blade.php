@@ -14,6 +14,7 @@
                     <h3 class="user-name">Edit Profile</h3>
                     <form action="{{ route('customer.updateProfile') }}" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" id="nama" name="nama" class="form-control" value="{{ old('nama', $customer->nama) }}">
@@ -44,7 +45,7 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                         </div>
-                    </form>
+                    </form>                                  
                 </div>
             </div>
         </div>

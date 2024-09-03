@@ -68,13 +68,13 @@ Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
 
 // Halaman profil customer
-Route::get('/customer/profile', [CustomerFrontend::class, 'customerdetail'])->name('customer.profile');
+Route::get('/customer/profile', [CustomerFrontend::class, 'customerdetail'])->name('customerdetail.index');
+// Route untuk menampilkan form edit profil
+Route::get('/customer/profile/edit', [CustomerFrontend::class, 'editProfile'])->name('customerdetail.edit');
+// Route untuk memproses pembaruan profil
+Route::put('customer/profile/update', [CustomerFrontend::class, 'updateProfile'])->name('customer.updateProfile');
 
-// Route untuk menampilkan form edit profil customer
-Route::get('/customer/profile/edit', [CustomerFrontend::class, 'editProfile'])->name('customer.profile.edit');
 
-// Route untuk memperbarui profil customer
-Route::post('/customer/profile', [CustomerFrontend::class, 'updateProfile'])->name('customer.updateProfile');
 
 Route::get('/page/blog', [PageFrontend::class, 'blog']);
 Route::get('/blog/details/{id}', [PageFrontend::class, 'blogdetails'])->name('blogdetails'); 
