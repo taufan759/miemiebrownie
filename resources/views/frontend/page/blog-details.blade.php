@@ -30,20 +30,9 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="blog__details__content">
-<<<<<<< HEAD
-                        <div class="blog__details__text">
-                            <p style="text-align: justify">{{ strip_tags($berita->detail) }}</p>
-                        </div>
-                        <div class="blog__details__quote">
-                            <i class="fa fa-quote-left"></i>
-                            <p>“Lorem ipsum dolor sit amet.”</p>
-                            <h6>LOREM</h6>
-                        </div>
-=======
                         <div class="blog__details__text" style="line-height: 1.6; text-align: justify;">
                             {!! $berita->detail !!}
                         </div>                        
->>>>>>> eb82b8ef8056683b95c81b832f861000a0ddf1f0
                     </div>
                 </div>
             </div>
