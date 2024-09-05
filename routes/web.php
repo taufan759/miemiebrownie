@@ -63,19 +63,17 @@ Route::get('/', [HomeFrontend::class, 'index']);
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/page/produk', [PageFrontend::class, 'produk']);
 Route::get('/produk/{kategori?}', [PageFrontend::class, 'produk'])->name('produk');
+Route::get('/produk/{id}', [PageFrontend::class, 'produkDetail'])->name('produk.detail');
+Route::get('/page/detail/{id}', [PageFrontend::class, 'detail'])->name('produk.detail');
+
 
 // Route::get('/page/produk/{id}', [PageFrontend::class, 'detail']);
-Route::get('/page/detail', [PageFrontend::class, 'detail']);
 Route::get('/page/mitra', [PageFrontend::class, 'mitra']);
 Route::get('/page/tentang', [PageFrontend::class, 'tentang']);
 
-// Halaman profil customer
-Route::get('/customer/profile', [CustomerFrontend::class, 'customerdetail'])->name('customerdetail.index');
-// Route untuk menampilkan form edit profil
-Route::get('/customer/profile/edit', [CustomerFrontend::class, 'editProfile'])->name('customerdetail.edit');
-// Route untuk memproses pembaruan profil
-Route::put('customer/profile/update', [CustomerFrontend::class, 'updateProfile'])->name('customer.updateProfile');
-
+Route::get('/customer/profile', [CustomerFrontend::class, 'index'])->name('customerdetail.index');
+Route::get('/customer/profile/edit', [CustomerFrontend::class, 'edit'])->name('customerdetail.edit');
+Route::post('/customer/profile/update', [CustomerFrontend::class, 'update'])->name('customerdetail.update');
 
 
 Route::get('/page/blog', [PageFrontend::class, 'blog']);

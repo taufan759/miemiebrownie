@@ -39,6 +39,21 @@ class PageFrontend extends Controller
     ]);
 }
 
+public function detail($id)
+{
+    // Ambil data produk berdasarkan ID
+    $product = Produk::findOrFail($id);
+
+    // Kembalikan view untuk detail produk
+    return view('frontend.page.detail', [
+        'product' => $product
+    ]);
+}
+
+
+
+
+
 public function produkByKategori($nama_kategori)
 {
     // Ambil kategori berdasarkan nama
@@ -61,12 +76,6 @@ public function produkByKategori($nama_kategori)
     //     $product = Produk::find($id); 
     //     return view('frontend.page.detail', ['produk' => $produk]);
     // }
-
-    public function detail()
-    {
-        return view('frontend.page.detail');
-    }
-
     public function mitra()
     {
         return view('frontend.page.mitra');

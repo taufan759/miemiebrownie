@@ -11,21 +11,17 @@ class Customer extends Authenticatable
 {
     use Notifiable;
 
-    public $timestamps = true;
     protected $table = 'customer';
-    protected $guarded = ['id'];
 
-    // Daftar atribut yang dapat diisi
     protected $fillable = [
-        'nama', 
-        'email', 
-        'hp', 
-        'alamat', 
-        'jenis_kelamin', 
-        'sosmed', 
-        'password'
+        'nama',
+        'email',
+        'hp',
+        'alamat',
+        'jenis_kelamin',
+        'sosmed',
+        'password',
     ];
-
     // Daftar atribut yang harus disembunyikan dalam serialisasi
     protected $hidden = ['password', 'remember_token'];
 

@@ -66,49 +66,7 @@ class CustomerAuth extends Controller
         // Redirect ke halaman utama atau dashboard setelah login
         return redirect()->intended('/')->with('success', 'Pendaftaran berhasil dan Anda telah login.');
     }
-
-    public function showProfile()
-    {
-        // Ambil data customer yang sedang login
-        $customer = Auth::guard('customer')->user();
-        return view('frontend.customerdetail.index', compact('customer'));
-    }
-
-    public function updateProfile(Request $request)
-{
-    $customer = Auth::guard('customer')->user();
-
-    $validatedData = $request->validate([
-        'nama' => 'required|string|max:255',
-        'email' => 'required|string|email|max:255|unique:customer,email,' . $customer->id,
-        'hp' => 'required|digits_between:10,13',
-        'alamat' => 'nullable|string|max:255',
-        'jenis_kelamin' => 'nullable|string|in:Laki-laki,Perempuan',
-        'sosmed' => 'nullable|string|max:255',
-        'password' => 'nullable|string|min:8|confirmed',
-    ]);
-
-    dd($validatedData);
-
-    if ($request->filled('password')) {
-        $validatedData['password'] = bcrypt($request->password);
-    } else {
-        unset($validatedData['password']);
-    }
-
-    $customer->update($validatedData);
-
-    return redirect()->route('customer.profile')->with('success', 'Profil berhasil diperbarui.');
-}
-
-
-    public function editProfile()
-    {
-        // Ambil data customer yang sedang login
-        $customer = Auth::guard('customer')->user();
-        return view('frontend.customerdetail.edit', compact('customer'));
-    }
-
+    
     public function logout(Request $request)
     {
         // Melakukan proses logout untuk guard 'customer'

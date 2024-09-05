@@ -1,54 +1,42 @@
 <?php
+
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Backend\Customer;
+use App\Http\Controllers\Controller;
 
 class CustomerFrontend extends Controller
 {
-    // Menampilkan detail profil customer yang sedang login
-    public function customerdetail()
+    // Fungsi untuk menampilkan profil tanpa bisa diubah (index view)
+    public function index()
     {
         $customer = Auth::guard('customer')->user();
         return view('frontend.customerdetail.index', compact('customer'));
     }
 
-    // Menampilkan form untuk mengedit profil
-    public function editProfile()
+    // Fungsi untuk menampilkan halaman edit profil
+    public function edit()
     {
         $customer = Auth::guard('customer')->user();
         return view('frontend.customerdetail.edit', compact('customer'));
     }
 
-    // Update profil customer
-    public function updateProfile(Request $request)
-{
-    $customer = Auth::guard('customer')->user();
+    // Fungsi untuk update profil
+    public function update(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'hp' => 'nullable|digits_between:10,13',
+            'alamat' => 'nullable|string|max:255',
+            'jenis_kelamin' => 'nullable|string|in:L,P',
+            'sosmed' => 'nullable|string|max:255',
+        ]);
 
-    $validatedData = $request->validate([
-        'nama' => 'required|string|max:255',
-        'email' => 'required|string|email|max:255|unique:customer,email,' . $customer->id,
-        'hp' => 'required|digits_between:10,13',
-        'alamat' => 'nullable|string|max:255',
-        'jenis_kelamin' => 'nullable|string|in:Laki-laki,Perempuan',
-        'sosmed' => 'nullable|string|max:255',
-        'password' => 'nullable|string|min:8|confirmed',
-    ]);
+        $customer = Auth::guard('customer')->user();
+        $customer->update($request->only(['nama', 'hp', 'alamat', 'jenis_kelamin', 'sosmed']));
 
-    if ($request->filled('password')) {
-        $validatedData['password'] = bcrypt($request->password);
-    } else {
-        unset($validatedData['password']);
+        return redirect()->route('customerdetail.index')->with('success', 'Profil berhasil diperbarui!');
     }
-
-    $customer->update($validatedData);
-
-    // Debugging: Cetak data customer setelah di-update
-    dd($customer);
-
-    return redirect()->route('customerdetail.index')->with('success', 'Profil berhasil diperbarui.');
-}
-
 }

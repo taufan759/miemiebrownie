@@ -77,8 +77,9 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" 
-                            data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
-                            </div>
+                            data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}"
+                            onclick="window.location.href='{{ route('produk.detail', $product->id) }}'">
+                       </div>
                             <div class="product__item__text">
                                 <h6>{{ $product->nama_produk }}</h6>    
                                 <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
