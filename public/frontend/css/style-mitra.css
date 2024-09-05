@@ -1,0 +1,241 @@
+/* Text Color */
+.text-pink {
+    color: #ff4081;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.text-dark {
+    color: #343a40;
+}
+
+.text-black {
+    color: #000;
+}
+
+/* Button Styles */
+.btn-pink {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pink:hover {
+    background-color: #e03372;
+    color: white;
+}
+
+.btn-green {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: #218838;
+    color: white;
+}
+
+.btn-custom {
+    background-color: #FF0000;
+    border-color: #FF0000 ;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #CC0000;
+    border-color: #CC0000;
+}
+
+/* Underline Style */
+.underline {
+    height: 4px;
+    width: 100px;
+    background-color: #ff4081;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-image: url('../img/background.jpg'); /* Example background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.welcome-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+}
+
+/* YouTube Section */
+.youtube-section {
+    background-color: #f8f9fa;
+}
+
+.youtube-section h4 {
+    font-size: 1.8rem;
+}
+
+.youtube-section .embed-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Section Backgrounds */
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+/* Section Headers */
+h4, h5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li i {
+    color: #ff4081;
+    margin-right: 10px;
+}
+
+/* Image Styles */
+.img-fluid {
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ Styles */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h5 {
+    font-size: 1.3rem;
+    color: #ff4081;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-control {
+    height: calc(1.5em + 0.75rem + 2px);
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #ff4081;
+    box-shadow: none;
+}
+
+.contact-form .btn {
+    background-color: #ff4081;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #e03372;
+    color: white;
+}
+
+/* Map Responsive */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/* Animations */
+.animate__animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+/* Custom Media Queries */
+@media (max-width: 768px) {
+    .welcome-section h2 {
+        font-size: 2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+
+    .youtube-section h4 {
+        font-size: 1.5rem;
+    }
+}

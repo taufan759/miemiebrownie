@@ -12,7 +12,7 @@
     <title>Miemie Brownie | Oleh-oleh Exclusive Tegal</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
@@ -114,6 +114,10 @@
             <!-- Main Content End -->
         </div>
     </div>
+
+    <a href="https://api.whatsapp.com/send/?phone=628152800800&text=Hallo+miemiebrownie.com.+Saya+mau+pesan+%3A&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/WhatsApp_logo-color-vertical.svg" alt="WhatsApp" width="60px">
+    </a>
     
     <!-- Footer Section Begin -->
     <footer class="footer" style="background-color: #f0f0f0; color: #3E2723;">

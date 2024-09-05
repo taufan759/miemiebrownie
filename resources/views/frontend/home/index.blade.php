@@ -68,94 +68,24 @@
                     </div>
                 </div>
                 <div class="row product__filter">
+                    @foreach($bestSellers as $product) 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p1.jpg')}}">
+                            <div class="product__item__pic set-bg" 
+                                data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}">
                             </div>
                             <div class="product__item__text">
-                                <h6>KayaKue Cake</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
+                                <h6>{{ $product->nama_produk }}</h6>    
+                                <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
+                                </form>
+                                <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p2.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>KayaKue Cake</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p3.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>KayaKue Cake</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p4.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Dessert Box</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p5.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Dessert Box</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p6.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Dessert Box</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p7.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Dessert Box</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/p8.jpg')}}">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Dessert Box</h6>
-                                <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                <h5>Rp 50.000</h5>
-                            </div>
-                        </div>
-                    </div>
+                @endforeach
                 </div>
             </div>
         </section>
