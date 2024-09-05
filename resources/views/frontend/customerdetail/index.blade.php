@@ -14,46 +14,48 @@
                     <h2>Detail Profile</h2>
                     <p>Detail Profile kamu tersedia di sini</p>
                 </div>
-                    <table class="table">
-                        <tr>
-                            <th>Nama:</th>
-                            <td>{{ $customer->nama }}</td>
-                        </tr>
-                        <tr>
-                            <th>Email:</th>
-                            <td>{{ $customer->email }}</td>
-                        </tr>
-                        <tr>
-                            <th>No. HP:</th>
-                            <td>{{ $customer->hp }}</td>
-                        </tr>
-                        <tr>
-                            <th>Alamat:</th>
-                            <td>{{ $customer->alamat }}</td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Kelamin:</th>
-                            <td>{{ $customer->jenis_kelamin }}</td>
-                        </tr>
-                        <tr>
-                            <th>Akun Sosmed:</th>
-                            <td>{{ $customer->sosmed }}</td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <td></td>
-                            </th>
-                        </tr>
-                    </table>
-                    <a href="{{ route('customerdetail.edit') }}" class="btn btn-primary">Edit Profile</a>
-
-                </div>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Nama:</th>
+                        <td>{{ $customer->nama }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td>{{ $customer->email }}</td>
+                    </tr>
+                    <tr>
+                        <th>No. HP:</th>
+                        <td>{{ $customer->hp ?? 'Tidak Diketahui' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Alamat:</th>
+                        <td>{{ $customer->alamat ?? 'Tidak Diketahui' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Jenis Kelamin:</th>
+                        <td>
+                            @if($customer->jenis_kelamin == 'L')
+                                Laki-laki
+                            @elseif($customer->jenis_kelamin == 'P')
+                                Perempuan
+                            @else
+                                Tidak Diketahui
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Akun Sosmed:</th>
+                        <td>{{ $customer->sosmed ?? 'Tidak Diketahui' }}</td>
+                    </tr>
+                </table>
+                <a href="{{ route('customerdetail.edit') }}" class="btn btn-primary">Edit Profile</a>
             </div>
         </div>
     </div>
 </section>
 <!-- Profile Detail Section End -->
 
+<!-- Recent Orders Section Begin -->
 <section class="user-orders spad">
     <div class="container">
         <div class="row">
@@ -67,7 +69,7 @@
                     <div class="order-item">
                         <div class="order-item__header">
                             <h4>Order #12345</h4>
-                            <span class="order-status">Completed</span>
+                            <span class="order-status completed">Completed</span>
                         </div>
                         <div class="order-item__details">
                             <p><span class="detail-label">Date:</span> 05 Aug 2024</p>
@@ -79,7 +81,7 @@
                     <div class="order-item">
                         <div class="order-item__header">
                             <h4>Order #12346</h4>
-                            <span class="order-status">Pending</span>
+                            <span class="order-status pending">Pending</span>
                         </div>
                         <div class="order-item__details">
                             <p><span class="detail-label">Date:</span> 15 Aug 2024</p>

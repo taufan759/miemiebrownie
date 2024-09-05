@@ -2,6 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('frontend/css/style-customerdetail.css') }}">
+
 <div class="container">
     <h2>Ubah Detail Profil</h2>
 
@@ -11,6 +12,11 @@
         <div class="form-group">
             <label for="nama">Nama:</label>
             <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama', $customer->nama) }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $customer->email) }}" disabled>
         </div>
 
         <div class="form-group">
