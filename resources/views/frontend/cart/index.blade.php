@@ -12,7 +12,7 @@
                                 <th>Foto</th>
                                 <th>Nama</th>
                                 <th>Jumlah</th>
-                                <th>Total</th>
+                                <th>Harga</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -40,7 +40,7 @@
                                     </div>
                                 </td>
                                 <td class="cart__price"data-label="Total">
-                                    Rp {{ number_format($item['product']->harga * $item['quantity'], 0, ',', '.') }}
+                                    Rp {{ number_format($item['product']->harga, 0, ',', '.') }}
                                 </td>
                                 <td class="cart__close" data-label="Action">
                                     <button type="button" class="delete-item" data-id="{{ $item['product']->id }}">

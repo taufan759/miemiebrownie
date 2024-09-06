@@ -84,4 +84,3 @@ Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart']);
 Route::post('/cart/keranjang/delete', [KeranjangFrontend::class, 'removeItem']);
 Route::get('/cart/keranjang/checkout', [CheckoutFrontend::class, 'showCheckout'])->name('checkout.show');
 Route::post('/cart/keranjang/checkout', [CheckoutFrontend::class, 'processCheckout'])->name('checkout.process');
-Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart'])->name('cart.update');
