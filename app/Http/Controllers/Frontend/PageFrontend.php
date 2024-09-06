@@ -39,13 +39,13 @@ class PageFrontend extends Controller
     ]);
 }
 
-public function detail($id)
+public function produkdetail($id)
 {
     // Ambil data produk berdasarkan ID
     $product = Produk::findOrFail($id);
 
     // Kembalikan view untuk detail produk
-    return view('frontend.page.detail', [
+    return view('frontend.produkdetail.index', [
         'product' => $product
     ]);
 }

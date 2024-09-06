@@ -1,9 +1,9 @@
 @extends('frontend.layouts.app')
-
 @section('content')
 <link rel="stylesheet" href="{{ asset('frontend/css/style-customerdetail.css') }}">
+
 <div class="container">
-    <h2>Ubah Detail Profil</h2>
+    <h2 style="margin-top: 20px; margin-bottom: 20px; text-align:center">Ubah Detail Profil</h2>
 
     <form action="{{ route('customerdetail.update') }}" method="POST">
         @csrf
@@ -32,8 +32,8 @@
             <label for="jenis_kelamin">Jenis Kelamin:</label>
             <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                 <option value="">Pilih Jenis Kelamin</option>
-                <option value="Pria" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'Pria' ? 'selected' : '' }}>Pria</option>
-                <option value="Wanita" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'Wanita' ? 'selected' : '' }}>Wanita</option>
+                <option value="L" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'L' ? 'selected' : '' }}>Laki-laki</option>
+                <option value="P" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'P' ? 'selected' : '' }}>Perempuan</option>
             </select>
         </div>
 
@@ -42,7 +42,8 @@
             <input type="text" class="form-control" id="sosmed" name="sosmed" value="{{ old('sosmed', $customer->sosmed) }}">
         </div>
 
-        <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+        <button type="submit" style="margin-bottom: 20px" class="btn btn-success">Simpan Perubahan</button>
+        <a href="{{ route('customerdetail.index') }}" style="margin-left: 10px; margin-bottom: 20px" class="btn btn-secondary">Batal</a>
     </form>
 </div>
 @endsection

@@ -63,8 +63,8 @@ Route::get('/', [HomeFrontend::class, 'index']);
 // Route::resource('/produk', ProdukFrontend::class);
 Route::get('/page/produk', [PageFrontend::class, 'produk']);
 Route::get('/produk/{kategori?}', [PageFrontend::class, 'produk'])->name('produk');
-Route::get('/produk/{id}', [PageFrontend::class, 'produkDetail'])->name('produk.detail');
-Route::get('/page/detail/{id}', [PageFrontend::class, 'detail'])->name('produk.detail');
+Route::get('/produk/{id}', [PageFrontend::class, 'produkdetail'])->name('produk.detail');
+Route::get('/produk/detail/{id}', [PageFrontend::class, 'produkdetail'])->name('produk.detail');
 
 
 // Route::get('/page/produk/{id}', [PageFrontend::class, 'detail']);
