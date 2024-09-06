@@ -4,11 +4,13 @@
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-blog set-bg" data-setbg="{{ asset('frontend/img/info-home.png') }}">
         <div class="overlay">
-            <div class="content">
-                <h1>Blog Artikel</h1>
+            <div class="content">  
             </div>
         </div>
     </section>
+    <div class="content2">
+        <h1>Blog Artikel</h1>
+    </div>
     <!-- Breadcrumb Section End -->
 
     <!-- Blog Section Begin -->

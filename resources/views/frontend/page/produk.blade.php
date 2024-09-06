@@ -1,15 +1,11 @@
 @extends('frontend.layouts.app')
 @section('content')
 <body>
-<section class="hero__items set-bg" data-setbg="{{ asset('frontend/img/bg2.jpeg') }}">
+<section class="hero__items set-bg" data-setbg="{{ asset('frontend/img/hero/2.png') }}">
     <div class="overlay">
-        <div class="content">
-            <h1>Produk Miemie Brownie</h1>
-        </div>
     </div>
 </section>
 
-<!-- Categories Slider di luar gambar -->
 <!-- Categories Slider di luar gambar -->
 <section class="categories">
     <div class="container">
@@ -41,6 +37,9 @@
         </div>
     </div>
 </section>
+<div class="content">
+            <h1>Produk Miemie Brownie</h1>
+        </div>
 
 <script>
   // Dapatkan referensi ke elemen slider dan tombol navigasi
@@ -48,21 +47,21 @@
   const prevBtn = document.querySelector('.owl-prev');
   const nextBtn = document.querySelector('.owl-next');
 
-  const scrollStep = 150; // Jarak scroll untuk setiap klik, sesuaikan dengan ukuran item
+  const scrollStep = 150; 
 
   // Event listener untuk tombol prev
   prevBtn.addEventListener('click', () => {
     slider.scrollBy({
-      left: -scrollStep, // Geser ke kiri
-      behavior: 'smooth' // Scroll halus
+      left: -scrollStep, 
+      behavior: 'smooth' 
     });
   });
 
   // Event listener untuk tombol next
   nextBtn.addEventListener('click', () => {
     slider.scrollBy({
-      left: scrollStep, // Geser ke kanan
-      behavior: 'smooth' // Scroll halus
+      left: scrollStep, 
+      behavior: 'smooth' 
     });
   });
 </script>
