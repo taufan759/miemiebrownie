@@ -76,7 +76,6 @@
                 <div class="cart__total">
                     <h6>Cart total</h6>
                     <ul>
-                        <li>Subtotal <span id="cart-total">Rp {{ number_format($cartTotal, 0, ',', '.') }}</span></li>
                         <li>Total <span id="cart-total">Rp {{ number_format($cartTotal, 0, ',', '.') }}</span></li>
                     </ul>
                     <a href="/cart/keranjang/checkout" class="primary-btn">Proceed to checkout</a>

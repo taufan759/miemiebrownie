@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
 <body>
-<section class="combined-section set-bg" data-setbg="{{ asset('frontend/img/bg2.jpeg') }}">
+<section class="hero__items set-bg" data-setbg="{{ asset('frontend/img/bg2.jpeg') }}">
     <div class="overlay">
         <div class="content">
             <h1>Produk Miemie Brownie</h1>

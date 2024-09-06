@@ -93,24 +93,36 @@ public function updateCart(Request $request)
         'items.*.quantity' => 'required|integer|min:0',
     ]);
 
+    $updatedItems = [];
+    $cartTotal = 0;
+
     // Loop melalui items yang dikirim
     foreach ($request->items as $item) {
         $cartItem = $user->cartItems()->where('product_id', $item['id'])->first();
         if ($cartItem) {
             $cartItem->quantity = $item['quantity'];
             $cartItem->save();
+
+            // Menghitung total harga per item
+            $totalPrice = $cartItem->product->harga * $cartItem->quantity;
+            $updatedItems[] = [
+                'id' => $cartItem->product_id,
+                'totalPrice' => number_format($totalPrice, 0, ',', '.'),
+                'quantity' => $cartItem->quantity
+            ];
+
+            $cartTotal += $totalPrice;
         }
     }
 
     // Menghitung ulang total harga
-    $cartTotal = $user->cartItems()->with('product')->get()->sum(function ($cartItem) {
-        return $cartItem->product->harga * $cartItem->quantity;
-    });
+    $cartTotal = number_format($cartTotal, 0, ',', '.');
 
-    return response()->json(['cartTotal' => number_format($cartTotal, 0, ',', '.')]);
+    return response()->json([
+        'cartTotal' => $cartTotal,
+        'updatedItems' => $updatedItems
+    ]);
 }
-
-
 
     // Method untuk menghapus item dari cart
     public function removeItem(Request $request)
