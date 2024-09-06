@@ -2,7 +2,6 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('frontend/css/style-customerdetail.css') }}">
-
 <div class="container">
     <h2>Ubah Detail Profil</h2>
 
@@ -33,8 +32,8 @@
             <label for="jenis_kelamin">Jenis Kelamin:</label>
             <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                 <option value="">Pilih Jenis Kelamin</option>
-                <option value="L" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'L' ? 'selected' : '' }}>Laki-laki</option>
-                <option value="P" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'P' ? 'selected' : '' }}>Perempuan</option>
+                <option value="Pria" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'Pria' ? 'selected' : '' }}>Pria</option>
+                <option value="Wanita" {{ old('jenis_kelamin', $customer->jenis_kelamin) == 'Wanita' ? 'selected' : '' }}>Wanita</option>
             </select>
         </div>
 

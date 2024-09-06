@@ -34,10 +34,10 @@
                     <tr>
                         <th>Jenis Kelamin:</th>
                         <td>
-                            @if($customer->jenis_kelamin == 'L')
-                                Laki-laki
-                            @elseif($customer->jenis_kelamin == 'P')
-                                Perempuan
+                            @if($customer->jenis_kelamin == 'P')
+                                Pria
+                            @elseif($customer->jenis_kelamin == 'W')
+                                Wanita
                             @else
                                 Tidak Diketahui
                             @endif

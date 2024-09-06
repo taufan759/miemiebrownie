@@ -30,7 +30,7 @@ class CustomerFrontend extends Controller
             'nama' => 'required|string|max:255',
             'hp' => 'nullable|digits_between:10,13',
             'alamat' => 'nullable|string|max:255',
-            'jenis_kelamin' => 'nullable|string|in:L,P',
+            'jenis_kelamin' => 'nullable|string|in:Pria,Wanita',
             'sosmed' => 'nullable|string|max:255',
         ]);
 
