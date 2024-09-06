@@ -34,15 +34,14 @@
                     <tr>
                         <th>Jenis Kelamin:</th>
                         <td>
-                            @if($customer->jenis_kelamin == 'P')
+                            @if($customer->jenis_kelamin == 'Pria')
                                 Pria
-                            @elseif($customer->jenis_kelamin == 'W')
+                            @elseif($customer->jenis_kelamin == 'Wanita')
                                 Wanita
                             @else
                                 Tidak Diketahui
                             @endif
-                        </td>
-                    </tr>
+                        </td>                     
                     <tr>
                         <th>Akun Sosmed:</th>
                         <td>{{ $customer->sosmed ?? 'Tidak Diketahui' }}</td>

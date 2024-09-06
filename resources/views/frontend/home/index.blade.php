@@ -71,6 +71,7 @@
                     @foreach($bestSellers as $product) 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
                         <div class="product__item">
+                            <a href="{{ route('produk.detail', $product->id) }}">
                             <div class="product__item__pic set-bg" 
                                 data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}"
                                 onclick="window.location.href='{{ route('produk.detail', $product->id) }}'">

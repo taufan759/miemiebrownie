@@ -58,7 +58,7 @@
         <!-- Testimonial Section End -->
     
         <!-- Counter Section Begin -->
-        <section class="counter spad">
+        <section class="counter spad" style="margin-top: 50px; margin-bottom: 20px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
@@ -88,11 +88,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>        
         <!-- Counter Section End -->
-    
+        
         <!-- Team Section Begin -->
-        <section class="team spad">
+        <section class="team spad" style="padding-top: 20px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -134,6 +134,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Team Section End -->
     
         <!-- Client Section Begin -->
