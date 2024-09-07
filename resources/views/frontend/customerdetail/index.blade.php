@@ -1,7 +1,5 @@
 @extends('frontend.layouts.app')
-
 @section('title', 'Customer Profile')
-
 @section('content')
 <link rel="stylesheet" href="{{ asset('frontend/css/style-customerdetail.css') }}">
 

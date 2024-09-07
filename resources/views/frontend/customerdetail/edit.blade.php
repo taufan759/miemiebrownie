@@ -1,8 +1,6 @@
 "@extends('frontend.layouts.app')
-
 @section('content')
 <link rel="stylesheet" href="{{ asset('frontend/css/style-customerdetail.css') }}">
-
 
 <div class="container">
     <h2 style="margin-top: 20px; margin-bottom: 20px; text-align:center">Ubah Detail Profil</h2>
@@ -47,4 +45,3 @@
     </form>
 </div>
 @endsection
-"

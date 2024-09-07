@@ -1,6 +1,8 @@
 @extends('frontend.layouts.app')
 @section('title', 'Checkout')
 @section('content')
+<link rel="stylesheet" href="{{ asset('frontend/css/style-checkout.css') }}">
+
 <!-- Checkout Form Section -->
 <div class="container py-5">
     <div class="row">
@@ -105,42 +107,4 @@
         </div>
     </div>
 </div>
-
-<!-- CSS Kustom -->
-<style>
-    .checkout-form, .order-summary {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .checkout-form h4, .order-summary h4 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .form-control {
-        border-radius: 5px;
-        border-color: #ced4da;
-    }
-    .form-check-label {
-        font-size: 0.875rem;
-    }
-    .form-select {
-    border-radius: 0.25rem;
-    padding: 0.5rem 1.25rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    }
-    .btn-primary {
-        background-color: #FF4DA3;
-        border-color: #FF4DA3;
-    }
-    .btn-primary:hover {
-        background-color: #FF3A85;
-        border-color: #FF4DA3;
-    }
-    .order-summary__products li {
-        border-bottom: 1px solid #dee2e6;
-        padding: 0.5rem 0;
-    }
-</style>
 @endsection

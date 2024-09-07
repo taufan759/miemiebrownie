@@ -58,7 +58,7 @@
         <!-- Testimonial Section End -->
     
         <!-- Counter Section Begin -->
-        <section class="counter spad" style="margin-top: 50px; margin-bottom: 20px;">
+        <section class="counter spad">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
@@ -88,11 +88,11 @@
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
         <!-- Counter Section End -->
-        
+    
         <!-- Team Section Begin -->
-        <section class="team spad" style="padding-top: 20px;">
+        <section class="team spad">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -134,7 +134,6 @@
                 </div>
             </div>
         </section>
-        
         <!-- Team Section End -->
     
         <!-- Client Section Begin -->
@@ -150,22 +149,22 @@
                 <div class="row">
                     <!-- Client logos -->
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner1.jpg' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/nbm.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner2.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/adap.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner1.jpg' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/umkm.jpeg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner2.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/btg.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner1.jpg' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/coffe.jpg' )}}" alt="Partner"></a>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4 col-6">
-                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/partner2.png' )}}" alt="Partner"></a>
+                        <a href="#" class="client__item"><img src="{{ asset('frontend/img/clients/berani.png' )}}" alt="Partner"></a>
                     </div>
                 </div>
             </div>

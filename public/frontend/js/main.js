@@ -343,6 +343,34 @@ $(document).ready(function() {
             }
         });
     });
+
+    // Fungsi untuk membuka modal
+    function openModal() {
+        var modal = $("#myModal");
+        var modalImg = $("#imgModal");
+        var img = $("#productImg");
+        var captionText = $("#caption");
+
+        modal.css("display", "block");
+        modalImg.attr("src", img.attr("src"));
+        captionText.html(img.attr("alt"));
+    }
+
+    // Fungsi untuk menutup modal
+    function closeModal() {
+        var modal = $("#myModal");
+        modal.css("display", "none");
+    }
+
+    // Tambahkan event listener untuk membuka modal saat gambar diklik
+    $("#productImg").on("click", function () {
+        openModal();
+    });
+
+    // Tambahkan event listener untuk menutup modal saat tombol close diklik
+    $(".close").on("click", function () {
+        closeModal();
+    });
 });
 
 

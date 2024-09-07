@@ -53,7 +53,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
-            <p>Miemie Brownie X Miemie Coffe</p>
+            <p>Miemie Brownie & Miemie Coffe</p>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -149,7 +149,9 @@
                         <h6>Informasi</h6>
                         <p style="color: #3E2723;">
                             <a href="/page/blog" style="color: #3E2723;">Blog Artikel</a><br>
-                            <a href="/page/mitra" style="color: #3E2723;">Jadi Mitra</a>
+                            <a href="https://food.grab.com/id/en/restaurant/miemie-brownie-x-miemie-coffee-mangkukusuman-delivery/6-CYWZNNTXVCB3KA" style="color: #3E2723;">Grab Food</a><br>
+                            <a href="https://gofood.co.id/tegal/restaurant/miemie-brownie-d6ed69fe-ead6-489c-828d-901b36e8b983" style="color: #3E2723;">Go Food</a><br>
+                            <a href="https://shopee.co.id/miemiebrownie" style="color: #3E2723;">Shopee</a>
                         </p>
                     </div>
                 </div>

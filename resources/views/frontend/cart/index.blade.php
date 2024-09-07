@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('content')
 <section class="shopping-cart spad">
     <div class="container">
@@ -85,7 +84,5 @@
     </div>
 </section>
 
-{{-- Pastikan JavaScript di-load setelah seluruh konten halaman dimuat --}}
 <script src="{{ asset('frontend/js/app-cart.js') }}" defer></script>
-
 @endsection

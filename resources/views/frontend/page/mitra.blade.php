@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 <link rel="stylesheet" href="{{ asset('frontend/css/style-mitra.css') }}">
@@ -238,13 +237,14 @@
                             style="border:0;" 
                             allowfullscreen="" 
                             aria-hidden="false" 
-                            tabindex="0"></iframe>
+                            tabindex="0">
+                    </iframe>
                 </div>
             </div>
 
             <!-- Contact Form -->
             <div class="col-md-6 mb-4">
-                <form action="#" method="POST" class="contact-form">
+                <form action="https://formspree.io/f/movabpgv" method="POST" class="contact-form">
                     <div class="form-group">
                         <label for="name" class="font-weight-bold">Nama</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Nama Anda" required>
@@ -264,5 +264,4 @@
     </div>
 </section>
 <!-- Contact Us Section End -->
-
 @endsection
