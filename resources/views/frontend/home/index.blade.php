@@ -69,25 +69,25 @@
                 </div>
                 <div class="row product__filter">
                     @foreach($bestSellers as $product) 
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" 
-                                data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}"
-                                onclick="window.location.href='{{ route('produk.detail', $product->id) }}'">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>{{ $product->nama_produk }}</h6>    
-                                <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
-                                </form>
-                                <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" 
+                                    data-setbg="{{ asset('storage/img-produk/img_produk_depan/' . $product->img_produk_depan) }}"
+                                    onclick="window.location.href='{{ route('produk.detail', $product->id) }}'">
+                                </div>
+                                <div class="product__item__text">
+                                    <h6>{{ $product->nama_produk }}</h6>    
+                                    <form action="{{ route('cart.add') }}" method="POST" class="add-to-cart-form">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <button type="submit" class="add-cart product-page-cart"> + Tambah Keranjang</button> 
+                                    </form>
+                                    <h5>Rp {{ number_format($product->harga, 0, ',', '.') }}</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                </div>
+                    @endforeach
+                </div>                
             </div>
         </section>
         <!-- Product Section End -->

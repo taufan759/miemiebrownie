@@ -12,10 +12,12 @@ class HomeFrontend extends Controller
 {
     public function index()
     {
+        // Ambil 3 berita terbaru
         $berita = Berita::orderBy('created_at', 'desc')->take(3)->get();
-
-        $bestSellers = Produk::orderBy('created_at', 'desc')->take(4)->get();
-
+    
+        // Ambil 4 produk best seller yang aktif
+        $bestSellers = Produk::where('status', true)->orderBy('created_at', 'desc')->take(4)->get();
+    
         return view('frontend.home.index', compact('berita', 'bestSellers'));
-    }
+    }    
 }
