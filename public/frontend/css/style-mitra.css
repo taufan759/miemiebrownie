@@ -226,30 +226,6 @@ ul li i {
 }
 
 /* Custom Media Queries */
-@media only screen and (max-width: 768px) {
-    .welcome-section .container {
-        max-width: 90%; /* Memperbesar kotak pada mobile */
-        padding: 20px; /* Memberikan ruang pada isi kontainer */
-    }
-    
-    .welcome-section p {
-        font-size: 1rem; /* Memperkecil ukuran teks untuk mobile */
-    }
-
-    .welcome-section h2 {
-        font-size: 2rem; /* Menyesuaikan ukuran heading untuk mobile */
-    }
-    
-    .container.py-5 {
-        margin: 10px auto; /* Mengurangi margin untuk mobile */
-        padding: 15px; /* Mengurangi padding untuk mobile */
-    }
-
-    .container .row {
-        margin-bottom: 20px; /* Mengurangi jarak antar elemen */
-    }
-}
-
 @media (max-width: 768px) {
     .welcome-section h2 {
         font-size: 2rem;
@@ -263,3 +239,19 @@ ul li i {
         font-size: 1.5rem;
     }
 }
+/* CSS untuk konten teks */
+.text-content {
+    line-height: 1.6;
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 0 10px; 
+}
+
+@media (max-width: 768px) {
+    .text-content {
+        line-height: 1.4; 
+        max-width: 200px;
+        padding : 0 10px;
+    }
+}
+

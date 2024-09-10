@@ -3,8 +3,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 <link rel="stylesheet" href="{{ asset('frontend/css/style-mitra.css') }}">
 
-<div class="welcome-section">
-    <div class="container py-5 bg-white rounded shadow-lg" style="background: rgba(255, 255, 255, 0.95);">
+<!-- Welcome Section Begin -->
+<div class="welcome-section" style="background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container py-5 bg-white rounded shadow-lg" style="background: rgba(255, 255, 255, 0.95); max-width: 75%; margin: auto; margin-bottom: 20px; margin-top: 20px">
         <section class="about">
             <div class="row mb-5">
                 <div class="col-lg-12 text-center mb-4 animate__animated animate__fadeInUp">
@@ -12,19 +13,24 @@
                     <p class="lead text-muted">Mitra Miemie Brownie di Seluruh Indonesia</p>
                     <div class="underline bg-pink mx-auto mt-3"></div>
                 </div>
-                <div class="col-lg-10 text-center mx-auto animate__animated animate__fadeInUp">
-                    <p class="lead text-dark" style="line-height: 1.8;">
-                        Ingin bekerja dari rumah tapi tetap meraih penghasilan jutaan rupiah? <br>
-                        Penasaran bagaimana caranya mendapatkan emas murni gratis? <br>
-                        Siap memperluas jaringan dan menambah banyak relasi baru? <br>
-                        Dan, ingin dibimbing langsung oleh para ahli agar menjadi penjual handal? <br><br>
-                        Yuk, simak baik-baik sampai selesai! Semua jawaban yang kamu cari ada di sini.
-                    </p>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 text-center mb-4 animate__animated animate__fadeInUp">
+                            <p class="lead text-dark" style="line-height: 1.8;">
+                                Ingin bekerja dari rumah tapi tetap meraih penghasilan jutaan rupiah? <br>
+                                Penasaran bagaimana caranya mendapatkan emas murni gratis? <br>
+                                Siap memperluas jaringan dan menambah banyak relasi baru? <br>
+                                Dan, ingin dibimbing langsung oleh para ahli agar menjadi penjual handal? <br><br>
+                                Yuk, simak baik-baik sampai selesai! Semua jawaban yang kamu cari ada di sini.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </div>
+<!-- Welcome Section End -->
 
 <!-- YouTube Section Begin -->
 <section class="youtube-section py-5 bg-light">
@@ -171,6 +177,19 @@
         </div>
     </div>
 </div>
+
+<div class="container mt-5 py-5 bg-white rounded shadow-sm">
+    <div class="row mb-4">
+        <div class="col-lg-12 text-center animate__animated animate__fadeInUp">
+            <h4 class="text-black font-weight-bold">Pricelist</h4>
+            <div class="underline bg-pink mx-auto"></div>
+        </div>
+    </div>
+    <div class="col-lg-12 text-center">
+            <img src="{{ asset('frontend/img/mitra/pricelist.png') }}" alt="Pricelist" class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+        </div>
+</div>
+
 
 <!-- Tanya Jawab Section -->
 <div class="container mt-5 py-5 bg-white rounded shadow-sm">

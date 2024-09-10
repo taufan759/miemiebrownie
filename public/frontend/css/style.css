@@ -975,7 +975,7 @@ Helper CSS
 
 .filter__controls li.active {
     color: #FF4DA3;
-	
+	font-size: 40px;	
 }
 
 .product__item {
@@ -1189,6 +1189,7 @@ Helper CSS
 		color: #FF4DA3;
 		position: relative;
 		top: -50px; 
+		font-size: 35px
 	}
 }
 /*---------------------
