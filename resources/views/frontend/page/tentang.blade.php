@@ -57,39 +57,39 @@
         </section>        
         <!-- Testimonial Section End -->
     
-        <!-- Counter Section Begin -->
-        <section class="counter spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="counter__item">
-                            <div class="counter__item__number">
-                                <h2 class="cn_num">8</h2>
-                            </div>
-                            <span>Tahun Beroperasi</span>
+         <!-- Counter Section Begin -->
+    <section class="counter spad" style="margin-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__number">
+                            <h2 class="cn_num">8</h2>
                         </div>
+                        <span>Tahun Beroperasi</span>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="counter__item">
-                            <div class="counter__item__number">
-                                <h2 class="cn_num">50</h2>
-                            </div>
-                            <span>Lebih Variasi Menu</span>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__number">
+                            <h2 class="cn_num">50</h2>
                         </div>
+                        <span>Lebih Variasi Menu</span>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="counter__item">
-                            <div class="counter__item__number">
-                                <h2 class="cn_num">95</h2>
-                                <strong>%</strong>
-                            </div>
-                            <span>Tingkat Kepuasan Pelanggan</span>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="counter__item">
+                        <div class="counter__item__number">
+                            <h2 class="cn_num">95</h2>
+                            <strong>%</strong>
                         </div>
+                        <span>Tingkat Kepuasan Pelanggan</span>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Counter Section End -->
+        </div>
+    </section>
+    <!-- Counter Section End -->
     
         <!-- Team Section Begin -->
         <section class="team spad">
