@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="filter__controls">
-                            <li class="active" data-filter="*">Best Sellers</li>
+                            <li class="active" data-filter="*">Bestseller Pilihan</li>
                         </ul>
                     </div>
                 </div>

@@ -9,7 +9,9 @@
         <!-- Checkout Form -->
         <div class="col-lg-8 col-md-12">
             <div class="checkout-form shadow-sm p-4 rounded bg-white">
-                <h4 class="mb-4">Detail Pembayaran</h4>
+                <h4 class="mb-4" style="border-bottom: 2px solid #FF4DA3; padding-bottom: 10px; font-weight: bold; text-align: center;">
+                    Detail Pembayaran
+                </h4>                
                 <form action="{{ route('checkout.process') }}" method="POST">
                     @csrf
                     <div class="row">
@@ -72,7 +74,9 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">BUAT PESANAN</button>
+                    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 80%; max-width: 400px;">BUAT PESANAN</button>
+                    </div>                    
                 </form>
             </div>
         </div>
@@ -80,7 +84,9 @@
         <!-- Order Summary -->
         <div class="col-lg-4 col-md-12 mt-4 mt-md-0">
             <div class="order-summary shadow-sm p-4 rounded bg-white">
-                <h4 class="mb-4">Ringkasan Pesanan</h4>
+                <h4 class="mb-4" style="border-bottom: 2px solid #FF4DA3; padding-bottom: 10px; font-weight: bold; text-align: center;">
+                    Ringkasan Pesanan
+                </h4>
                 <div class="order-summary__products">
                     <div class="d-flex justify-content-between mb-2">
                         <span>Produk</span>
@@ -95,13 +101,9 @@
                         @endforeach
                     </ul>
                     <div class="d-flex justify-content-between mt-3">
-                        <strong>Subtotal</strong>
-                        <strong>Rp {{ number_format($subtotal, 0, ',', '.') }}</strong>
-                    </div>
-                    <div class="d-flex justify-content-between mt-2">
                         <strong>Total</strong>
                         <strong>Rp {{ number_format($total, 0, ',', '.') }}</strong>
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </div>

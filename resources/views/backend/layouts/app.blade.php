@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Mie Mie</title>
+    <title>Admin Miemie Brownie</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -69,7 +69,12 @@
                 <br/>
 
                 <div class="footer">
-                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a></p>
+                    <p><strong>&copy; 
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> 
+                        All rights reserved
+                    </strong></p>
                 </div>
             </div>
         </nav>
