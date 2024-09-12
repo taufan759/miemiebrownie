@@ -9,7 +9,7 @@
         </div>
     </section>
     <div class="content2">
-        <h1>Blog Artikel</h1>
+        <h3>Blog Artikel</h3>
     </div>
     <!-- Breadcrumb Section End -->
 

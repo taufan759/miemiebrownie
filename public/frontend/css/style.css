@@ -125,17 +125,36 @@ Helper CSS
 	font-weight: 700;
 	line-height: 46px;
 }
+/* Untuk Ponsel Kecil (max-width: 575px) */
+@media (max-width: 575px) {
+    .section-title h2 {
+        font-size: 20px; 
+        line-height: 30px;
+		margin-top: -70px; 
+    }
+}
+
+/* Untuk Ponsel Besar dan Tablet Kecil (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .section-title h2 {
+        font-size: 24px; 
+        line-height: 35px;
+		margin-top: -70px; 
+    }
+}
 
 
 .set-bg {
-	background-size: cover;
+    background-size: cover;
     background-position: center;
-    height: 80vh; 
+    height: 80vh; /* Tinggi default */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -557,13 +576,13 @@ Helper CSS
 }
 
 .hero__items {
-	width: 100%;
+    width: 100%;
     height: 100vh; 
     background-size: cover; 
-    background-position: top center; 
+    background-position: center center; 
     background-repeat: no-repeat; 
-    position: relative;
-} 
+    position: relative; 
+}
 
 .hero__text h6 {
 	color: #FF4DA3;
@@ -760,7 +779,7 @@ Helper CSS
     }
 
     .banner__item__text h2 {
-        font-size: 12px; 
+        font-size: 10px; 
         margin-bottom: -20px; 
 		margin-top: -25px;
     }
@@ -1165,33 +1184,147 @@ Helper CSS
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsif di mobile */
-@media (max-width: 767px) {
+/* Ponsel Kecil (max-width: 575px) */
+@media (max-width: 575px) {
     .product__item {
-        margin-bottom: 30px; 
-		margin-top: -50px;
+        margin-bottom: 80px;
+        margin-top: -100px;
     }
 
     .product__item__text {
-        padding: 10px; 
+        padding: 8px;
     }
 
     .product__item__text h6 {
-        margin-bottom: 2px; 
+        margin-bottom: 1px;
     }
-    .product-page-cart {
-		font-size: 10px;
-		padding: 5px 10px;
-		width: 100%; 
-		border-radius: 20px;
+
+	.product-page-cart {
+        font-size: 7px;
+        padding: 2px 20px;
+        width: 80%;
+        border-radius: 5px;
+        text-align: center; 
+    }
+	.product-page-cart::before {
+		content: "\f07a"; 
+		font-family: "Font Awesome 5 Free"; 
+		font-weight: 900;
+		margin-right: 8px;
 	}
-	.filter__controls li.active {
+	
+    .filter__controls li.active {
+        color: #FF4DA3;
+        position: relative;
+        top: -80px;
+        font-size: 20px;
+    }
+	.product__item__text h6 {
 		color: #FF4DA3;
-		position: relative;
-		top: -50px; 
-		font-size: 35px
+		font-size: 10px;
+		font-weight: 700;
+		margin-bottom: 5px;
+		margin-top: 0;
+	}
+	
+	.product__item__text h5 {
+		color: #0d0d0d;
+		font-weight: 700;
+		font-size: 12px;
 	}
 }
+
+
+/* Ponsel Besar dan Tablet Kecil (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .product__item {
+        margin-bottom: 35px;
+        margin-top: -90px;
+    }
+
+    .product__item__text {
+        padding: 9px;
+    }
+
+    .product__item__text h6 {
+        margin-bottom: 1.5px;
+    }
+
+    .product-page-cart {
+        font-size: 15px;
+        padding: -10px 5px;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .filter__controls li.active {
+        color: #FF4DA3;
+        position: relative;
+        top: -40px;
+        font-size: 35px;
+    }
+}
+
+/* Tablet Besar (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .product__item {
+        margin-bottom: 30px;
+        margin-top: -30px;
+    }
+
+    .product__item__text {
+        padding: 10px;
+    }
+
+    .product__item__text h6 {
+        margin-bottom: 2px;
+    }
+
+    .product-page-cart {
+        font-size: 12px;
+        padding: 5px 10px;
+        width: 80%;
+        border-radius: 20px;
+    }
+
+    .filter__controls li.active {
+        color: #FF4DA3;
+        position: relative;
+        top: -50px;
+        font-size: 30px;
+    }
+}
+
+/* Desktop (992px dan lebih besar) */
+@media (min-width: 992px) {
+    .product__item {
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+
+    .product__item__text {
+        padding: 15px;
+    }
+
+    .product__item__text h6 {
+        margin-bottom: 5px;
+    }
+
+    .product-page-cart {
+        font-size: 12px;
+        padding: 8px 15px;
+        width: auto;
+        border-radius: 25px;
+    }
+
+    .filter__controls li.active {
+        color: #FF4DA3;
+        position: relative;
+        top: 0;
+        font-size: 40px;
+    }
+}
+
 /*---------------------
   Shop
 -----------------------*/
@@ -2127,7 +2260,7 @@ Breadcrumb
     margin-top: 10px; 
 }
 
-h1 {
+h3 {
     margin: 0; 
     font-size: 2rem;
 	font-weight: bold;  
@@ -2137,12 +2270,13 @@ h1 {
 /* Media Query untuk Responsif di Mobile */
 @media (max-width: 767px) {
     .content2 {
-        padding: 20px 20px; 
-        margin-top: 5px; 
+        padding: 30px 20px; 
+        margin-top: 10px; 
     }
 
-    h1 {
-        font-size: 1.5rem; 
+    h3 {
+        font-size: 1.2rem; 
+		margin-top: -20px;
     }
 }
 
@@ -2165,12 +2299,25 @@ h1 {
 /* Media Query untuk Responsif di Mobile */
 @media (max-width: 767px) {
     .content {
-        padding: 50px 10px; 
-        margin-top: -80px; 
+        padding: 40px 20px; 
+        margin-top: 10px; 
     }
 
     h1 {
         font-size: 1.2rem; 
+		margin-top: -170px;
+    }
+}
+/* Untuk Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .content {
+        padding: 20px 15px;  
+        margin-top: 20px;    
+    }
+
+    h1 {
+        font-size: 1.5rem;   /* Mengubah ukuran font H1 untuk tablet */
+        margin-top: -100px;  /* Sesuaikan margin atas agar lebih proporsional di tablet */
     }
 }
 
@@ -2914,6 +3061,37 @@ h1 {
 	line-height: 28px;
 	margin-bottom: 10px;
 }
+/* Untuk Ponsel Kecil (max-width: 575px) */
+@media (max-width: 575px) {
+    .blog__item__text h5 {
+        font-size: 15px; 
+        line-height: 18px; 
+    }
+}
+
+/* Untuk Ponsel Besar dan Tablet Kecil (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .blog__item__text h5 {
+        font-size: 15px; 
+        line-height: 20px; 
+    }
+}
+
+/* Untuk Tablet Besar (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .blog__item__text h5 {
+        font-size: 15px; 
+        line-height: 25px; 
+    }
+}
+
+/* Untuk Desktop (992px dan lebih besar) */
+@media (min-width: 992px) {
+    .blog__item__text h5 {
+        font-size: 22px; 
+        line-height: 30px; 
+    }
+}
 
 .blog__item__text a {
 	display: inline-block;
@@ -3445,6 +3623,7 @@ h1 {
 	.slicknav_nav ul {
 		margin: 0;
 	}
+	
 	.slicknav_nav .slicknav_row,
 	.slicknav_nav a {
 		padding: 7px 0;
@@ -3857,7 +4036,7 @@ h1 {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.hero__items {
 		width: 100%;
-        height: 550px; 
+        height: auto; 
         padding-top: 130px;
 		padding-bottom: 40px;
     }
@@ -3889,12 +4068,12 @@ h1 {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.hero__items {
 		width: 100%;
-		height: 430px;
+		height: auto;
 		object-fit: cover;
 		padding-top: 70px;
-        padding-bottom: 25px;
-		right: -0.1%; 
+        padding-bottom: 25px; 
 	}
+
 	.breadcrumb-blog {
 		width: 100%;
 		height: 430px;
@@ -3971,6 +4150,20 @@ h1 {
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+	.hero__items {
+        width: 100%;
+        height: auto;
+        padding-top: 130px;
+        padding-bottom: 40px;
+        background-position: center;
+		background-repeat: no-repeat;
+    }
+
+    .hero__items img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 	.canvas__open {
 		display: block;
 		font-size: 22px;
@@ -4309,7 +4502,7 @@ h1 {
 	}
 	.hero__items {
 		width: 100%;          
-		height: 120;        
+		height: auto;        
 		padding-top: 60px;    
 		padding-bottom: 20px; 
 	}	
@@ -4448,6 +4641,25 @@ h1 {
         left: auto; 
     }
 }
+/* Responsif untuk tampilan tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .owl-prev, .owl-next {
+        padding: 10px;    
+        font-size: 12px;  
+        position: absolute; 
+    }
+
+    .owl-prev {
+        left: 10px;       
+        right: auto;
+    }
+
+    .owl-next {
+        right: 10px;      
+        left: auto;
+    }
+}
+
 
 .wd-btn-arrow.disabled {
     opacity: 0.5;
@@ -4802,6 +5014,7 @@ h1 {
         padding-bottom: 20px;
     }
 }
+
 
 /* Whatsapp-float */
 .whatsapp-float {
