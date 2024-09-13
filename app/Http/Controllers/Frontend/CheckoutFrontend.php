@@ -2,48 +2,111 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Backend\Pesanan;
+use App\Models\Cart;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 
 class CheckoutFrontend extends Controller
 {
-    public function showCheckout()
+    // Menampilkan halaman checkout
+    public function index()
     {
-        // Mendapatkan data dari cart atau session
-        $cartItems = session('cart', []);
-        $subtotal = array_sum(array_column($cartItems, 'price'));
-        $total = $subtotal; // Tambahkan biaya lain jika ada
+        // Mendapatkan data customer yang sedang login
+        $customer = auth('customer')->user();
+        if (!$customer) {
+            return redirect()->route('customer.login')->with('error', 'Anda harus login terlebih dahulu.');
+        }
 
-        // Tampilkan halaman checkout
-        return view('frontend.page.checkout', [
+        // Mengambil data item keranjang customer yang sedang login
+        $cartItems = Cart::where('customer_id', $customer->id)->with('product')->get();
+        
+        // Menghitung subtotal dan total harga
+        $subtotal = $cartItems->sum(function ($item) {
+            return $item->product->harga * $item->quantity;
+        });
+        $total = $subtotal;
+
+        // Menampilkan halaman checkout dengan data yang diperlukan
+        return view('frontend.checkout.checkout', [
             'cartItems' => $cartItems,
             'subtotal' => $subtotal,
             'total' => $total,
+            'customer' => $customer,
         ]);
     }
 
-    public function processCheckout(Request $request)
+    // Memproses form checkout
+    public function process(Request $request)
     {
-        // Validasi input
+        // Memastikan customer sudah login
+        $customer = auth('customer')->user();
+        if (!$customer) {
+            return redirect()->route('customer.login')->with('error', 'Anda harus login terlebih dahulu.');
+        }
+
+        // Validasi data input form checkout
         $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'state' => 'required|string|max:255',
-            'postcode' => 'required|string|max:10',
-            'phone' => 'required|string|max:20',
-            'email' => 'required|email',
-            'create_account' => 'nullable|boolean',
-            'ship_to_different' => 'nullable|boolean',
-            'order_notes' => 'nullable|string',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'address' => 'required',
+            'payment_method' => 'required',
         ]);
 
-        // Proses checkout: simpan data, kirim email, atau buat pesanan
+        // Mengambil item di keranjang customer
+        $cartItems = Cart::where('customer_id', $customer->id)->with('product')->get();
+        
+        // Cek apakah keranjang kosong
+        if ($cartItems->isEmpty()) {
+            return redirect()->back()->with('error', 'Keranjang kosong, tidak ada item untuk diproses.');
+        }
 
-        // Contoh: Simpan data ke session untuk demonstrasi
-        // Sebenarnya, Anda mungkin ingin menyimpan ke database atau sistem lain
-        session()->flash('success', 'Pesanan Anda berhasil diproses.');
+        // Menghitung total harga semua item di keranjang
+        $total = $cartItems->sum(function ($item) {
+            return $item->product->harga * $item->quantity;
+        });
+
+        // Cek apakah total harga valid
+        if ($total === 0) {
+            return redirect()->back()->with('error', 'Total harga tidak valid.');
+        }
+
+        // Simpan setiap item dalam pesanan di tabel `pesanan`
+        foreach ($cartItems as $item) {
+            $pesanan = new Pesanan();
+            $pesanan->no_pesanan = uniqid();
+            $pesanan->alamat = $request->address;
+            $pesanan->metode_pembayaran = $request->payment_method;
+            $pesanan->nama_customer = $request->first_name . ' ' . $request->last_name;
+            $pesanan->produk_id = $item->product_id;
+            $pesanan->harga = $item->product->harga;
+            $pesanan->jumlah_pesanan = $item->quantity;
+            $pesanan->total = $item->product->harga * $item->quantity; // Menyimpan total per item
+            $pesanan->status_pesanan = 'pending';
+            $pesanan->user_id = $customer->id;
+            $pesanan->tanggal = Carbon::now();
+            $pesanan->save();
+        }
+
+        // Format pesan untuk dikirim ke WhatsApp
+        $productDetails = $cartItems->map(function ($item) {
+            $product = $item->product;
+            $harga = $product->harga ?? 0;
+            return "{$product->nama_produk} - {$item->quantity} x Rp " . number_format($harga, 0, ',', '.');
+        })->implode("\n");
+
+        $whatsappMessage = "Pesanan baru:\n" .
+                           "Nama: {$request->first_name} {$request->last_name}\n" .
+                           "Alamat: {$request->address}\n" .
+                           "Metode Pembayaran: {$request->payment_method}\n" .
+                           "Total: Rp " . number_format($total, 0, ',', '.') . "\n" .
+                           "Pesanan:\n" . $productDetails;
+
+        // Mengirim pesan ke WhatsApp
+        $whatsappNumber = '6289653600997';
+        $waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
+        return redirect($waLink);
     }
 }

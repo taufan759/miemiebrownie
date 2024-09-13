@@ -4,16 +4,15 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{$sub}} <br><br>
+                <h5 class="card-title">{{ $sub }} <br><br>
                     <a href="{{ route('pesanan.create') }}" title="Tambah data">
                         <button type="button" class="btn btn-success btn-xs waves-effect waves-light">Tambah</button>
                     </a>
                 </h5>
-                <!-- /.dropdown js__dropdown -->
                 <table id="example" class="table-striped table-bordered display table" style="width:100%">
                     <thead>
                         <tr>
-                            <th align="center">No</th>
+                            <th>No</th>
                             <th>No Pesanan</th>
                             <th>Status</th>
                             <th>Tanggal</th>
@@ -29,63 +28,69 @@
                         @foreach ($pesanan as $index => $row)
                             <tr>
                                 <td align="center">{{ $index + 1 }}</td>
-                                <td> {{ $row->no_pesanan }} </td>
+                                <td>{{ $row->no_pesanan }}</td>
                                 <td align="center">
-                                    @if ($row->status_pesanan == 0)
-                                        <div class="label label-default">Menunggu</div>
-                                    @elseif ($row->status_pesanan == 1)
-                                        <div class="label label-success">Lunas</div>
-                                    @elseif ($row->status_pesanan == 2)
-                                        <div class="label label-info">Dikemas</div>
-                                    @elseif ($row->status_pesanan == 3)
-                                        <div class="label label-primary">Dikirim</div>
-                                    @elseif ($row->status_pesanan == 4)
-                                        <div class="label label-info">Diterima</div>
-                                    @elseif ($row->status_pesanan == 5)
-                                        <div class="label label-default">Selesai</div>
-                                    @else
-                                        <div class="label label-danger">Tidak Aktif</div>
-                                    @endif
+                                    @switch($row->status_pesanan)
+                                        @case(0)
+                                            <span class="badge badge-secondary">Menunggu</span>
+                                            @break
+                                        @case(1)
+                                            <span class="badge badge-success">Lunas</span>
+                                            @break
+                                        @case(2)
+                                            <span class="badge badge-info">Dikemas</span>
+                                            @break
+                                        @case(3)
+                                            <span class="badge badge-primary">Dikirim</span>
+                                            @break
+                                        @case(4)
+                                            <span class="badge badge-info">Diterima</span>
+                                            @break
+                                        @case(5)
+                                            <span class="badge badge-secondary">Selesai</span>
+                                            @break
+                                        @default
+                                            <span class="badge badge-danger">Tidak Aktif</span>
+                                    @endswitch
                                 </td>
-                                <td> {{ $row->created_at }} </td>
-                                <td> {{ $row->nama_customer }} </td>
-                                <td> {{ $row->alamat }} </td>
-                                <td> {{ $row->jumlah_pesanan }} </td>
-                                <td>Rp. {{ number_format($row->total_pesanan, 0, ',', '.') }} </td>
+                                <td>{{ $row->created_at }}</td>
+                                <td>{{ $row->nama_customer }}</td>
+                                <td>{{ $row->alamat }}</td>
+                                <td>{{ $row->jumlah_pesanan }}</td>
+                                <td>Rp. {{ number_format($row->total_pesanan, 0, ',', '.') }}</td>
                                 <td>
-                                    @if ($row->metode_pembayaran == 0)
-                                        <div>Menunggu</div>
-                                    @elseif ($row->metode_pembayaran == 1)
-                                        <div>Transfer Bank</div>
-                                    @elseif ($row->metode_pembayaran == 2)
-                                        <div>COD - Cek Dulu</div>
-                                    @elseif ($row->metode_pembayaran == 3)
-                                        <div>COD</div>
-                                    @else
-                                        <div>Belum Bayar</div>
-                                    @endif
+                                    @switch($row->metode_pembayaran)
+                                        @case(1)
+                                            <span>Transfer Bank</span>
+                                            @break
+                                        @case(2)
+                                            <span>COD - Cek Dulu</span>
+                                            @break
+                                        @case(3)
+                                            <span>COD</span>
+                                            @break
+                                        @default
+                                            <span>Belum Bayar</span>
+                                    @endswitch
                                 </td>
                                 <td align="center">
-                                    <a href="{{ route('pesanan.edit', $row->id) }}" title="Ubah Data">
-                                        <span class="btn btn-success btn-xs waves-effect waves-light"><i
-                                                class="fa fa-edit"></i>Ubah</span>
+                                    <a href="{{ route('pesanan.edit', $row->id) }}" title="Ubah Data" class="btn btn-success btn-xs">
+                                        <i class="fa fa-edit"></i> Ubah
                                     </a>
-                                    <form method="POST" action="{{ route('pesanan.destroy', $row->id) }}"
-                                        style="display: inline-block;">
-                                        @method('delete')
+                                    <form method="POST" action="{{ route('pesanan.destroy', $row->id) }}" style="display:inline-block;">
                                         @csrf
-                                        <button type="button"
-                                            class="btn btn-danger btn-xs waves-effect waves-light show_confirm"
-                                            data-toggle="tooltip" title='Delete' data-konf-delete="{{ $row->no_pesanan }}"
-                                            onclick=""><i class="fa fa-trash"></i>Hapus</button></button>
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-xs show_confirm" data-konf-delete="{{ $row->no_pesanan }}">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
                                     </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-            <!-- /.box-content -->
         </div>
-        <!-- /.col-xs-12 -->
     </div>
+</div>
 @endsection

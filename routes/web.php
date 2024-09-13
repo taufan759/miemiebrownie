@@ -12,11 +12,11 @@ use App\Http\Controllers\Backend\PesananBackend;
 use App\Http\Middleware\IsAdmin;
 
 use App\Http\Controllers\Auth\CustomerAuth;
+use App\Http\Controllers\Frontend\HomeFrontend;
 use App\Http\Controllers\Frontend\KeranjangFrontend;
 use App\Http\Controllers\Frontend\CheckoutFrontend;
 use App\Http\Controllers\Frontend\PageFrontend;
 use App\Http\Controllers\Frontend\CustomerFrontend;
-use App\Http\Controllers\Frontend\HomeFrontend;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,5 +82,5 @@ Route::get('/cart/keranjang', [KeranjangFrontend::class, 'index']);
 Route::post('/cart/add', [KeranjangFrontend::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/keranjang/update', [KeranjangFrontend::class, 'updateCart']);
 Route::post('/cart/keranjang/delete', [KeranjangFrontend::class, 'removeItem']);
-Route::get('/cart/keranjang/checkout', [CheckoutFrontend::class, 'showCheckout'])->name('checkout.show');
-Route::post('/cart/keranjang/checkout', [CheckoutFrontend::class, 'processCheckout'])->name('checkout.process');
+Route::get('/checkout', [CheckoutFrontend::class, 'index'])->name('checkout');
+Route::post('/checkout/process', [CheckoutFrontend::class, 'process'])->name('checkout.process');

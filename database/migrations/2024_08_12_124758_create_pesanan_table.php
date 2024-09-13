@@ -15,19 +15,22 @@ return new class extends Migration
             $table->id();
             $table->string('no_pesanan')->unique();
             $table->text('alamat');
-            $table->string('metode_pembayaran');
+            $table->enum('metode_pembayaran', ['bank_transfer', 'credit_card', 'cod']); // Pembatasan metode pembayaran
             $table->string('nama_customer');
-            $table->string('jumlah_pesanan');
+            $table->integer('jumlah_pesanan'); // Menambahkan jumlah pesanan sebagai integer
+            $table->decimal('total', 15, 2); // Total tanpa after karena kolom jumlah_pesanan sudah ada
             $table->string('status_kode')->nullable();
-            $table->string('transaksi_id')->nullable();
-            $table->datetime('tanggal');
-            $table->string('harga');
-            $table->string('status_pesanan');
+            $table->string('transaksi_id')->nullable(); 
+            $table->datetime('tanggal')->default(now());
+            $table->decimal('harga', 15, 2); // Menggunakan decimal untuk harga, mendukung angka besar
+            $table->enum('status_pesanan', ['pending', 'proses', 'selesai', 'batal']); // Menggunakan enum untuk status pesanan
             $table->unsignedBigInteger('produk_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
-            $table->foreign('produk_id')->references('id')->on('produk');
-            $table->foreign('user_id')->references('id')->on('user');
+
+            // Relasi foreign key
+            $table->foreign('produk_id')->references('id')->on('produk')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade'); // onDelete cascade
         });
     }
 

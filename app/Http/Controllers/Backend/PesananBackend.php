@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use App\Models\Backend\Pesanan;
@@ -41,46 +42,56 @@ class PesananBackend extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+{
     // Validasi input
-    // ddd($request->all());
     $validatedData = $request->validate([
-        'nama_customer' => 'required',
-        'metode_pembayaran' => 'required',
-        'produk_id' => 'required',
-        'jumlah_pesanan' => 'required',
-        'total_pesanan' => 'required',
-        'alamat' => 'required',
+        'nama_customer' => 'required|string|max:255',
+        'produk_id' => 'required|exists:produk,id', // Assuming produk_id is used to validate the product existence
+        'jumlah_pesanan' => 'required|integer',
+        'alamat' => 'required|string',
+        'total_pesanan' => 'required|numeric',
+        'metode_pembayaran' => 'required|in:0,1,2,3', // Adjust to match your payment method values
+        'status_pesanan' => 'nullable|in:pending,proses,selesai,batal', // Optional, defaults to 'pending'
     ]);
 
     // Menghasilkan nomor pesanan dengan format nama_customer-tanggal-angka_acak
     $tanggal = Carbon::now()->format('Ymd');
-    $angka_acak = Str::upper (Str::random (8));
+    $angka_acak = Str::upper(Str::random(8));
     $no_pesanan = "{$tanggal}{$angka_acak}";
 
-    // Menambahkan nomor pesanan ke dalam data yang akan disimpan
+    // Menyimpan data pesanan
     $validatedData['no_pesanan'] = $no_pesanan;
-
-    // Menyimpan data ke dalam database
-    $validatedData['status_pesanan'] = 1;
+    $validatedData['status_pesanan'] = $validatedData['status_pesanan'] ?? 'pending'; // Set status sebagai 'pending' jika tidak ada status yang diberikan
     $validatedData['user_id'] = auth()->user()->id;
-    Pesanan::create($validatedData);
+    $validatedData['tanggal'] = Carbon::now();
 
-    return redirect('backend/pesanan')->with('success', 'Data berhasil tersimpan');
+    // Create the order
+    $pesanan = Pesanan::create($validatedData);
+
+    // Ambil data cart dari session atau database
+    $cartItems = auth('customer')->user()->cartItems;
+
+    foreach ($cartItems as $item) {
+        if ($item->product && $item->product->harga !== null) {
+            // Save each item with `produk_id` from the cart
+            $pesanan->items()->create([
+                'produk_id' => $item->product_id, // Ensure this is correctly set
+                'jumlah_pesanan' => $item->quantity,
+                'harga' => $item->product->harga,
+                'total' => $item->product->harga * $item->quantity,
+            ]);
+        } else {
+            Log::error('Produk tidak valid atau harga produk adalah null', ['product_id' => $item->product_id]);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    // Optionally clear the cart after processing
+    auth('customer')->user()->cartItems()->delete();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    return redirect()->route('pesanan.index')->with('success', 'Pesanan berhasil dibuat.');
+}
+
+public function edit(string $id)
     {
         $produk = Produk::orderBy('id', 'asc')->get();
         $pesanan = Pesanan::findOrFail($id);
@@ -106,9 +117,9 @@ class PesananBackend extends Controller
             'alamat' => 'required',
         ];
 
-        // dd($request->all());
         $validatedData = $request->validate($rules);
-        Pesanan::where('id', $id)->update($validatedData);
+        $pesanan->update($validatedData);
+
         return redirect('backend/pesanan')->with('success', 'Data berhasil diperbaharui');
     }
 
@@ -119,18 +130,19 @@ class PesananBackend extends Controller
     {
         $pesanan = Pesanan::findOrFail($id);
         $pesanan->delete();
-        return redirect('backend/pesanan');
+        return redirect('backend/pesanan')->with('success', 'Pesanan berhasil dihapus');
     }
 
+    /**
+     * Get harga produk berdasarkan produk ID
+     */
     public function getIdProduk(Request $request)
     {
-        $produkId = $request->produk_id;
-        $produk = Produk::find($produkId);
+        $produk = Produk::find($request->produk_id);
 
         if ($produk) {
-            $hargaProduk = $produk->harga;
-            return response()->json(['hargaProduk' => $hargaProduk]);
-        }else {
+            return response()->json(['hargaProduk' => $produk->harga]);
+        } else {
             return response()->json(['hargaProduk' => null]);
         }
     }
