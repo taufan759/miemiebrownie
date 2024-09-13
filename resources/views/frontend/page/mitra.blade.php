@@ -1,6 +1,7 @@
 @extends('frontend.layouts.app')
 @section('content')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('frontend/css/style-mitra.css') }}">
 
 <!-- Welcome Section Begin -->
@@ -16,7 +17,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-10 text-center mb-4 animate__animated animate__fadeInUp">
-                            <p class="lead text-dark" style="line-height: 1.8;">
+                            <p class="lead text-dark" style="line-height: 1.8; text-align: center;">
                                 Ingin bekerja dari rumah tapi tetap meraih penghasilan jutaan rupiah? <br>
                                 Penasaran bagaimana caranya mendapatkan emas murni gratis? <br>
                                 Siap memperluas jaringan dan menambah banyak relasi baru? <br>
@@ -46,7 +47,7 @@
                 <div class="embed-responsive embed-responsive-16by9 mb-3" style="max-width: 80%; margin: auto;">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/IEuOPuanEWc" title="Pemutar video YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <p class="lead mb-3">Jangan lewatkan konten eksklusif terbaru kami hanya di YouTube!</p>
+                <p class="lead mb-3">Jangan lewatkan konten eksklusif terbaru di YouTube kami!</p>
                 <a href="https://www.youtube.com/@miemiebrownieofficial" target="_blank" class="btn btn-primary btn-custom">
                     <i class="fab fa-youtube mr-2"></i> Miemie Brownie
                 </a>
@@ -82,10 +83,10 @@
         <div class="col-lg-6 order-lg-1 animate__animated animate__fadeInUp">
             <h4 class="text-pink font-weight-bold">Ketentuan dan Etika Menjadi Mitra</h4>
             <ul class="list-unstyled lead">
-                <li><i class="fas fa-check-circle"></i> Bawa nama baik diri, keluarga, dan Miemie Brownie.</li>
-                <li><i class="fas fa-check-circle"></i> Jadilah inspirasi positif di sekitarmu, baik secara langsung maupun online.</li>
-                <li><i class="fas fa-check-circle"></i> Semakin sering belanja (Repeat Order), semakin banyak reward yang didapatkan.</li>
-                <li><i class="fas fa-check-circle"></i> Terbuka untuk saran dan masukan. Jangan ragu untuk menghubungi tim admin jika ingin berdiskusi lebih lanjut.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Bawa nama baik diri, keluarga, dan Miemie Brownie.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Jadilah inspirasi positif di sekitarmu, baik secara langsung maupun online.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Semakin sering belanja (Repeat Order), semakin banyak reward yang didapatkan.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Terbuka untuk saran dan masukan. Jangan ragu untuk menghubungi tim admin jika ingin berdiskusi lebih lanjut.</li>
             </ul>
         </div>
     </div>
@@ -100,11 +101,11 @@
         <div class="col-lg-6 animate__animated animate__fadeInUp">
             <h4 class="text-pink font-weight-bold">Keuntungan Menjadi Mitra</h4>
             <ul class="list-unstyled lead">
-                <li><i class="fas fa-check-circle"></i> Penghasilan tambahan hingga jutaan rupiah.</li>
-                <li><i class="fas fa-check-circle"></i> Bekerja secara online dari rumah.</li>
-                <li><i class="fas fa-check-circle"></i> Mendapatkan e-banner Mitra Miemie Brownie.</li>
-                <li><i class="fas fa-check-circle"></i> Materi promosi, foto promo medsos, dan training online.</li>
-                <li><i class="fas fa-check-circle"></i> Hadiah langsung berupa emas murni.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Penghasilan tambahan hingga jutaan rupiah.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Bekerja secara online dari rumah.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Mendapatkan e-banner Mitra Miemie Brownie.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Materi promosi, foto promo medsos, dan training online.</li>
+                <li style="text-align: justify;"><i class="fas fa-check-circle"></i> Hadiah langsung berupa emas murni.</li>
             </ul>
         </div>
     </div>
@@ -126,13 +127,13 @@
                     <p class="card-text">Pembelanjaan minimal 18 box Cookies atau senilai Rp 1.500.000</p>
                     <p class="card-text">Benefit:</p>
                     <ul class="list-unstyled lead">
-                        <li><i class="fas fa-gem"></i> Hadiah langsung emas murni (0,025 gram)</li>
-                        <li><i class="fas fa-chalkboard-teacher"></i> Free training</li>
-                        <li><i class="fas fa-comments"></i> Konsultasi dengan owner dan tim marketing</li>
-                        <li><i class="fas fa-gift"></i> Free produk Brownie To Go</li>
-                        <li><i class="fas fa-tags"></i> Harga khusus mitra</li>
-                        <li><i class="fas fa-ad"></i> E-banner dan materi iklan medsos</li>
-                        <li><i class="fas fa-pen-alt"></i> Copywriting promosi</li>
+                        <li style="text-align: justify;"><i class="fas fa-gem"></i> Hadiah langsung emas murni (0,025 gram)</li>
+                        <li style="text-align: justify;"><i class="fas fa-chalkboard-teacher"></i> Free training</li>
+                        <li style="text-align: justify;"><i class="fas fa-comments"></i> Konsultasi dengan owner dan tim marketing</li>
+                        <li style="text-align: justify;"><i class="fas fa-gift"></i> Free produk Brownie To Go</li>
+                        <li style="text-align: justify;"><i class="fas fa-tags"></i> Harga khusus mitra</li>
+                        <li style="text-align: justify;"><i class="fas fa-ad"></i> E-banner dan materi iklan medsos</li>
+                        <li style="text-align: justify;"><i class="fas fa-pen-alt"></i> Copywriting promosi</li>
                     </ul>
                 </div>
             </div>
@@ -146,12 +147,12 @@
                     <p class="card-text">Pembelanjaan minimal 14 box Cookies atau senilai Rp 1.000.000</p>
                     <p class="card-text">Benefit:</p>
                     <ul class="list-unstyled lead">
-                        <li><i class="fas fa-gem"></i> Hadiah langsung emas murni (0,025 gram)</li>
-                        <li><i class="fas fa-chalkboard-teacher"></i> Free training</li>
-                        <li><i class="fas fa-comments"></i> Konsultasi dengan owner dan tim marketing</li>
-                        <li><i class="fas fa-tags"></i> Harga khusus mitra</li>
-                        <li><i class="fas fa-ad"></i> E-banner dan materi iklan medsos</li>
-                        <li><i class="fas fa-pen-alt"></i> Copywriting promosi</li>
+                        <li style="text-align: justify;"><i class="fas fa-gem"></i> Hadiah langsung emas murni (0,025 gram)</li>
+                        <li style="text-align: justify;"><i class="fas fa-chalkboard-teacher"></i> Free training</li>
+                        <li style="text-align: justify;"><i class="fas fa-comments"></i> Konsultasi dengan owner dan tim marketing</li>
+                        <li style="text-align: justify;"><i class="fas fa-tags"></i> Harga khusus mitra</li>
+                        <li style="text-align: justify;"><i class="fas fa-ad"></i> E-banner dan materi iklan medsos</li>
+                        <li style="text-align: justify;"><i class="fas fa-pen-alt"></i> Copywriting promosi</li>
                     </ul>
                 </div>
             </div>
@@ -165,12 +166,12 @@
                     <p class="card-text">Pembelanjaan minimal 10 box Cookies atau senilai Rp 750.000</p>
                     <p class="card-text">Benefit:</p>
                     <ul class="list-unstyled lead">
-                        <li><i class="fas fa-chalkboard-teacher"></i> Free training</li>
-                        <li><i class="fas fa-comments"></i> Konsultasi dengan owner dan tim marketing</li>
-                        <li><i class="fas fa-gift"></i> Free produk Brownie To Go</li>
-                        <li><i class="fas fa-tags"></i> Harga khusus mitra</li>
-                        <li><i class="fas fa-ad"></i> E-banner dan materi iklan medsos</li>
-                        <li><i class="fas fa-pen-alt"></i> Copywriting promosi</li>
+                        <li style="text-align: justify;"><i class="fas fa-chalkboard-teacher"></i> Free training</li>
+                        <li style="text-align: justify;"><i class="fas fa-comments"></i> Konsultasi dengan owner dan tim marketing</li>
+                        <li style="text-align: justify;"><i class="fas fa-gift"></i> Free produk Brownie To Go</li>
+                        <li style="text-align: justify;"><i class="fas fa-tags"></i> Harga khusus mitra</li>
+                        <li style="text-align: justify;"><i class="fas fa-ad"></i> E-banner dan materi iklan medsos</li>
+                        <li style="text-align: justify;"><i class="fas fa-pen-alt"></i> Copywriting promosi</li>
                     </ul>
                 </div>
             </div>
@@ -186,10 +187,21 @@
         </div>
     </div>
     <div class="col-lg-12 text-center">
-            <img src="{{ asset('frontend/img/mitra/pricelist.png') }}" alt="Pricelist" class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
-        </div>
-</div>
+            <!-- Trigger gambar -->
+            <img src="{{ asset('frontend/img/price-list.png') }}" alt="Pricelist" class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;" data-bs-toggle="modal" data-bs-target="#imageModal">
 
+            <!-- Modal -->
+            <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="{{ asset('frontend/img/price-list.png') }}" alt="Pricelist" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Tanya Jawab Section -->
 <div class="container mt-5 py-5 bg-white rounded shadow-sm">
@@ -205,30 +217,51 @@
                 <!-- FAQ 1 -->
                 <div class="faq-item mb-4">
                     <h5 class="font-weight-bold">Apakah harga boleh dinaikkan (upping price)?</h5>
-                    <p>Boleh, silakan disesuaikan dengan kondisi market di lokasi Anda. Pastikan tetap kompetitif agar menarik pelanggan. Untuk detail harga, <em>silakan lihat tabel harga yang terlampir.</em></p>
+                    <p style="text-align: justify;">Boleh, Anda bisa menyesuaikan harga dengan kondisi pasar di lokasi Anda. Namun, pastikan harga tetap kompetitif agar menarik bagi pelanggan. Untuk informasi lebih detail mengenai harga, <em>silakan lihat tabel harga yang terlampir.</em></p>
                 </div>
-                
+
                 <!-- FAQ 2 -->
                 <div class="faq-item mb-4">
                     <h5 class="font-weight-bold">Bagaimana jika uang saya belum cukup untuk membeli Paket Platinum?</h5>
-                    <p>Anda bisa menawarkan produk dan varian Miemie Brownie ke calon customer seperti saudara, relasi, atau teman terlebih dahulu. Minta pembayaran di awal, dan uang yang terkumpul bisa digunakan untuk membeli paket. Yang terpenting, selalu jaga amanah dan kepercayaan.</p>
+                    <p style="text-align: justify;">Anda dapat menawarkan produk dan varian Miemie Brownie kepada calon pelanggan, seperti saudara, relasi, atau teman. Minta pembayaran di awal, dan gunakan uang yang terkumpul untuk membeli paket. Hal yang paling penting adalah menjaga amanah dan kepercayaan mereka.</p>
                 </div>
-                
+
                 <!-- FAQ 3 -->
                 <div class="faq-item mb-4">
                     <h5 class="font-weight-bold">Saya masih belum mahir memasarkan secara online. Bagaimana solusinya?</h5>
-                    <p>Jangan khawatir! Tim Miemie Brownie menyediakan pelatihan online dan konsultasi gratis melalui grup WhatsApp. Selain itu, Anda bisa memanfaatkan materi promosi yang sudah disediakan untuk media sosial. Tim kami siap membimbing Anda.</p>
+                    <p style="text-align: justify;">Jangan khawatir! Tim Miemie Brownie menyediakan pelatihan online dan konsultasi gratis melalui grup WhatsApp. Anda juga dapat memanfaatkan materi promosi yang sudah tersedia untuk media sosial. Tim kami siap membimbing Anda hingga mahir.</p>
                 </div>
-                
+
                 <!-- FAQ 4 -->
                 <div class="faq-item mb-4">
                     <h5 class="font-weight-bold">Apakah aman jika saya memesan barang untuk dikirim ke luar kota?</h5>
-                    <p>InsyaAllah aman. Kami menggunakan metode pengemasan khusus dengan box Styrofoam untuk menjaga produk tetap segar. Dessert Box dibekukan terlebih dahulu sebelum pengiriman ke luar kota atau luar pulau. Alhamdulillah, pengiriman lancar hingga sekarang.</p>
+                    <p style="text-align: justify;">InsyaAllah aman. Kami menggunakan pengemasan khusus dengan box Styrofoam untuk menjaga produk tetap segar. Dessert Box dibekukan terlebih dahulu sebelum pengiriman ke luar kota atau luar pulau. Alhamdulillah, hingga kini pengiriman berjalan lancar.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- WhatsApp Section Begin -->
+<section class="whatsapp-section py-5 bg-light">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-lg-12 text-center animate__animated animate__fadeInUp">
+                <h4 class="text-black font-weight-bold">Bergabung di Grup WhatsApp Sekarang!</h4>
+                <div class="underline bg-pink mx-auto" style="width: 100px; height: 4px;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="lead mb-3">Klik tombol di bawah untuk bergabung. Terima kasih!</p>
+                <a href="https://chat.whatsapp.com/Fbgo3wXPLbJCkqwpyUqOHb" target="_blank" class="btn btn-custom whatsapp-btn">
+                    <i class="fab fa-whatsapp mr-2"></i> Gabung Grup WhatsApp
+                </a>                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- WhatsApp Section End -->
 
 <!-- Contact Us Section Begin -->
 <section class="contact-us-section py-5">
@@ -275,6 +308,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </section>
 <!-- Contact Us Section End -->
 @endsection

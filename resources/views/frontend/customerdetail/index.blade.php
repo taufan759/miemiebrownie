@@ -65,25 +65,25 @@
                     <!-- Order Item -->
                     <div class="order-item">
                         <div class="order-item__header">
-                            <h4>Order #12345</h4>
-                            <span class="order-status completed">Completed</span>
+                            <h4>Pesanan #12345</h4>
+                            <span class="order-status completed">Selesai</span>
                         </div>
                         <div class="order-item__details">
-                            <p><span class="detail-label">Date:</span> 05 Aug 2024</p>
+                            <p><span class="detail-label">Tanggal:</span> 05 Aug 2024</p>
                             <p><span class="detail-label">Total:</span> Rp 150,000</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary">Selengkapnya</a>
                         </div>
                     </div>
                     <!-- Order Item -->
                     <div class="order-item">
                         <div class="order-item__header">
-                            <h4>Order #12346</h4>
-                            <span class="order-status pending">Pending</span>
+                            <h4>Pesanan #12346</h4>
+                            <span class="order-status pending">Diproses</span>
                         </div>
                         <div class="order-item__details">
-                            <p><span class="detail-label">Date:</span> 15 Aug 2024</p>
+                            <p><span class="detail-label">Tanggal:</span> 15 Aug 2024</p>
                             <p><span class="detail-label">Total:</span> Rp 200,000</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="#" class="btn btn-primary">Selengkapnya</a>
                         </div>
                     </div>
                 </div>

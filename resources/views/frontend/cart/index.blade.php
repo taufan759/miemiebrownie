@@ -54,30 +54,34 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="/page/produk">Continue Shopping</a>
+                            <a href="/page/produk">Lanjut Belanja</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="#" id="update-cart"><i class="fa fa-spinner"></i> Update cart</a>
+                            <a href="#" id="update-cart"><i class="fa fa-spinner"></i>Update Keranjang</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="cart__discount">
-                    <h6>Discount codes</h6>
+                    <h6>Pakai Kode, Lebih Hemat!</h6>
                     <form action="#">
-                        <input type="text" placeholder="Coupon code">
-                        <button type="submit">Apply</button>
+                        <input type="text" placeholder="Kode Promo">
+                        <button type="submit">Klaim!</button>
                     </form>
                 </div>
                 <div class="cart__total">
-                    <h6>Cart total</h6>
+                    <h6>Total Keranjang</h6>
                     <ul>
                         <li>Total <span id="cart-total">Rp {{ number_format($cartTotal, 0, ',', '.') }}</span></li>
                     </ul>
+<<<<<<< HEAD
                     <a href="{{ route('checkout') }}"class="primary-btn">Proceed to checkout</a>
+=======
+                    <a href="/cart/keranjang/checkout" class="primary-btn">Checkout</a>
+>>>>>>> d68eb6c605a3495bc5480f3e8a88e01e6ff42193
                 </div>
             </div>
         </div>

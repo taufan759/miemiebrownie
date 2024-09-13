@@ -42,6 +42,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+        <a href="{{ route('customerdetail.index') }}" class="btn btn-secondary">Batal</a>
     </form>
 </div>
 @endsection

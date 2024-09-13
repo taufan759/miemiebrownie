@@ -114,10 +114,21 @@
             <!-- Main Content End -->
         </div>
     </div>
+    
+    <!-- CTA Text -->
+    <div id="cta-text" class="cta-text">
+        Ingin Pesan Sekarang? <br> Hubungi Kami via WhatsApp!
+    </div>
 
+    <!-- WhatsApp Button -->
     <a href="https://api.whatsapp.com/send/?phone=628152800800&text=Hallo+miemiebrownie.com.+Saya+mau+pesan+%3A&type=phone_number&app_absent=0" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/WhatsApp_logo-color-vertical.svg" alt="WhatsApp" width="60px">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include custom JavaScript file -->
+    <script src="main.js"></script>
     
     <!-- Footer Section Begin -->
     <footer class="footer" style="background-color: #f0f0f0; color: #3E2723;">

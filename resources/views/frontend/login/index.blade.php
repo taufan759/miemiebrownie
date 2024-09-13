@@ -71,7 +71,7 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-phone"></i>
-                <input type="text" name="hp" placeholder="Enter your phone number" required>
+                <input type="number" name="hp" placeholder="Enter your phone number" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>

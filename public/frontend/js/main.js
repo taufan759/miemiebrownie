@@ -371,6 +371,13 @@ $(document).ready(function() {
     $(".close").on("click", function () {
         closeModal();
     });
+
+    $(window).on('load', function() {
+        // Mengatur timer untuk menghilangkan CTA setelah 5 detik
+        setTimeout(function() {
+            $('#cta-text').addClass('hidden');
+        }, 5000); // 5000 milidetik = 5 detik
+    });
 });
 
 

@@ -2,7 +2,7 @@
 @section('content')
 <body>
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-blog set-bg" data-setbg="{{ asset('frontend/img/info-home.png') }}">
+    <section class="breadcrumb-blog set-bg" data-setbg="{{ asset('frontend/img/info.png') }}">
         <div class="overlay">
             <div class="content">  
             </div>
@@ -22,7 +22,7 @@
                         <div class="blog__item">
                             <div class="blog__item__pic set-bg" data-setbg="{{ asset('storage/img-berita/thumb_md_' . $item->img_berita) }}"></div>
                             <div class="blog__item__text">
-                                <span><img src="{{ asset('frontend/img/icon/calendar.png') }}" alt=""> {{ \Carbon\Carbon::parse($item->tanggal)->format('d F Y') }}</span>
+                                <span><i class="fa fa-calendar"></i> {{ \Carbon\Carbon::parse($item->tanggal)->format('d F Y') }}</span>
                                 <h5>{{ $item->judul }}</h5>
                                 <a href="{{ route('blogdetails', $item->id) }}">Lihat Detail</a>
                             </div>
