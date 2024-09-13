@@ -77,7 +77,7 @@
                     <ul>
                         <li>Total <span id="cart-total">Rp {{ number_format($cartTotal, 0, ',', '.') }}</span></li>
                     </ul>
-                    <a href="/cart/keranjang/checkout" class="primary-btn">Proceed to checkout</a>
+                    <a href="{{ route('checkout') }}"class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
         </div>
