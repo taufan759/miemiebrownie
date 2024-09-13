@@ -31,43 +31,37 @@
                                 <td>{{ $row->no_pesanan }}</td>
                                 <td align="center">
                                     @switch($row->status_pesanan)
-                                        @case(0)
-                                            <span class="badge badge-secondary">Menunggu</span>
+                                        @case('pending')
+                                            <span class="badge badge-secondary">Pending</span>
                                             @break
-                                        @case(1)
-                                            <span class="badge badge-success">Lunas</span>
+                                        @case('proses')
+                                            <span class="badge badge-info">Proses</span>
                                             @break
-                                        @case(2)
-                                            <span class="badge badge-info">Dikemas</span>
+                                        @case('selesai')
+                                            <span class="badge badge-success">Selesai</span>
                                             @break
-                                        @case(3)
-                                            <span class="badge badge-primary">Dikirim</span>
-                                            @break
-                                        @case(4)
-                                            <span class="badge badge-info">Diterima</span>
-                                            @break
-                                        @case(5)
-                                            <span class="badge badge-secondary">Selesai</span>
+                                        @case('batal')
+                                            <span class="badge badge-danger">Batal</span>
                                             @break
                                         @default
-                                            <span class="badge badge-danger">Tidak Aktif</span>
+                                            <span class="badge badge-warning">Tidak Diketahui</span>
                                     @endswitch
                                 </td>
-                                <td>{{ $row->created_at }}</td>
+                                <td>{{ $row->created_at->format('d M Y H:i') }}</td>
                                 <td>{{ $row->nama_customer }}</td>
                                 <td>{{ $row->alamat }}</td>
                                 <td>{{ $row->jumlah_pesanan }}</td>
-                                <td>Rp. {{ number_format($row->total_pesanan, 0, ',', '.') }}</td>
+                                <td>Rp. {{ number_format($row->total, 0, ',', '.') }}</td>
                                 <td>
                                     @switch($row->metode_pembayaran)
-                                        @case(1)
+                                        @case('bank_transfer')
                                             <span>Transfer Bank</span>
                                             @break
-                                        @case(2)
-                                            <span>COD - Cek Dulu</span>
+                                        @case('credit_card')
+                                            <span>Kartu Kredit</span>
                                             @break
-                                        @case(3)
-                                            <span>COD</span>
+                                        @case('cod')
+                                            <span>Bayar di Tempat (COD)</span>
                                             @break
                                         @default
                                             <span>Belum Bayar</span>
@@ -87,7 +81,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                    </tbody>
+                    </tbody>                    
                 </table>
             </div>
         </div>

@@ -91,22 +91,33 @@ class CheckoutFrontend extends Controller
         }
 
         // Format pesan untuk dikirim ke WhatsApp
-        $productDetails = $cartItems->map(function ($item) {
-            $product = $item->product;
-            $harga = $product->harga ?? 0;
-            return "{$product->nama_produk} - {$item->quantity} x Rp " . number_format($harga, 0, ',', '.');
-        })->implode("\n");
+$productDetails = $cartItems->map(function ($item) {
+    $product = $item->product;
+    $harga = $product->harga ?? 0;
+    return "{$product->nama_produk} ({$item->quantity}) x Rp " . number_format($harga, 0, ',', '.');
+})->implode("\n");
 
-        $whatsappMessage = "Pesanan baru:\n" .
-                           "Nama: {$request->first_name} {$request->last_name}\n" .
-                           "Alamat: {$request->address}\n" .
-                           "Metode Pembayaran: {$request->payment_method}\n" .
-                           "Total: Rp " . number_format($total, 0, ',', '.') . "\n" .
-                           "Pesanan:\n" . $productDetails;
+$whatsappMessage = 
+    "==============================\n" .
+    "                    MIE MIE BROWNIE                    \n" .
+    "                      KOTA TEGAL                        \n" .
+    "==============================\n" .
+    "Nama Penerima : {$request->first_name} {$request->last_name}\n" .
+    "Alamat Penerima : {$request->address}\n" .
+    "No HP : {$request->phone}\n" .
+    "Metode Pengiriman : - \n" . // Kosongkan pengiriman
+    "-----------------------------------------------------------\n" .
+    "Detail Pesanan :\n" .
+    $productDetails . "\n" . // Produk dan kuantitas
+    "-----------------------------------------------------------\n" .
+    "Total Harga : Rp " . number_format($total, 0, ',', '.') . "\n" .
+    "Metode Pembayaran : {$request->payment_method}\n" .
+    "==============================\n";
 
-        // Mengirim pesan ke WhatsApp
-        $whatsappNumber = '6289653600997';
-        $waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
-        return redirect($waLink);
+// Mengirim pesan ke WhatsApp
+$whatsappNumber = '6289653600997';
+$waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
+return redirect($waLink);
+
     }
 }

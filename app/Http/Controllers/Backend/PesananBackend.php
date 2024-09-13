@@ -46,15 +46,14 @@ class PesananBackend extends Controller
     // Validasi input
     $validatedData = $request->validate([
         'nama_customer' => 'required|string|max:255',
-        'produk_id' => 'required|exists:produk,id', // Assuming produk_id is used to validate the product existence
+        'produk_id' => 'required|exists:produk,id', 
         'jumlah_pesanan' => 'required|integer',
         'alamat' => 'required|string',
+        'metode_pembayaran' => 'required|in:bank_transfer,credit_card,cod', // Perbaiki metode pembayaran
         'total_pesanan' => 'required|numeric',
-        'metode_pembayaran' => 'required|in:0,1,2,3', // Adjust to match your payment method values
-        'status_pesanan' => 'nullable|in:pending,proses,selesai,batal', // Optional, defaults to 'pending'
     ]);
 
-    // Menghasilkan nomor pesanan dengan format nama_customer-tanggal-angka_acak
+    // Menghasilkan nomor pesanan dengan format tanggal-angka_acak
     $tanggal = Carbon::now()->format('Ymd');
     $angka_acak = Str::upper(Str::random(8));
     $no_pesanan = "{$tanggal}{$angka_acak}";
@@ -65,17 +64,18 @@ class PesananBackend extends Controller
     $validatedData['user_id'] = auth()->user()->id;
     $validatedData['tanggal'] = Carbon::now();
 
-    // Create the order
+    // Buat pesanan
     $pesanan = Pesanan::create($validatedData);
 
     // Ambil data cart dari session atau database
     $cartItems = auth('customer')->user()->cartItems;
 
+    // Proses setiap item di dalam keranjang belanja
     foreach ($cartItems as $item) {
         if ($item->product && $item->product->harga !== null) {
-            // Save each item with `produk_id` from the cart
+            // Simpan detail produk dari keranjang
             $pesanan->items()->create([
-                'produk_id' => $item->product_id, // Ensure this is correctly set
+                'produk_id' => $item->product_id,
                 'jumlah_pesanan' => $item->quantity,
                 'harga' => $item->product->harga,
                 'total' => $item->product->harga * $item->quantity,
@@ -85,9 +85,10 @@ class PesananBackend extends Controller
         }
     }
 
-    // Optionally clear the cart after processing
+    // Hapus keranjang setelah pesanan berhasil diproses
     auth('customer')->user()->cartItems()->delete();
 
+    // Redirect ke halaman pesanan dengan pesan sukses
     return redirect()->route('pesanan.index')->with('success', 'Pesanan berhasil dibuat.');
 }
 
@@ -107,22 +108,26 @@ public function edit(string $id)
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        $pesanan = Pesanan::findOrFail($id);
-        $rules = [
-            'status_pesanan' => 'required',
-            'nama_customer' => 'required',
-            'jumlah_pesanan' => 'required',
-            'total_pesanan' => 'required',
-            'alamat' => 'required',
-        ];
+{
+    $pesanan = Pesanan::findOrFail($id);
 
-        $validatedData = $request->validate($rules);
-        $pesanan->update($validatedData);
+    // Validasi input
+    $rules = [
+        'status_pesanan' => 'required|in:pending,proses,selesai,batal',
+        'nama_customer' => 'required',
+        'jumlah_pesanan' => 'required',
+        'total_pesanan' => 'required',
+        'alamat' => 'required',
+    ];
 
-        return redirect('backend/pesanan')->with('success', 'Data berhasil diperbaharui');
-    }
+    $validatedData = $request->validate($rules);
 
+    // Update data pesanan
+    $pesanan->update($validatedData);
+
+    // Redirect dengan pesan sukses
+    return redirect()->route('pesanan.index')->with('success', 'Data berhasil diperbaharui');
+}
     /**
      * Remove the specified resource from storage.
      */

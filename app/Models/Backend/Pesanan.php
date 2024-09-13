@@ -9,7 +9,6 @@ class Pesanan extends Model
 {
     use HasFactory;
 
-    // Tentukan nama tabel secara eksplisit
     protected $table = 'pesanan'; 
 
     protected $fillable = [
@@ -28,12 +27,13 @@ class Pesanan extends Model
 
     public function produk()
     {
-        return $this->belongsTo(Produk::class);
+        return $this->belongsTo(Produk::class, 'produk_id'); // pastikan relasi ini benar
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id'); // pastikan relasi ini benar
     }
 }
+
 
