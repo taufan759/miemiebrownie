@@ -47,15 +47,19 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#kategoriSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a>
-                        <ul class="collapse list-unstyled" id="kategoriSubmenu">
-                            <li>
-                                <a href="{{ route('pesanan.index') }}">Pesanan</a>
-                            </li>
-                            <li>
-                                <a href="#">Pesanan Selesai</a>
-                            </li>
-                        </ul>
+                        <a href="#kategoriSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Data Pesanan</a> 
+<ul class="collapse list-unstyled" id="kategoriSubmenu">
+    <li>
+        <a href="{{ route('pesanan.index') }}">Pesanan</a>
+    </li>
+    <li>
+        <a href="{{ route('pesanan.selesai') }}">Pesanan Selesai</a>
+    </li>
+    <li>
+        <a href="{{ route('pesanan.batal') }}">Pesanan Batal</a>
+    </li>
+</ul>
+
                     </li>
                 </ul>
 

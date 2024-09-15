@@ -19,7 +19,6 @@
                             <th>Tanggal</th>
                             <th>Nama Customer</th>
                             <th>Alamat Lengkap</th>
-                            <th>Produk</th>
                             <th>Total</th>
                             <th>Metode Pembayaran</th>
                             <th>Aksi</th>
@@ -31,33 +30,11 @@
                                 <td align="center">{{ $index + 1 }}</td>
                                 <td>{{ $row->no_pesanan }}</td>
                                 <td align="center">
-                                    @switch($row->status_pesanan)
-                                        @case('pending')
-                                            <span class="badge badge-secondary">Pending</span>
-                                            @break
-                                        @case('proses')
-                                            <span class="badge badge-info">Proses</span>
-                                            @break
-                                        @case('selesai')
-                                            <span class="badge badge-success">Selesai</span>
-                                            @break
-                                        @case('batal')
-                                            <span class="badge badge-danger">Batal</span>
-                                            @break
-                                        @default
-                                            <span class="badge badge-warning">Tidak Diketahui</span>
-                                    @endswitch
+                                    <span class="badge badge-danger">Batal</span>
                                 </td>
-                                <!-- Format tanggal ke WIB -->
                                 <td>{{ \Carbon\Carbon::parse($row->tanggal)->timezone('Asia/Jakarta')->format('d M Y H:i') }}</td>
                                 <td>{{ $row->nama_customer }}</td>
                                 <td>{{ $row->alamat }}</td>
-                                <!-- Tampilkan nama produk menggunakan relasi produk -->
-                                <td>
-                                    @foreach($row->items as $item)
-    {{ $item->produk->nama_produk }} ({{ $item->jumlah_pesanan }}){{ !$loop->last ? ',' : '' }}
-@endforeach
-                                </td>                                
                                 <td>Rp. {{ number_format($row->total, 0, ',', '.') }}</td>
                                 <td>
                                     @switch($row->metode_pembayaran)
@@ -73,18 +50,9 @@
                                         @default
                                             <span>Belum Bayar</span>
                                     @endswitch
-                                </td>                                
+                                </td>
                                 <td align="center">
-                                    <a href="{{ route('pesanan.edit', $row->id) }}" title="Ubah Data" class="btn btn-success btn-xs">
-                                        <i class="fa fa-edit"></i> Ubah
-                                    </a>
-                                    <form method="POST" action="{{ route('pesanan.destroy', $row->id) }}" style="display:inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-xs show_confirm" data-konf-delete="{{ $row->no_pesanan }}">
-                                            <i class="fa fa-trash"></i> Hapus
-                                        </button>
-                                    </form>
+                                    <!-- Aksi jika diperlukan -->
                                 </td>
                             </tr>
                         @endforeach

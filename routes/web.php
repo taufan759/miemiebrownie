@@ -50,6 +50,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('backend/berita', BeritaBackend::class);
     Route::resource('backend/produk', ProdukBackend::class); 
     Route::resource('backend/pesanan', PesananBackend::class);
+    Route::get('backend/pesanan-selesai', [PesananBackend::class, 'selesai'])->name('pesanan.selesai');
+    Route::get('backend/pesanan-batal', [PesananBackend::class, 'batal'])->name('pesanan.batal');
 });
 
 Route::middleware(['auth', IsAdmin::class])->group(function () {
