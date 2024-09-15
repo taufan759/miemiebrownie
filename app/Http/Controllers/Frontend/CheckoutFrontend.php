@@ -81,7 +81,7 @@ $pesanan->user_id = $customer->id;
 $pesanan->tanggal = Carbon::now();
 $pesanan->save();
 
-// Simpan item ke dalam pesanan_item
+// Simpan item ke dalam pesanan_item menggunakan relasi
 foreach ($cartItems as $item) {
     $pesanan->items()->create([
         'produk_id' => $item->product_id,
@@ -90,7 +90,6 @@ foreach ($cartItems as $item) {
         'total_harga' => $item->product->harga * $item->quantity,
     ]);
 }
-
 
     // Format pesan untuk dikirim ke WhatsApp
     $productDetails = $cartItems->map(function ($item) {
@@ -121,5 +120,4 @@ foreach ($cartItems as $item) {
     $waLink = "https://wa.me/{$whatsappNumber}?text=" . urlencode($whatsappMessage);
     return redirect($waLink);
 }
-
 }

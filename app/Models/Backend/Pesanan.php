@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pesanan extends Model
 {
-    protected $table = 'pesanan';
-
     protected $fillable = [
         'no_pesanan', 'alamat', 'metode_pembayaran', 'nama_customer',
         'jumlah_pesanan', 'total', 'status_pesanan', 'produk_id', 'user_id'
@@ -17,12 +15,11 @@ class Pesanan extends Model
     // Relasi ke model Produk
     public function produk()
     {
-        return $this->belongsTo(Produk::class, 'produk_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id'); // pastikan relasi ini benar
     }
 
     public function items()
@@ -30,4 +27,5 @@ class Pesanan extends Model
         return $this->hasMany(PesananItem::class, 'pesanan_id');
     }
 }
+
 
