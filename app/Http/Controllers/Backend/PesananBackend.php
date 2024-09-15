@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use App\Models\Backend\Pesanan;
 use App\Models\Backend\Produk;
@@ -115,22 +116,50 @@ public function edit(string $id)
     $pesanan = Pesanan::findOrFail($id);
 
     // Validasi input
-    $rules = [
+    $validatedData = $request->validate([
         'status_pesanan' => 'required|in:pending,proses,selesai,batal',
-        'nama_customer' => 'required',
-        'jumlah_pesanan' => 'required',
-        'total_pesanan' => 'required',
-        'alamat' => 'required',
-    ];
+        'nama_customer' => 'required|string|max:255',
+        'alamat' => 'required|string',
+    ]);
 
-    $validatedData = $request->validate($rules);
+    if ($validatedData['status_pesanan'] == 'selesai') {
+        // Pindahkan pesanan ke tabel pesanan_selesai
+        DB::transaction(function () use ($pesanan, $validatedData) {
+            DB::table('pesanan_selesai')->insert([
+                'no_pesanan' => $pesanan->no_pesanan,
+                'nama_customer' => $pesanan->nama_customer,
+                'alamat' => $pesanan->alamat,
+                'total' => $pesanan->total,
+                'tanggal' => $pesanan->tanggal,
+                'user_id' => $pesanan->user_id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            $pesanan->delete(); // Hapus dari tabel pesanan
+        });
+    } elseif ($validatedData['status_pesanan'] == 'batal') {
+        // Pindahkan pesanan ke tabel pesanan_batal
+        DB::transaction(function () use ($pesanan, $validatedData) {
+            DB::table('pesanan_batal')->insert([
+                'no_pesanan' => $pesanan->no_pesanan,
+                'nama_customer' => $pesanan->nama_customer,
+                'alamat' => $pesanan->alamat,
+                'total' => $pesanan->total,
+                'tanggal' => $pesanan->tanggal,
+                'user_id' => $pesanan->user_id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            $pesanan->delete(); // Hapus dari tabel pesanan
+        });
+    } else {
+        // Update data pesanan biasa
+        $pesanan->update($validatedData);
+    }
 
-    // Update data pesanan
-    $pesanan->update($validatedData);
-
-    // Redirect dengan pesan sukses
     return redirect()->route('pesanan.index')->with('success', 'Data berhasil diperbaharui');
 }
+    
     /**
      * Remove the specified resource from storage.
      */
@@ -141,6 +170,19 @@ public function edit(string $id)
         return redirect('backend/pesanan')->with('success', 'Pesanan berhasil dihapus');
     }
 
+    /**
+     * Get harga produk berdasarkan produk ID
+     */
+    public function getIdProduk(Request $request)
+    {
+        $produk = Produk::find($request->produk_id);
+
+        if ($produk) {
+            return response()->json(['hargaProduk' => $produk->harga]);
+        } else {
+            return response()->json(['hargaProduk' => null]);
+        }
+    }
     public function selesai()
 {
     $pesananSelesai = Pesanan::onlyTrashed()->where('status_pesanan', 'selesai')->get();
@@ -161,17 +203,4 @@ public function batal()
     ]);
 }
 
-    /**
-     * Get harga produk berdasarkan produk ID
-     */
-    public function getIdProduk(Request $request)
-    {
-        $produk = Produk::find($request->produk_id);
-
-        if ($produk) {
-            return response()->json(['hargaProduk' => $produk->harga]);
-        } else {
-            return response()->json(['hargaProduk' => null]);
-        }
-    }
 }

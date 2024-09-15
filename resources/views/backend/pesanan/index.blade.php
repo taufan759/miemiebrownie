@@ -48,7 +48,6 @@
                                             <span class="badge badge-warning">Tidak Diketahui</span>
                                     @endswitch
                                 </td>
-<<<<<<< HEAD
                                 <!-- Format tanggal ke WIB -->
                                 <td>{{ \Carbon\Carbon::parse($row->tanggal)->timezone('Asia/Jakarta')->format('d M Y H:i') }}</td>
                                 <td>{{ $row->nama_customer }}</td>
@@ -58,13 +57,7 @@
                                     @foreach($row->items as $item)
     {{ $item->produk->nama_produk }} ({{ $item->jumlah_pesanan }}){{ !$loop->last ? ',' : '' }}
 @endforeach
-                                </td>                                
-=======
-                                <td>{{ $row->created_at->format('d M Y H:i') }}</td>
-                                <td>{{ $row->nama_customer }}</td>
-                                <td>{{ $row->alamat }}</td>
-                                <td>{{ $row->jumlah_pesanan }}</td>
->>>>>>> 1fa86e3578892b89680ebc43d988888666f2679f
+                                </td>
                                 <td>Rp. {{ number_format($row->total, 0, ',', '.') }}</td>
                                 <td>
                                     @switch($row->metode_pembayaran)
@@ -95,11 +88,7 @@
                                 </td>
                             </tr>
                         @endforeach
-<<<<<<< HEAD
                     </tbody>                             
-=======
-                    </tbody>                    
->>>>>>> 1fa86e3578892b89680ebc43d988888666f2679f
                 </table>
             </div>
         </div>

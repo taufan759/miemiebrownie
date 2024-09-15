@@ -26,36 +26,36 @@
                     </thead>
                     <tbody>
                         @foreach ($pesanan as $index => $row)
-                            <tr>
-                                <td align="center">{{ $index + 1 }}</td>
-                                <td>{{ $row->no_pesanan }}</td>
-                                <td align="center">
-                                    <span class="badge badge-success">Selesai</span>
-                                </td>
-                                <td>{{ \Carbon\Carbon::parse($row->tanggal)->timezone('Asia/Jakarta')->format('d M Y H:i') }}</td>
-                                <td>{{ $row->nama_customer }}</td>
-                                <td>{{ $row->alamat }}</td>
-                                <td>Rp. {{ number_format($row->total, 0, ',', '.') }}</td>
-                                <td>
-                                    @switch($row->metode_pembayaran)
-                                        @case('bank_transfer')
-                                            <span>Transfer Bank</span>
-                                            @break
-                                        @case('credit_card')
-                                            <span>Kartu Kredit</span>
-                                            @break
-                                        @case('cod')
-                                            <span>Bayar di Tempat (COD)</span>
-                                            @break
-                                        @default
-                                            <span>Belum Bayar</span>
-                                    @endswitch
-                                </td>
-                                <td align="center">
-                                    <!-- Aksi jika diperlukan -->
-                                </td>
-                            </tr>
-                        @endforeach
+    <tr>
+        <td align="center">{{ $index + 1 }}</td>
+        <td>{{ $row->no_pesanan }}</td>
+        <td align="center">
+            <span class="badge badge-success">Selesai</span>
+        </td>
+        <td>{{ \Carbon\Carbon::parse($row->tanggal)->timezone('Asia/Jakarta')->format('d M Y H:i') }}</td>
+        <td>{{ $row->nama_customer }}</td>
+        <td>{{ $row->alamat }}</td>
+        <td>Rp. {{ number_format($row->total, 0, ',', '.') }}</td>
+        <td>
+            @switch($row->metode_pembayaran)
+                @case('bank_transfer')
+                    <span>Transfer Bank</span>
+                    @break
+                @case('credit_card')
+                    <span>Kartu Kredit</span>
+                    @break
+                @case('cod')
+                    <span>Bayar di Tempat (COD)</span>
+                    @break
+                @default
+                    <span>Belum Bayar</span>
+            @endswitch
+        </td>
+        <td align="center">
+            <!-- Aksi jika diperlukan -->
+        </td>
+    </tr>
+@endforeach
                     </tbody>                             
                 </table>
             </div>
